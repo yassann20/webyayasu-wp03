@@ -1,0 +1,194 @@
+body {
+	color: #fff;
+	div#particles-js {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		background-color: blue;
+		z-index: -1;
+	}
+
+	header {
+		width: 100%;
+		height: calc(100vh - 80px);
+
+		nav.menu {
+			width: 100%;
+			height: 80px;
+			background-color: #f3f3f3;
+		}
+
+		div.content-profile {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: calc(100% - 80px);
+
+			div.img {
+				width: 300px;
+				height: 300px;
+				border-radius: 150px;
+				background-color: #ffff;
+			}
+
+			div.content-profile_text {
+				padding-left: 100px;
+
+				h2 {}
+
+				p {}
+			}
+		}
+	}
+
+	main {
+		max-width: 1400px;
+		width: 100%;
+		margin: 0 auto;
+
+		section.section-news {
+			width: 1000px;
+			margin: 0 auto;
+
+			div.sections-title {
+				h2 {}
+			}
+
+			ul.news-list {
+				li.news-list__item {
+					list-style: none;
+					border-top: solid 1px #fff;
+					margin: 0 200px;
+					padding: 0 10px;
+					article {
+						display: flex;
+					align-items: center;
+						height: 60px;
+
+						time {
+							margin: 0 10px;
+						}
+
+						span.category {
+							display: inline-block;
+							padding: 5px;
+							margin: 0 10px;
+							color: #000000;
+							background-color: #ffff;
+						}
+
+						p {
+							margin: 0 10px;
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+
+		section.section-work {
+			div.sections-title {
+				h2 {}
+			}
+
+			p.section-text {}
+
+			div.work-content {
+				div.work-content__item {
+					div.img {
+						img {}
+					}
+
+					h3 {}
+
+					p {}
+				}
+
+				div.work-content-item {
+					div.img {
+						img {}
+					}
+
+					h3 {}
+
+					p {}
+				}
+			}
+		}
+
+		section.section-portfolio {
+			div.sections-title {
+				h2 {}
+			}
+
+			p.section-text {}
+
+			div.portofolio-content {
+				div.portofolio-content__item {
+					div.portofolio-img-slider {
+						div.img {
+							img {}
+						}
+					}
+
+					h3 {}
+
+					p {}
+
+					a.portofolio-link {}
+				}
+			}
+		}
+
+		section.section-skill {
+			div.sections-title {
+				h2 {}
+			}
+
+			p.section-text {}
+
+			div.skill-content {
+				div.skill-content__item {
+					div.img {
+						img {}
+					}
+
+					div.skill-content__item {
+						h3 {}
+
+						div.img {
+							img {}
+						}
+
+						p {}
+					}
+				}
+			}
+		}
+
+		section.section-contact {
+			div.sections-title {
+				h2 {}
+			}
+
+			form {
+				label {
+					h3 {}
+
+					input {}
+
+					/*============================
+#message
+============================*/
+					textarea#message {}
+				}
+
+				button {}
+			}
+		}
+	}
+
+	footer {}
+}

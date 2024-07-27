@@ -1,5 +1,50 @@
+// 変数の定義
+$breakpoint-pc: 1024px;
+$breakpoint-tab: 768px;
+$breakpoint-sp: 480px;
+
+// Mixinの定義
+@mixin respond-to($device) {
+	@if $device=='pc' {
+		@media (min-width: $breakpoint-pc) {
+			@content;
+		}
+	}
+
+	@else if $device=='tab' {
+		@media (min-width: $breakpoint-tab) and (max-width: ($breakpoint-pc - 1px)) {
+			@content;
+		}
+	}
+
+	@else if $device=='sp' {
+		@media (max-width: $breakpoint-sp) {
+			@content;
+		}
+	}
+}
+
 body {
 	color: #fff;
+
+	div.sections-title {
+		width: 100%;
+		text-align: center;
+
+		h2 {
+			display: inline-block;
+			font-size: 48px;
+			border-bottom: solid 1px #fff;
+			margin: 20px;
+		}
+	}
+
+	p.section-text {
+		max-width: 700px;
+		margin: 20px auto;
+		padding: 0 20px;
+	}
+
 	div#particles-js {
 		position: fixed;
 		width: 100vw;
@@ -11,6 +56,7 @@ body {
 	header {
 		width: 100%;
 		height: calc(100vh - 80px);
+		background-color: gray;
 
 		nav.menu {
 			width: 100%;
@@ -47,9 +93,11 @@ body {
 		max-width: 1400px;
 		width: 100%;
 		margin: 0 auto;
+		padding: 100px;
 
 		section.section-news {
-			width: 1000px;
+			width: 100%;
+			max-width: 1000px;
 			margin: 0 auto;
 
 			div.sections-title {
@@ -58,14 +106,17 @@ body {
 
 			ul.news-list {
 				li.news-list__item {
+					width: 100%;
 					list-style: none;
 					border-top: solid 1px #fff;
-					margin: 0 200px;
-					padding: 0 10px;
+					margin: 0 10px;
+
 					article {
 						display: flex;
-					align-items: center;
-						height: 60px;
+						flex-wrap: wrap;
+						align-items: center;
+						min-height: 60px;
+						padding: 10px;
 
 						time {
 							margin: 0 10px;
@@ -89,6 +140,9 @@ body {
 		}
 
 		section.section-work {
+			width: 100%;
+			margin: 0 auto;
+
 			div.sections-title {
 				h2 {}
 			}
@@ -96,24 +150,33 @@ body {
 			p.section-text {}
 
 			div.work-content {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				width: 100%;
+				gap: 50px;
+				margin: 60px auto 0;
+
 				div.work-content__item {
+					width: 350px;
+					height: auto;
+					text-align: center;
+
 					div.img {
+						width: 100%;
+						aspect-ratio: 16/9;
+						background-color: gray;
+
 						img {}
 					}
 
-					h3 {}
-
-					p {}
-				}
-
-				div.work-content-item {
-					div.img {
-						img {}
+					h3 {
+						padding: 20px 40px 10px;
 					}
 
-					h3 {}
-
-					p {}
+					p {
+						padding: 10px 40px 30px;
+					}
 				}
 			}
 		}
@@ -126,18 +189,57 @@ body {
 			p.section-text {}
 
 			div.portofolio-content {
+				width: 100%;
+				margin: 0 auto;
+				padding: 20px;
+
 				div.portofolio-content__item {
+					min-width: 300px;
+					max-width: 500px;
+					text-align: center;
+					background-color: rgba( 255, 255, 255, 0.7);
+					color: #000000;
+					padding-bottom: 20px;
+					&.left, &.right{
+						margin: 20px auto;
+					}
+
+					@include respond-to('pc') {
+						&.left {
+							margin-left: 0;
+						}
+						&.right {
+							margin-left: 620px;
+						}
+					}
+
 					div.portofolio-img-slider {
+						width: 100%;
+						aspect-ratio: 16/9;
+						background-color: gray;
+
 						div.img {
+							width: 100%;
+							height: 100%;
+
 							img {}
 						}
 					}
 
-					h3 {}
+					h3 {
+						padding: 20px 40px 10px;
+					}
 
-					p {}
+					p {
+						padding: 10px 40px 30px;
+					}
 
-					a.portofolio-link {}
+					a.portofolio-link {
+						display: block;
+						width: 100px;
+						margin: auto;
+						border: solid 1px #000000;
+					}
 				}
 			}
 		}
@@ -150,45 +252,136 @@ body {
 			p.section-text {}
 
 			div.skill-content {
+				width: 100%;
+				max-width: 1200px;
+				margin: 0 auto;
+				@include respond-to('pc') {
 				div.skill-content__item {
+					
+					display: flex;
+					flex-wrap: wrap;
+					width: 100%;
+					min-height: 250px;
+					color: black;
+					background-color: rgba(255, 255, 255, 0.7);
+					margin: 20px 0;
 					div.img {
+						width: 230px;
+						height: 230px;
+						margin: 0 auto;
+						background-color: gray;
+
 						img {}
 					}
 
-					div.skill-content__item {
+					div.skill-content__item__text {
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: center;
+						width: 100%;
+						max-width: 800px;
+						padding: 60px;
+
 						h3 {}
 
-						div.img {
+						div.img-star {
 							img {}
 						}
 
 						p {}
 					}
+
+					div.skill-content__item__button {
+						position: relative;
+						width: 60px;
+
+						span {
+							position: absolute;
+							top: 50%;
+							left: 0;
+							display: block;
+							width: 50px;
+							height: 3px;
+							background-color: #000000;
+							transform: translate(-50%, -50%);
+
+							&:nth-of-type(1) {
+								transform: rotate(45deg);
+							}
+
+							&:nth-of-type(2) {
+								transform: rotate(-45deg);
+							}
+						}
+					}
 				}
+			}
 			}
 		}
 
 		section.section-contact {
+			max-width: 1200px;
+			width: 100%;
+			margin: 0 auto;
+
 			div.sections-title {
 				h2 {}
 			}
 
 			form {
 				label {
-					h3 {}
+					display: flex;
+					justify-content: center;
+					width: 100%;
+					height: auto;
+					padding: 25px 10px;
+					border-top: solid 1px #ffff;
 
-					input {}
+					h3 {
+						width: 400px;
+						font-size: 24px;
+					}
+
+					input {
+						display: block;
+						width: 600px;
+						height: 50px;
+						background-color: #ffff;
+					}
 
 					/*============================
 #message
 ============================*/
-					textarea#message {}
+					textarea#message {
+						display: block;
+						width: 600px;
+						height: 200px;
+						background-color: #ffff;
+					}
 				}
 
-				button {}
+				button {
+					display: block;
+					width: 80px;
+					height: 40px;
+					line-height: 40px;
+					background-color: #ffff;
+					color: black;
+					margin: 50px calc(50% - 40px) 60px;
+				}
 			}
 		}
 	}
 
-	footer {}
+	footer {
+		width: 100%;
+		height: 80px;
+		color: black;
+		background-color: #ffff;
+
+		p {
+			text-align: center;
+			padding: 20px 0;
+		}
+	}
 }

@@ -1,7 +1,7 @@
 $(function () {
     $('header').on('inview', function (event, isInView) {
         if (isInView) {
-            $('.menu').addClass('fade-dawn');
+            $('.menu-content').addClass('fade-dawn');
             setTimeout(function () {
                 $('.header-img').addClass('left-slide-in');
             }, 400);

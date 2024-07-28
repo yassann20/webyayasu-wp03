@@ -56,39 +56,55 @@ body div.sections-text-scale.scale-show {
 body header {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
+  overflow: hidden;
 }
-body header nav.menu {
+body header div.menu-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
   width: 100%;
   height: 80px;
-  background-color: #f3f3f3;
-  transition: all 0.5s;
+  background-color: #ffffff;
+  transition: all 1s;
 }
-body header nav.menu.hide {
+body header div.menu-content.hide {
   transform: translateY(-200px);
 }
-body header nav.menu.hide.fade-dawn {
+body header div.menu-content.hide.fade-dawn {
   transform: translateY(0);
   opacity: 1;
+}
+body header div.menu-content div.img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  background-color: gray;
+}
+body header div.menu-content nav.menu {
+  width: auto;
+  height: 100%;
+  transition: all 0.5s;
+}
+body header div.menu-content nav.menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 40px;
+  color: #000000;
 }
 body header div.header-img {
   position: absolute;
   width: 100%;
-  height: calc(100% - 80px);
-  top: 80px;
-  background-color: gray;
-  transition: all 0.5s;
-}
-body header div.header-img.hide {
-  transform: translateX(-300px);
-}
-body header div.header-img.hide.left-slide-in {
-  transform: translateX(0);
-  opacity: 1;
-}
-body header div.header-img img {
-  display: block;
-  width: 100%;
+  height: calc(100vh - 80px);
+  top: 0;
+  background-image: url("../photos/sitecodding.jpg");
+  background-attachment: fixed;
+  z-index: -1;
 }
 body header div.content-profile {
   display: flex;
@@ -114,6 +130,19 @@ body header div.content-profile div.img {
 }
 body header div.content-profile div.content-profile_text {
   padding-left: 100px;
+  text-align: center;
+}
+body header div.content-profile div.content-profile_text h2, body header div.content-profile div.content-profile_text p {
+  width: 500px;
+  padding: 10px 0;
+}
+body header div.content-profile div.content-profile_text a {
+  display: block;
+  width: 150px;
+  height: 40px;
+  line-height: 30px;
+  border: solid 1px #ffffff;
+  margin: 20px auto;
 }
 body main {
   max-width: 1400px;
@@ -204,11 +233,26 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
   color: #000000;
+  margin: 0 auto;
   padding-bottom: 20px;
   transition: all 1s;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item.left, body main section.section-portfolio div.portofolio-content div.portofolio-content__item.right {
   margin: 20px auto;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item.left.hide {
+  transform: translateX(-100px);
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item.left.hide.slide-left-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item.right.hide {
+  transform: translateX(100px);
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item.right.hide.slide-right-in {
+  transform: translateX(0);
+  opacity: 1;
 }
 @media (min-width: 1024px) {
   body main section.section-portfolio div.portofolio-content div.portofolio-content__item.left {
@@ -261,6 +305,43 @@ body main section.section-skill div.skill-content {
   max-width: 1200px;
   margin: 0 auto;
 }
+body main section.section-skill div.skill-content div.skill-content__item {
+  display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+  min-height: 250px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 20px 0;
+  transition: all 1s;
+}
+body main section.section-skill div.skill-content div.skill-content__item.skill-left {
+  transform: translateX(-200px);
+}
+body main section.section-skill div.skill-content div.skill-content__item.skill-left.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+body main section.section-skill div.skill-content div.skill-content__item.skill-right {
+  transform: translateX(200px);
+}
+body main section.section-skill div.skill-content div.skill-content__item.skill-right.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+body main section.section-skill div.skill-content div.skill-content__item div.img {
+  width: 250px;
+  height: 250px;
+  margin: 0;
+  background-color: gray;
+}
+body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: calc(100% - 330px);
+  padding: 40px 60px;
+}
 @media (min-width: 1024px) {
   body main section.section-skill div.skill-content div.skill-content__item {
     display: flex;
@@ -298,51 +379,6 @@ body main section.section-skill div.skill-content {
     justify-content: center;
     width: calc(100% - 330px);
     padding: 40px 60px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  body main section.section-skill div.skill-content div.skill-content__item {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    min-height: 250px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.7);
-    margin: 20px 0;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.img {
-    width: 230px;
-    height: 230px;
-    margin: 0 auto;
-    background-color: gray;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    max-width: 800px;
-    padding: 60px;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__button {
-    position: relative;
-    width: 60px;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__button span {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #000000;
-    transform: translate(-50%, -50%);
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__button span:nth-of-type(1) {
-    transform: rotate(45deg);
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__button span:nth-of-type(2) {
-    transform: rotate(-45deg);
   }
 }
 body main section.section-contact {

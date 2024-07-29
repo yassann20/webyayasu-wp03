@@ -4,9 +4,14 @@
             $('.custom-header-logo').attr('src', newval);
         });
     });
-    wp.customize('mytheme_header_image', function(value) {
+    wp.customize('mytheme_header_img', function(value) {
         value.bind(function(newval) {
-            $('.custom-header-image').attr('src', newval);
+            $('.custom-header-img').attr('src', newval);
+        });
+    });
+    wp.customize('custom_header_profile_img', function(value) {
+        value.bind(function(newval) {
+            $('.custom-header-profile-img').attr('src', newval);
         });
     });
     wp.customize('mytheme_header_headline_h2', function(value) {

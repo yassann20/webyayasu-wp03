@@ -1,6 +1,7 @@
 <?php
 $header_logo = get_theme_mod( 'custom_header_logo' );
-$header_image = get_theme_mod( 'custom_header_image' );
+$header_image = get_theme_mod( 'custom_header_img' );
+$header_profile_img = get_theme_mod( 'custom_header_profile_img' );
 $header_headline_h2 = get_theme_mod( 'custom_header_headline_h2' );
 $header_text = get_theme_mod( 'custom_header_text' );
 
@@ -26,7 +27,7 @@ $header_text = get_theme_mod( 'custom_header_text' );
         <div class="img logo custom-header-logo">
             <a href="">
                 <?php if( $header_logo) :?>
-                    <img src="<?php echo esc_url( get_theme_mod( 'custom_header_logo' ) ); ?>" alt="" class="custom-header-logo">
+                    <img src="<?php echo esc_url( get_theme_mod( 'custom_header_logo' ) ); ?>" alt="">
                 <?php else :?>
                     <img src="<?php echo esc_url($header_logo); ?>" alt="">
                     <?php endif; ?>
@@ -42,11 +43,15 @@ $header_text = get_theme_mod( 'custom_header_text' );
             </ul>
         </nav>
         </div>
-        <div class="header-img img custom-header-image" style="background-image: url('<?php echo $header_image ? esc_url($header_image) : get_template_directory_uri() . '/site-date/photos/sitecodding.jpg'; ?>');">
+        <div class="header-img img custom-header-img" style="background-image: url('<?php echo $header_image ? esc_url($header_image) : get_template_directory_uri() . '/site-date/photos/sitecodding.jpg'; ?>');">
         </div>
         <div class="content-profile hide">
             <div class="img">
-                <img src="" alt="">
+            <?php if( $header_profile_img ) :?>
+                    <img class="custom-header-profile-img" src="<?php echo $header_profile_img; ?>" alt="">
+                <?php else :?>
+                    <img class="custom-header-profile-img" src="<?php echo esc_url($header_profile_img ); ?>" alt="">
+                    <?php endif; ?>
             </div>
             <div class="content-profile_text">
             <h2 class="custom-header-headline-h2">

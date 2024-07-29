@@ -1,5 +1,18 @@
 <?php
 
+// アイキャッチ画像のサポートを追加
+function theme_setup() {
+    // アイキャッチ画像のサポート
+    add_theme_support('post-thumbnails');
+
+    // 投稿タイプごとにアイキャッチ画像をサポートする場合
+    add_post_type_support('post', 'thumbnail'); // 通常の投稿タイプ
+    add_post_type_support('page', 'thumbnail'); // 固定ページ
+    // 必要に応じて他のカスタム投稿タイプも追加できます
+}
+
+add_action('after_setup_theme', 'theme_setup');
+
 function webyayasu03_customize_register( $wp_customize ) {
     // ヘッダーパネル追加
     $wp_customize->add_panel('custom_header_panel', array(
@@ -28,15 +41,27 @@ function webyayasu03_customize_register( $wp_customize ) {
     )));
     
     // ヘッダー画像の設定
-    $wp_customize->add_setting('custom_header_image', array(
+    $wp_customize->add_setting('custom_header_img', array(
         'default' => '',
         'transport' => 'postMessage',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_image_control', array(
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_img_control', array(
         'label'    => __('ヘッダー画像', 'mytheme'),
         'section'  => 'custom_header_section',
-        'settings' => 'custom_header_image',
+        'settings' => 'custom_header_img',
+    )));
+
+    // プロファイル画像の設定
+    $wp_customize->add_setting('custom_header_profile_img', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_profile_img_control', array(
+        'label'    => __('プロファイル画像', 'mytheme'),
+        'section'  => 'custom_header_section',
+        'settings' => 'custom_header_profile_img',
     )));
 
     //ヘッダーh2テキストの設定
@@ -70,9 +95,13 @@ function webyayasu03_customize_register( $wp_customize ) {
             'selector'        => '.custom-header-logo',
             'render_callback' => 'mytheme_customize_partial_header_logo',
         ));
-        $wp_customize->selective_refresh->add_partial('custom_header_image', array(
-            'selector'        => '.custom-header-image',
-            'render_callback' => 'mytheme_customize_partial_header_image',
+        $wp_customize->selective_refresh->add_partial('custom_header_img', array(
+            'selector'        => '.custom-header-img',
+            'render_callback' => 'mytheme_customize_partial_header_img',
+        ));
+        $wp_customize->selective_refresh->add_partial('custom_header_profile_img', array(
+            'selector'        => '.custom-header-profile-img',
+            'render_callback' => 'mytheme_customize_partial_header_profile_image',
         ));
         $wp_customize->selective_refresh->add_partial('custom_header_headline_h2', array(
             'selector'        => '.custom-header-headline-h2',
@@ -96,13 +125,33 @@ add_action('customize_preview_init', 'mytheme_customize_preview_js');
 function mytheme_customize_partial_header_logo() {	
     return get_theme_mod('custom_header_logo');	
 }	
-function mytheme_customize_partial_header_image() {	
-    return get_theme_mod('custom_header_image');	
-}	
+function mytheme_customize_partial_header_img() {	
+    return get_theme_mod('custom_header_img');	
+}
+function mytheme_customize_partial_header_profile_image() {	
+    return get_theme_mod('custom_header_profile_img');	
+}		
 function mytheme_customize_partial_header_headline_h2() {
     return get_theme_mod( 'custom_header_headline_h2' );
 }
 function mytheme_customize_partial_header_text() {
     return get_theme_mod( 'custom_header_text' );
 }
+
+// section-01(work)コンテンツ設定
+function post_section01(){
+    $support = [
+        'thumbnail',  //'サムネイル'
+        'title',  //'タイトル'
+        'editor',  //'記事本文'
+    ];
+    register_post_type('section01', array(
+        'label' => 'セクション01(work)',
+        'public' => true,
+        'has_archive' => true,
+        'menu_position' => 5,
+        'supports' => $support
+    ));
+}
+add_action('init', 'post_section01');
 ?>

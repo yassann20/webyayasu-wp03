@@ -202,6 +202,7 @@ body main section.section-work div.work-content div.work-content_item {
   width: 350px;
   height: auto;
   text-align: center;
+  word-wrap: break-word;
 }
 body main section.section-work div.work-content div.work-content_item.hide {
   transition: all 0.5s;
@@ -220,6 +221,7 @@ body main section.section-work div.work-content div.work-content_item h3 {
   padding: 20px 40px 10px;
 }
 body main section.section-work div.work-content div.work-content_item p {
+  width: 100%;
   padding: 10px 40px 30px;
 }
 body main section.section-portfolio div.portofolio-content {
@@ -236,6 +238,7 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   margin: 0 auto;
   padding-bottom: 20px;
   transition: all 1s;
+  word-wrap: break-word;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item.left, body main section.section-portfolio div.portofolio-content div.portofolio-content__item.right {
   margin: 20px auto;
@@ -289,9 +292,9 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   padding: 20px 40px 10px;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item p {
-  padding: 10px 40px 30px;
+  padding: 10px 40px 20px;
 }
-body main section.section-portfolio div.portofolio-content div.portofolio-content__item a.portofolio-link {
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item a {
   display: block;
   width: 100px;
   margin: auto;
@@ -314,6 +317,7 @@ body main section.section-skill div.skill-content div.skill-content__item {
   background-color: rgba(255, 255, 255, 0.7);
   margin: 20px 0;
   transition: all 1s;
+  word-wrap: break-word;
 }
 body main section.section-skill div.skill-content div.skill-content__item.skill-left {
   transform: translateX(-200px);

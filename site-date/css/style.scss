@@ -280,6 +280,7 @@ body {
 					width: 350px;
 					height: auto;
 					text-align: center;
+					word-wrap: break-word;
 
 					&.hide {
 						transition: all .5s;
@@ -304,6 +305,7 @@ body {
 					}
 
 					p {
+						width: 100%;
 						padding: 10px 40px 30px;
 					}
 				}
@@ -331,6 +333,7 @@ body {
 					margin: 0 auto;
 					padding-bottom: 20px;
 					transition: all 1s;
+					word-wrap: break-word;
 
 					&.left,
 					&.right {
@@ -405,10 +408,10 @@ body {
 					}
 
 					p {
-						padding: 10px 40px 30px;
+						padding: 10px 40px 20px;
 					}
 
-					a.portofolio-link {
+					a {
 						display: block;
 						width: 100px;
 						margin: auto;
@@ -442,6 +445,7 @@ body {
 					background-color: rgba(255, 255, 255, 0.7);
 					margin: 20px 0;
 					transition: all 1s;
+					word-wrap: break-word;
 
 					&.skill-left {
 						transform: translateX(-200px);
@@ -479,7 +483,7 @@ body {
 
 						h3 {}
 
-						div.img-star {
+						div.img{
 							img {}
 						}
 

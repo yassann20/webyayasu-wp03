@@ -146,7 +146,7 @@ function post_section01(){
         'editor',  //'記事本文'
     ];
     register_post_type('section01', array(
-        'label' => 'セクション01(work)',
+        'label' => 'workコンテンツ',
         'public' => true,
         'has_archive' => true,
         'menu_position' => 5,
@@ -154,4 +154,38 @@ function post_section01(){
     ));
 }
 add_action('init', 'post_section01');
+
+// section-02(portfplio)コンテンツ設定
+function post_section02(){
+    $support = [
+        'thumbnail',  //'サムネイル'
+        'title',  //'タイトル'
+        'editor',  //'記事本文'
+    ];
+    register_post_type('section02', array(
+        'label' => 'portfolioコンテンツ',
+        'public' => true,
+        'has_archive' => true,
+        'menu_position' => 6,
+        'supports' => $support
+    ));
+}
+add_action('init', 'post_section02');
+
+// section-03(skill)コンテンツ設定
+function post_section03(){
+    $support = [
+        'thumbnail',  //'サムネイル'
+        'title',  //'タイトル'
+        'editor',  //'記事本文'
+    ];
+    register_post_type('section03', array(
+        'label' => 'skillコンテンツ',
+        'public' => true,
+        'has_archive' => true,
+        'menu_position' => 6,
+        'supports' => $support
+    ));
+}
+add_action('init', 'post_section03');
 ?>

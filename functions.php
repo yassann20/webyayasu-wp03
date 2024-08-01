@@ -13,6 +13,18 @@ function theme_setup() {
 
 add_action('after_setup_theme', 'theme_setup');
 
+//ブログページが表示されている場合に個別のスタイルを適応させる
+function my_enqueue_blog_styles() {
+    if ( is_single() ) {
+        // ブログページの場合、スタイルシートを読み込む
+        wp_enqueue_style( 'blog-styles', get_template_directory_uri() . '/site-date/css/blog-page.css' );
+    }else if( is_archive() ){
+        // アーカイブページの場合、スタイルシートを読み込む
+        wp_enqueue_style( 'archive-styles', get_template_directory_uri() . '/site-date/css/archive.css' );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'my_enqueue_blog_styles' );
+
 function webyayasu03_customize_register( $wp_customize ) {
     // ヘッダーパネル追加
     $wp_customize->add_panel('custom_header_panel', array(
@@ -188,4 +200,23 @@ function post_section03(){
     ));
 }
 add_action('init', 'post_section03');
+
+//archiveページとcategoryページ内の記事抜粋の文字数を制限
+function custom_excerpt_length( $charlength ) {
+    $excerpt = get_the_excerpt();
+    $charlength++;
+    if (mb_strlen( $excerpt ) > $charlength) { // 抜粋が指定された文字数より多い場合
+        $subex = mb_substr( $excerpt, 0, $charlength - 5 ); // 抜粋の一番初めの文字列から指定された文字から-5した分を格納
+        $exwords = explode(' ', $subex); // 指定された文字列から分割、この場合はスペースで分割
+        $excut = - (mb_strlen($exwords[count($exwords) - 1])); // 最後の単語の長さを取得
+        if ( $excut < 0 ) {
+            echo mb_substr($subex, 0, $excut);
+        } else {
+            echo $subex;
+        }
+        echo '...';
+    } else {
+        echo $excerpt;
+    }
+}
 ?>

@@ -1,3 +1,6 @@
+div.categorys{
+    
+}
 section.blog-page {
     width: 100%;
 	div.img.thumbnail {
@@ -31,11 +34,13 @@ section.blog-page {
             gap: 40px;
             flex-wrap: nowrap;
             li{
+                width: 80px;
+                height: 30px;
                 list-style: none;
                 a{
                     display: block;
-                    width: 80px;
-                    height: 30px;
+                    width: 100%;
+                    height: 100%;
                     line-height: 30px;
                     border: solid 1px #ffffff;
                     text-align: center;

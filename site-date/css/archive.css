@@ -1,0 +1,70 @@
+section.archive {
+  width: 100%;
+  text-align: center;
+}
+section.archive div.categorys {
+  width: 100%;
+}
+section.archive div.categorys ul {
+  width: 100%;
+  text-align: left;
+}
+section.archive div.categorys ul li {
+  display: inline-block;
+  padding: 10px;
+  border: solid 1px #ffffff;
+  margin: 10px;
+}
+section.archive div.archive-text h2 {
+  padding: 20px 0;
+}
+section.archive div.archive-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+section.archive div.archive-content article.archive-content_item {
+  width: 1000px;
+  height: 250px;
+  margin: 0 auto;
+}
+section.archive div.archive-content article.archive-content_item a {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  border: solid 1px #ffffff;
+}
+section.archive div.archive-content article.archive-content_item a div.img {
+  height: 100%;
+  aspect-ratio: 16/9;
+  background-color: gray;
+}
+section.archive div.archive-content article.archive-content_item a div.post {
+  padding: 20px 50px;
+  text-align: left;
+}
+section.archive div.archive-content article.archive-content_item a div.post div.post-meta {
+  width: 100%;
+}
+section.archive div.archive-content article.archive-content_item a div.post div.post-meta p, section.archive div.archive-content article.archive-content_item a div.post div.post-meta time {
+  display: inline-block;
+  padding: 10px;
+}
+section.archive div.archive-content article.archive-content_item a div.post div.post-text {
+  word-break: break-all;
+}
+section.archive div.archive-content article.archive-content_item a div.post div.post-text h3 {
+  padding: 10px 0;
+}
+section.archive div.archive-content article.archive-content_item a div.post div.post-text p {
+  padding: 5px 0;
+}
+section.archive div.pagination ul li {
+  /*============================
+  #prev
+  ============================*/
+  /*============================
+  #next
+  ============================*/
+}/*# sourceMappingURL=archive.css.map */

@@ -1,0 +1,98 @@
+section.archive {
+    width: 100%;
+    text-align: center;
+
+    div.categorys {
+        width: 100%;
+
+        ul {
+            width: 100%;
+            text-align: left;
+
+            li {
+                display: inline-block;
+                padding: 10px;
+                border: solid 1px #ffffff;
+                margin: 10px;
+
+                a {}
+            }
+        }
+    }
+
+    div.archive-text {
+        h2 {
+            padding: 20px 0;
+        }
+    }
+
+    div.archive-content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        article.archive-content_item {
+            width: 1000px;
+            height: 250px;
+            margin: 0 auto;
+
+            a {
+                display: flex;
+                flex-wrap: nowrap;
+                width: 100%;
+                height: 100%;
+                border: solid 1px #ffffff;
+
+                div.img {
+                    height: 100%;
+                    aspect-ratio: 16/9;
+                    background-color: gray;
+
+                    img {}
+                }
+
+                div.post {
+                    padding: 20px 50px;
+                    text-align: left;
+                    div.post-meta {
+                        width: 100%;
+                        
+
+                        p, time {
+                            display: inline-block;
+                            padding: 10px;
+                        }
+                    }
+
+                    div.post-text {
+                        word-break: break-all;
+                        h3 {
+                            padding: 10px 0;
+                        }
+
+                        p {
+                            padding: 5px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.pagination {
+        ul {
+            li {
+
+                /*============================
+#prev
+============================*/
+                a#prev {}
+
+                /*============================
+#next
+============================*/
+                a#next {}
+            }
+        }
+    }
+}

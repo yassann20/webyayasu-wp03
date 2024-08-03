@@ -229,4 +229,21 @@ function custom_excerpt_length( $charlength ) {
         echo $excerpt;
     }
 }
+
+//ブロックエディター対応処理
+function webyayasu03_block_setup(){
+    add_theme_support('wp-block-styles');//ブロックエディターでのスタイルを適応
+    add_theme_support('editer-styles');//エディター用のカスタムシートを適応
+    add_editer_style('style-editer.css');//エディター用のスタイルシートを指定
+}
+
+function mytheme_enqueue_block_editor_assets() {
+    wp_enqueue_script(
+        'mytheme-blocks',
+        get_template_directory_uri() . '/blocks.build.js',
+        array('wp-blocks', 'wp-element', 'wp-editor'),
+        filemtime(get_template_directory() . '/blocks.build.js')
+    );
+}
+add_action('enqueue_block_editor_assets', 'mytheme_enqueue_block_editor_assets');
 ?>

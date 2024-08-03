@@ -13,9 +13,6 @@
 <?php get_template_part('template-parts/section', 'contact')?>
         
         
-        
-        
-
-    </main>
+</main>
 
 <?php get_footer(); ?>

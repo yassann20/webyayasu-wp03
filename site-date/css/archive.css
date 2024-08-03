@@ -60,11 +60,23 @@ section.archive div.archive-content article.archive-content_item a div.post div.
 section.archive div.archive-content article.archive-content_item a div.post div.post-text p {
   padding: 5px 0;
 }
+section.archive div.pagination ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
 section.archive div.pagination ul li {
-  /*============================
-  #prev
-  ============================*/
-  /*============================
-  #next
-  ============================*/
+  width: 80px;
+  height: 30px;
+  list-style: none;
+}
+section.archive div.pagination ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  border: solid 1px #ffffff;
+  text-align: center;
 }/*# sourceMappingURL=archive.css.map */

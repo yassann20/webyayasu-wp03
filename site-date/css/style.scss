@@ -66,6 +66,15 @@ body {
 	.img {
 		position: relative;
 		overflow: hidden;
+		img{
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: auto;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
 	}
 
 	.img_item {
@@ -131,7 +140,8 @@ body {
 				width: auto;
 				height: 100%;
 				transition: all .5s;
-
+				div{
+					height: 100%;
 				ul {
 					display: flex;
 					justify-content: center;
@@ -144,6 +154,7 @@ body {
 						a {}
 					}
 				}
+			}
 			}
 		}
 

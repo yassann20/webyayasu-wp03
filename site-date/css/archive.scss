@@ -80,19 +80,25 @@ section.archive {
     }
 
     div.pagination {
-        ul {
-            li {
-
-                /*============================
-#prev
-============================*/
-                a#prev {}
-
-                /*============================
-#next
-============================*/
-                a#next {}
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: nowrap;
+            li{
+                width: 80px;
+                height: 30px;
+                list-style: none;
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    line-height: 30px;
+                    border: solid 1px #ffffff;
+                    text-align: center;
+                }
             }
         }
-    }
+	}
 }

@@ -1,5 +1,15 @@
 <?php
 
+//ナビメニューの設定
+function register_my_menu() {
+    register_nav_menus(
+        array(
+            'primary-menu' => __( 'Primary Menu' ),
+        )
+    );
+}
+add_action( 'init', 'register_my_menu' );
+
 // アイキャッチ画像のサポートを追加
 function theme_setup() {
     // アイキャッチ画像のサポート

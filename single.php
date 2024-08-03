@@ -11,22 +11,30 @@ if (have_posts()) :
 
     <section class="blog-page">
         <div class="img thumbnail">
-            <img class="img_item" src="../photos/sitecodding.jpg" alt="">
+            <?php if(has_post_thumbnail()) : ?>
+            <?php the_post_thumbnail(); ?>
+            <?php else: ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/site-date/photos/noimg.jpg" alt="">
+            <?php endif; ?>
+        </div>
         </div>
         <div class="blog-header">
             <p class="time-data"><?php echo __('更新日'); ?><time
                     datetime="<?php echo get_the_date('Y/m/d'); ?>"><?php echo get_the_date(); ?></time></p>
             <p class="category-name">
                 <?php
-                    $categories = get_the_category();
-                    if ( ! empty( $categories ) ) {
-                        foreach ( $categories as $category ) {
-                             echo esc_html( $category->name );//カテゴリー名を出力
-                        }
-                    } else {
-                        echo 'カテゴリがありません';
-                    }
-                ?>
+    // 記事のカテゴリーを取得
+    $categories = get_the_category();
+
+    // カテゴリーが存在する場合
+    if ( ! empty( $categories ) ) {
+        // 最初のカテゴリーを取得
+        $category = $categories[0];
+
+        // カテゴリーのリンクを表示
+        echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
+    }
+    ?>
             </p>
         </div>
         <div class="blog-content">

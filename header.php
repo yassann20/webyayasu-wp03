@@ -25,7 +25,7 @@ $header_text = get_theme_mod( 'custom_header_text' );
     <header>
         <div class="menu-content hide">
         <div class="img logo custom-header-logo">
-            <a href="">
+            <a href="<?php echo get_home_url(); ?>">
                 <?php if( $header_logo) :?>
                     <img src="<?php echo esc_url( get_theme_mod( 'custom_header_logo' ) ); ?>" alt="">
                 <?php else :?>
@@ -35,12 +35,16 @@ $header_text = get_theme_mod( 'custom_header_text' );
             </a>
         </div>
         <nav class="menu">
-            <ul>
-                <li><a href="">hello</a></li>
-                <li><a href="">hello</a></li>
-                <li><a href="">hello</a></li>
-                <li><a href="">hello</a></li>
-            </ul>
+        <?php
+        wp_nav_menu(
+            array(
+                'theme_location' => 'primary-menu',
+                'container' => false,
+                'menu_class' => '', // クラス名が必要な場合はここに指定
+                'items_wrap' => '<ul>%3$s</ul>', // デフォルトで `<ul>` タグが追加されます
+            )
+        );
+    ?>
         </nav>
         </div>
         <div class="header-img img custom-header-img" style="background-image: url('<?php echo $header_image ? esc_url($header_image) : get_template_directory_uri() . '/site-date/photos/sitecodding.jpg'; ?>');">

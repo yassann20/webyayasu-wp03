@@ -44,7 +44,6 @@ body {
 		h2 {
 			display: inline-block;
 			font-size: 48px;
-			border-bottom: solid 1px #fff;
 			margin: 20px;
 		}
 	}
@@ -257,7 +256,7 @@ body {
 					width: 100%;
 					list-style: none;
 					border-top: solid 1px #fff;
-					margin: 0 10px;
+					margin: 0;
 
 					article {
 						display: flex;
@@ -308,7 +307,8 @@ body {
 				margin: 60px auto 0;
 
 				div.work-content_item {
-					width: 350px;
+					width: 100%;
+					max-width: 350px;
 					height: auto;
 					text-align: center;
 					word-wrap: break-word;

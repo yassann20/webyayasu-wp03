@@ -16,7 +16,6 @@ body div.sections-title.hide.scale-show {
 body div.sections-title h2 {
   display: inline-block;
   font-size: 48px;
-  border-bottom: solid 1px #fff;
   margin: 20px;
 }
 body p.section-text {
@@ -203,7 +202,7 @@ body main section.section-news ul.news-list li.news-list__item {
   width: 100%;
   list-style: none;
   border-top: solid 1px #fff;
-  margin: 0 10px;
+  margin: 0;
 }
 body main section.section-news ul.news-list li.news-list__item article {
   display: flex;
@@ -239,7 +238,8 @@ body main section.section-work div.work-content {
   margin: 60px auto 0;
 }
 body main section.section-work div.work-content div.work-content_item {
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   height: auto;
   text-align: center;
   word-wrap: break-word;

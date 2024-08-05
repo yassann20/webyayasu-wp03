@@ -230,6 +230,7 @@ function custom_excerpt_length( $charlength ) {
     }
 }
 
+/*
 //ブロックエディター対応処理
 function webyayasu03_block_setup(){
     add_theme_support('wp-block-styles');//ブロックエディターでのスタイルを適応
@@ -246,4 +247,6 @@ function mytheme_enqueue_block_editor_assets() {
     );
 }
 add_action('enqueue_block_editor_assets', 'mytheme_enqueue_block_editor_assets');
+*/
+
 ?>

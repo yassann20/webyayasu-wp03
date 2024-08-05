@@ -448,6 +448,85 @@ body main section.section-contact form button {
   color: black;
   margin: 50px calc(50% - 40px) 60px;
 }
+body main section.confirm {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+body main section.confirm div.confirm div.confirm-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 25px 10px;
+  border-top: solid 1px white;
+}
+body main section.confirm div.confirm div.confirm-content h3 {
+  width: 400px;
+  font-size: 24px;
+}
+body main section.confirm div.confirm div.confirm-content p {
+  display: block;
+  width: 600px;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+}
+body main section.confirm p.section-text {
+  text-align: center;
+}
+body main section.confirm div.button-area {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+body main section.confirm div.button-area a {
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: auto;
+  height: 40px;
+  font-size: 20px;
+  line-height: 20px;
+  background-color: white;
+  padding: 10px;
+  color: black;
+  margin: 50px 0 0;
+  transform: translateX(-50%);
+}
+body main section.semdmail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 25px 10px;
+  border-top: solid 1px white;
+}
+body main section.semdmail div.semdmail p {
+  text-align: center;
+  padding-top: 30px;
+}
+body main section.semdmail div.button-area {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+body main section.semdmail div.button-area a {
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: auto;
+  height: 40px;
+  font-size: 20px;
+  line-height: 20px;
+  background-color: white;
+  padding: 10px;
+  color: black;
+  margin: 50px 0 60px;
+  transform: translateX(-50%);
+}
 body footer {
   width: 100%;
   height: 80px;

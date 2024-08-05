@@ -62,6 +62,9 @@ body div.sections-text-scale.scale-show {
   transform: scale(1);
   opacity: 1;
 }
+body p.ip {
+  text-align: center;
+}
 body header {
   position: relative;
   width: 100%;
@@ -120,12 +123,17 @@ body header div.header-img {
 }
 body header div.content-profile {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: calc(100% - 80px);
   transition: all 0.5s;
+}
+@media (min-width: 1024px) {
+  body header div.content-profile {
+    flex-wrap: nowrap;
+  }
 }
 body header div.content-profile.hide {
   transform: translateY(200px);
@@ -141,12 +149,18 @@ body header div.content-profile div.img {
   background-color: white;
 }
 body header div.content-profile div.content-profile_text {
-  padding-left: 100px;
   text-align: center;
 }
+@media (min-width: 1024px) {
+  body header div.content-profile div.content-profile_text {
+    padding-left: 100px;
+  }
+}
 body header div.content-profile div.content-profile_text h2, body header div.content-profile div.content-profile_text p {
-  width: 500px;
+  width: 80%;
+  max-width: 500px;
   padding: 10px 0;
+  margin: 0 auto;
 }
 body header div.content-profile div.content-profile_text a {
   display: block;
@@ -160,7 +174,21 @@ body main {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 100px 100px 100px;
+}
+@media (max-width: 480px) {
+  body main {
+    padding: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body main {
+    padding: 100px 100px 100px;
+  }
+}
+@media (min-width: 1024px) {
+  body main {
+    padding: 100px 100px 100px;
+  }
 }
 body main section.section-news {
   width: 100%;
@@ -242,7 +270,7 @@ body main section.section-portfolio div.portofolio-content {
   padding: 20px;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item {
-  min-width: 300px;
+  width: 100%;
   max-width: 500px;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
@@ -414,7 +442,9 @@ body main section.section-contact form.hide.fade-up {
 }
 body main section.section-contact form label {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   width: 100%;
   height: auto;
   padding: 25px 10px;
@@ -426,6 +456,16 @@ body main section.section-contact form label {
 body main section.section-contact form label h3 {
   width: 400px;
   font-size: 24px;
+}
+@media (max-width: 480px) {
+  body main section.section-contact form label h3 {
+    padding-bottom: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body main section.section-contact form label h3 {
+    padding-bottom: 20px;
+  }
 }
 body main section.section-contact form label input {
   display: block;

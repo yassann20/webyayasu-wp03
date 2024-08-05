@@ -98,6 +98,9 @@ body {
 			opacity: 1;
 		}
 	}
+	p.ip{
+		text-align: center;
+	}
 
 	header {
 		position: relative;
@@ -170,7 +173,10 @@ body {
 
 		div.content-profile {
 			display: flex;
+			flex-wrap: wrap;
+			@include respond-to('pc') {
 			flex-wrap: nowrap;
+			}
 			justify-content: center;
 			align-items: center;
 			width: 100%;
@@ -194,11 +200,15 @@ body {
 			}
 
 			div.content-profile_text {
+				@include respond-to("pc"){
 				padding-left: 100px;
+				}
 				text-align: center;
 				h2, p{
-					width: 500px;
+					width: 80%;
+					max-width: 500px;
 					padding: 10px 0;
+					margin: 0 auto;
 				}
 				a{
 					display: block;
@@ -216,7 +226,17 @@ body {
 		max-width: 1400px;
 		width: 100%;
 		margin: 0 auto;
+		@include respond-to("sp"){
+			padding: 10px;
+		}
+		@include respond-to("tab"){
+			padding: 100px 100px 100px;
+		}
+		@include respond-to("pc"){
 		padding: 100px 100px 100px;
+		}
+		
+
 
 		section.section-news {
 			width: 100%;
@@ -336,7 +356,7 @@ body {
 				padding: 20px;
 
 				div.portofolio-content__item {
-					min-width: 300px;
+					width: 100%;
 					max-width: 500px;
 					text-align: center;
 					background-color: rgba(255, 255, 255, 0.7);
@@ -586,7 +606,9 @@ body {
 
 				label {
 					display: flex;
+					flex-wrap: wrap;
 					justify-content: center;
+					align-items: center;
 					width: 100%;
 					height: auto;
 					padding: 25px 10px;
@@ -595,6 +617,12 @@ body {
 					h3 {
 						width: 400px;
 						font-size: 24px;
+						@include respond-to("sp"){
+							padding-bottom: 20px;
+						}
+						@include respond-to("tab"){
+							padding-bottom: 20px;
+						}
 					}
 
 					input {

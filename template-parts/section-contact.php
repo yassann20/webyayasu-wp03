@@ -20,6 +20,6 @@
                     <textarea name="message" id="message"></textarea>
                 </label>
                 <button type="submit">送信</button>
-                <p>※いたずら防止のためIPアドレスを保存しています。</p>
+                <p class="ip">※いたずら防止のためIPアドレスを保存しています。</p>
             </form>
 </section>

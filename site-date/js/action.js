@@ -1,3 +1,9 @@
+$(function(){
+    $(".hamburger").on("click", function(){
+        $(this).children("span").toggleClass("open");
+        $(".menu").toggleClass("open");
+    });
+})
 $(function () {
     $('header').on('inview', function (event, isInView) {
         if (isInView) {

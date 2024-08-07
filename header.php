@@ -34,6 +34,11 @@ $header_text = get_theme_mod( 'custom_header_text' );
 
             </a>
         </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <nav class="menu">
         <?php
         wp_nav_menu(

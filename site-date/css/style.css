@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   color: #fff;
 }
@@ -92,12 +93,11 @@ body header div.menu-content div.img {
   position: fixed;
   top: 0;
   left: 0;
-  width: 70px;
+  width: 210px;
   height: 70px;
   margin: 5px;
-  background-color: gray;
 }
-@media (max-width: 480px) {
+@media (min-width: 0) and (max-width: 767px) {
   body header div.menu-content div.hamburger {
     position: fixed;
     right: 0;
@@ -137,20 +137,16 @@ body header div.menu-content div.img {
   body header div.menu-content nav.menu.open {
     transform: translateX(0);
   }
-  body header div.menu-content nav.menu div {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-  }
-  body header div.menu-content nav.menu div ul {
+  body header div.menu-content nav.menu ul {
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     width: 100%;
+    height: 100%;
     color: #000000;
   }
-  body header div.menu-content nav.menu div ul li {
+  body header div.menu-content nav.menu ul li {
     width: 100%;
     text-align: center;
     height: 50px;
@@ -197,20 +193,16 @@ body header div.menu-content div.img {
   body header div.menu-content nav.menu.open {
     transform: translateX(0);
   }
-  body header div.menu-content nav.menu div {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-  }
-  body header div.menu-content nav.menu div ul {
+  body header div.menu-content nav.menu ul {
     display: flex;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
     width: 100%;
+    height: 100%;
     color: #000000;
   }
-  body header div.menu-content nav.menu div ul li {
+  body header div.menu-content nav.menu ul li {
     width: 100%;
     text-align: center;
     height: 50px;
@@ -226,10 +218,7 @@ body header div.menu-content div.img {
     height: 100%;
     transition: all 0.5s;
   }
-  body header div.menu-content nav.menu div {
-    height: 100%;
-  }
-  body header div.menu-content nav.menu div ul {
+  body header div.menu-content nav.menu ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,10 +231,13 @@ body header div.header-img {
   position: absolute;
   width: 100%;
   height: calc(100vh - 80px);
-  top: 0;
+  top: 80px;
   background-image: url("../photos/sitecodding.jpg");
   background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
   z-index: -1;
+  filter: brightness(0.5);
 }
 body header div.content-profile {
   display: flex;
@@ -303,7 +295,7 @@ body main {
   width: 100%;
   margin: 0 auto;
 }
-@media (max-width: 480px) {
+@media (min-width: 0) and (max-width: 767px) {
   body main {
     padding: 10px;
   }
@@ -357,6 +349,7 @@ body main section.section-news ul.news-list li.news-list__item article p {
 body main section.section-work {
   width: 100%;
   margin: 0 auto;
+  padding: 0 20px;
 }
 body main section.section-work div.work-content {
   display: flex;
@@ -368,10 +361,15 @@ body main section.section-work div.work-content {
 }
 body main section.section-work div.work-content div.work-content_item {
   width: 100%;
-  max-width: 350px;
+  max-width: 500px;
   height: auto;
   text-align: center;
   word-wrap: break-word;
+}
+@media (min-width: 1024px) {
+  body main section.section-work div.work-content div.work-content_item {
+    max-width: 350px;
+  }
 }
 body main section.section-work div.work-content div.work-content_item.hide {
   transition: all 0.5s;
@@ -449,13 +447,151 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   }
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider {
+  display: block;
   width: 100%;
-  aspect-ratio: 16/9;
-  background-color: gray;
+  aspect-ratio: 16/10;
 }
-body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.img {
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc {
+  position: relative;
+  width: 500px;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  color: gray;
+  display: inline-block;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::before, body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: gray;
+  opacity: 0.7;
+  pointer-events: none; /* 矢印がクリックの邪魔にならないように */
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::before {
+  content: "▲"; /* 上向き矢印 */
+  top: -40px;
+  animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::after {
+  content: "▼"; /* 下向き矢印 */
+  bottom: -20px;
+  animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+}
+@keyframes moveUpDown {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-50%, 10px); /* 矢印が10px上下に動く */
+  }
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc img.portofolio-img-outer {
+  position: absolute;
   width: 100%;
-  height: 100%;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc div.portofolio-img-content-outer {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  height: 67%;
+  overflow: auto;
+  -ms-overflow-style: none; /* Internet Explorer と Edge用にスクロールバーを非表示にする */
+  scrollbar-width: none; /* Firefox用にスクロールバーを非表示にする */
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc div.portofolio-img-content-outer::-webkit-scrollbar {
+  display: none; /* Webkitベースのブラウザでスクロールバーを非表示にする */
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc div.portofolio-img-content-outer img.portofolio-img_inner {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp {
+  position: relative;
+  width: 500px;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll {
+  position: absolute;
+  top: 50%;
+  left: 63%;
+  color: gray;
+  display: inline-block;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::before, body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: gray;
+  opacity: 0.7;
+  pointer-events: none; /* 矢印がクリックの邪魔にならないように */
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::before {
+  content: "▲"; /* 上向き矢印 */
+  top: -40px;
+  animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::after {
+  content: "▼"; /* 下向き矢印 */
+  bottom: -20px;
+  animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+}
+@keyframes moveUpDown {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-50%, 10px); /* 矢印が10px上下に動く */
+  }
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp img.portofolio-img-outer {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%);
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp div.portofolio-img-content-outer {
+  position: absolute;
+  top: 1%;
+  left: 37%;
+  width: 26%;
+  height: 98%;
+  overflow: auto;
+  -ms-overflow-style: none; /* Internet Explorer と Edge用にスクロールバーを非表示にする */
+  scrollbar-width: none; /* Firefox用にスクロールバーを非表示にする */
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp div.portofolio-img-content-outer::-webkit-scrollbar {
+  display: none; /* Webkitベースのブラウザでスクロールバーを非表示にする */
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp div.portofolio-img-content-outer img.portofolio-img_inner {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: -1;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item h3 {
   padding: 20px 40px 10px;
@@ -474,84 +610,127 @@ body main section.section-skill div.skill-content {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  max-width: 1200px;
+  gap: 30px;
   margin: 0 auto;
 }
 body main section.section-skill div.skill-content div.skill-content__item {
+  position: relative;
   display: flex;
-  flex-wrap: nowrap;
-  width: auto;
+  flex-wrap: wrap;
+  width: 300px;
   min-height: 250px;
   color: black;
   background-color: rgba(255, 255, 255, 0.7);
   margin: 20px 0;
   transition: all 1s;
-  word-wrap: break-word;
+  overflow: hidden;
 }
-body main section.section-skill div.skill-content div.skill-content__item.skill-left {
-  transform: translateX(-200px);
+body main section.section-skill div.skill-content div.skill-content__item.skill-fade-up {
+  transform: translateY(200px);
 }
-body main section.section-skill div.skill-content div.skill-content__item.skill-left.slide-in {
-  transform: translateX(0);
-  opacity: 1;
-}
-body main section.section-skill div.skill-content div.skill-content__item.skill-right {
-  transform: translateX(200px);
-}
-body main section.section-skill div.skill-content div.skill-content__item.skill-right.slide-in {
-  transform: translateX(0);
+body main section.section-skill div.skill-content div.skill-content__item.skill-fade-up.fade-in {
+  transform: translateY(0);
   opacity: 1;
 }
 body main section.section-skill div.skill-content div.skill-content__item div.img {
-  width: 250px;
-  height: 250px;
-  margin: 0;
-  background-color: gray;
+  width: 200px;
+  height: 200px;
+  margin: 25px auto;
+}
+body main section.section-skill div.skill-content div.skill-content__item div.img img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: calc(100% - 330px);
-  padding: 40px 60px;
+  align-content: center;
+  width: 250px;
+  overflow: hidden;
+  margin: 25px auto;
+}
+body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text h3 {
+  width: 100%;
+  font-size: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star {
+  width: 150px;
+  margin: 15px 0;
+}
+body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text p {
+  word-break: break-all;
 }
 @media (min-width: 1024px) {
   body main section.section-skill div.skill-content div.skill-content__item {
+    position: relative;
     display: flex;
     flex-wrap: nowrap;
-    width: auto;
-    min-height: 250px;
+    width: 1000px;
+    height: 250px;
     color: black;
     background-color: rgba(255, 255, 255, 0.7);
     margin: 20px 0;
     transition: all 1s;
+    word-wrap: break-word;
+    overflow: hidden;
   }
-  body main section.section-skill div.skill-content div.skill-content__item.skill-left {
-    transform: translateX(-200px);
+  body main section.section-skill div.skill-content div.skill-content__item.skill-fade-up {
+    transform: translateY(200px);
   }
-  body main section.section-skill div.skill-content div.skill-content__item.skill-left.slide-in {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item.skill-right {
-    transform: translateX(200px);
-  }
-  body main section.section-skill div.skill-content div.skill-content__item.skill-right.slide-in {
-    transform: translateX(0);
+  body main section.section-skill div.skill-content div.skill-content__item.skill-fade-up.fade-in {
+    transform: translateY(0);
     opacity: 1;
   }
   body main section.section-skill div.skill-content div.skill-content__item div.img {
+    position: absolute;
     width: 250px;
     height: 250px;
-    margin: 0;
-    background-color: gray;
+    margin: 0 auto;
+  }
+  body main section.section-skill div.skill-content div.skill-content__item div.img img {
+    display: block;
+    width: 80%;
+    height: 80%;
+    padding: 10%;
   }
   body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: calc(100% - 330px);
-    padding: 40px 60px;
+    align-content: center;
+    width: 750px;
+    margin-left: 250px;
+    padding-right: 50px;
+    overflow: hidden;
+  }
+  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text h3 {
+    width: 100%;
+    font-size: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+  }
+  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star {
+    width: 150px;
+    margin: 15px 0;
+  }
+  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text p {
+    word-break: break-all;
   }
 }
 body main section.section-contact {
@@ -586,7 +765,7 @@ body main section.section-contact form label h3 {
   width: 400px;
   font-size: 24px;
 }
-@media (max-width: 480px) {
+@media (min-width: 0) and (max-width: 767px) {
   body main section.section-contact form label h3 {
     padding-bottom: 20px;
   }

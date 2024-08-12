@@ -14,6 +14,10 @@ $header_text = get_theme_mod( 'custom_header_text' );
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/site-date/css/sanitize.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/site-date/css/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/site-date/slick-1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/site-date/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/site-date/css/slick-setting.css">
+    
     <title>webyayasu</title>
     <?php wp_head(); ?>
 </head>
@@ -44,7 +48,7 @@ $header_text = get_theme_mod( 'custom_header_text' );
         wp_nav_menu(
             array(
                 'theme_location' => 'primary-menu',
-                'container' => false,
+                'container' => true,
                 'menu_class' => '', // クラス名が必要な場合はここに指定
                 'items_wrap' => '<ul>%3$s</ul>', // デフォルトで `<ul>` タグが追加されます
             )

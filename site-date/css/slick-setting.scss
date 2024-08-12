@@ -1,0 +1,22 @@
+/* 左矢印のスタイル */
+.slick-prev {
+    left: 10px; /* 左側の位置を調整 */
+    z-index: 1; /* 必要に応じてZインデックスを調整 */
+}
+
+/* 右矢印のスタイル */
+.slick-next {
+    right: 10px; /* 右側の位置を調整 */
+    z-index: 1; /* 必要に応じてZインデックスを調整 */
+}
+
+/* 共通のスタイル（任意） */
+.slick-prev, .slick-next {
+    top: 90%; /* 上下中央に配置 */
+    transform: translateY(-50%); /* 垂直方向に中央揃え */
+    width: 30px; /* 矢印ボタンの幅 */
+    height: 30px; /* 矢印ボタンの高さ */
+    background-color: rgba(0, 0, 0, 0.5); /* 背景色 */
+    color: white; /* 矢印の色 */
+    border-radius: 50%; /* 丸いボタンにする */
+}

@@ -55,19 +55,13 @@ $(function () {
         }
     });
 
-    //section-skill//
-
-    $('.skill-left').on('inview', function(event, isInView){
+    //section-skill
+    $('.skill-content__item').on('inview', function(event, isInView){
+        let $this = $(this);
         if(isInView){
-            $(this).addClass('slide-in');
+            $(this).addClass('fade-in');
         }
     });
-    $('.skill-right').on('inview', function(event, isInView){
-        if(isInView){
-            $(this).addClass('slide-in');
-        }
-    });
-
     //contact//
     $('form').on('inview', function(event, isInView){
         if(isInView){
@@ -75,4 +69,8 @@ $(function () {
         }
     });
 
+});
+
+$(".portofolio-img-slider").slick({
+    dots: true,
 });

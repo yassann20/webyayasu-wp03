@@ -110,6 +110,32 @@ function webyayasu03_customize_register( $wp_customize ) {
         'type' => 'text',
     ));
 
+    // ヘッダー画像フィルター設定
+    $wp_customize->add_section('header_image_filter_section', array(
+        'title'    => __('ヘッダー画像フィルター効果', 'mytheme'),
+        'priority' => 30,
+    ));
+
+    // フィルターの選択コントロール
+    $wp_customize->add_setting('header_image_filter', array(
+        'default'   => 'brightness(0.5)',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('header_image_filter_control', array(
+        'label'    => __('Select Header Image Filter', 'mytheme'),
+        'section'  => 'header_image_filter_section',
+        'settings' => 'header_image_filter',
+        'type'     => 'select',
+        'choices'  => array(
+            'none'          => __('None', 'mytheme'),
+            'grayscale(100%)' => __('Grayscale', 'mytheme'),
+            'sepia(100%)'     => __('Sepia', 'mytheme'),
+            'blur(5px)'       => __('Blur', 'mytheme'),
+            'brightness(0.5)' => __('Brightness', 'mytheme'),
+            'contrast(150%)'  => __('Contrast', 'mytheme'),
+        ),
+    ));
 
     // セレクティブリフレッシュの設定
     if (isset($wp_customize->selective_refresh)) {

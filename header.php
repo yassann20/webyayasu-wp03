@@ -17,11 +17,15 @@ $header_text = get_theme_mod( 'custom_header_text' );
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/site-date/slick-1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/site-date/slick-1.8.1/slick/slick.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/site-date/css/slick-setting.css">
-    
+
     <title>webyayasu</title>
     <?php wp_head(); ?>
 </head>
-
+<style type="text/css">
+            .header-img {
+                filter: <?php echo get_theme_mod('header_image_filter', 'brightness(0.5)'); ?>;
+            }
+        </style>
 <body>
     <div id="particles-js">
     </div>

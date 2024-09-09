@@ -256,4 +256,14 @@ function custom_excerpt_length( $charlength ) {
     }
 }
 
+function mytheme_enqueue_block_editor_assets() {
+    wp_enqueue_script(
+        'mytheme-custom-block',
+        get_template_directory_uri() . '/my-custom-block/build/index.js',
+        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'),
+        filemtime(get_template_directory() . '/my-custom-block/build/index.js')
+    );
+}
+add_action('enqueue_block_editor_assets', 'mytheme_enqueue_block_editor_assets');
+
 ?>

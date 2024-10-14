@@ -9,11 +9,8 @@ $(function () {
         if (isInView) {
             $('.menu-content').addClass('fade-dawn');
             setTimeout(function () {
-                $('.header-img').addClass('left-slide-in');
+                $('.header-view').addClass('fade-up');
             }, 400);
-            setTimeout(function () {
-                $('.content-profile').addClass('fade-up');
-            }, 800);
         }
     });
     $('.section-news').on('inview', function (event, isInView) {

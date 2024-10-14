@@ -26,7 +26,6 @@ $breakpoint-spend: 767px;
 
 body {
 	color: #fff;
-
 	div.sections-title {
 		width: 100%;
 		text-align: center;
@@ -57,7 +56,7 @@ body {
 	div#particles-js {
 		position: fixed;
 		width: 100vw;
-		height: 100vh;
+		height: 100lvh;
 		background-color: blue;
 		z-index: -1;
 	}
@@ -177,10 +176,11 @@ body {
 				nav.menu {
 					position: fixed;
 					width: 100%;
-					height: calc( 100vh - 80px );
+					height: calc( 100lvh - 80px );
 					transition: all .5s;
 					margin-top: 80px;
 					transform: translateX(100%);
+					background-color: #ffff;
 					&.open{
 						transform: translateX(0);
 					}
@@ -240,10 +240,11 @@ body {
 				nav.menu {
 					position: fixed;
 					width: 100%;
-					height: calc( 100vh - 80px );
+					height: calc( 100lvh - 80px );
 					transition: all .5s;
 					margin-top: 80px;
 					transform: translateX(100%);
+					background-color: #ffff;
 					&.open{
 						transform: translateX(0);
 					}
@@ -294,10 +295,25 @@ body {
 					}
 			}
 		}
+		div.header-view{
+			position: relative;
+			width: 100%;
+			height: calc( 100vh - 80px );
+			transition: all 1s;
+			&.hide{
+				opacity: 0;
+				transform: translateY(200px);
+			}
+			&.hide.fade-up{
+				opacity: 1;
+				transform: translateY(0);
+			}
 		div.header-img {
 			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
-			height: calc(100vh - 80px);
+			height: 100%;
 			top: 80px;
 			background-image: url('../photos/sitecodding.jpg');
 			background-attachment: fixed;
@@ -307,28 +323,21 @@ body {
 		}
 
 		div.content-profile {
+			position: absolute;
+			top: 0;
+			left: 0;
 			display: flex;
 			flex-wrap: wrap;
-			margin-top: 80px;
-			
 			@include respond-to('pc') {
 				flex-wrap: nowrap;
 			}
 
 			justify-content: center;
 			align-items: center;
+			align-content: center;
 			width: 100%;
-			height: calc(100% - 80px);
+			height: 100%;
 			transition: all .5s;
-
-			&.hide {
-				transform: translateY(200px);
-			}
-
-			&.hide.fade-up {
-				transform: translateY(0);
-				opacity: 1;
-			}
 
 			div.img {
 				width: 300px;
@@ -362,6 +371,7 @@ body {
 				}
 			}
 		}
+	}
 	}
 
 	main {
@@ -504,6 +514,7 @@ body {
 				width: 100%;
 				margin: 0 auto;
 				padding: 20px;
+				overflow-y: hidden;
 
 				div.portofolio-content__item {
 					width: 100%;
@@ -584,7 +595,7 @@ body {
 							p.scroll{
 								position: absolute;
 								top: 50%;
-								left: 80%;
+								left: 75%;
 								color: gray;
 								display: inline-block;
 								transform: translateY(-50%);
@@ -707,8 +718,8 @@ body {
 							div.portofolio-img-content-outer{
 								position: absolute;
 								top: 1%;
-								left: 37%;
-								width: 26%;
+								left: 36%;
+								width: 28%;
 								height: 98%;
 								overflow: auto;
 								-ms-overflow-style: none;  /* Internet Explorer と Edge用にスクロールバーを非表示にする */

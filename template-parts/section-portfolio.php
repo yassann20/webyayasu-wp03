@@ -65,7 +65,7 @@
                     
             $portfolio_site_link = CFS()->get('portfolio_site_link'); // 'site_link' はフィールドの名前
             if ($portfolio_site_link) {
-                echo '<a href="' . esc_url($portfolio_site_link) . '" class="portfolio-link">more</a>';
+                echo '<a href="' . esc_url($portfolio_site_link['url']) . '" class="portfolio-link" target="'.$portfolio_site_link['target'].'">'.esc_html($portfolio_site_link['text']) .'</a>';
             }
             ?>
         </div>

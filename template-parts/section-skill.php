@@ -1,4 +1,4 @@
-<section class="section-skill">
+<section id="skill" class="section-skill">
     <div class="sections-text-scale">
         <div class="sections-title">
             <h2>skill</h2>
@@ -42,16 +42,6 @@
                     }
                     ?>
                 </div>
-                <?php
-                $skill_content_text = CFS()->get('skill_content_text');
-                if($skill_content_text){
-                    echo '<p>'.esc_html($skill_content_text).'</p>';
-                }
-                ?>
-            </div>
-            <div class="skill-content__item__button">
-                <span></span>
-                <span></span>
             </div>
         </div>
         <?php endwhile; ?>

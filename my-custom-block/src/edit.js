@@ -6,35 +6,22 @@
 import { __ } from '@wordpress/i18n';
 
 /**
- * Imports the InspectorControls component, which is used to wrap
- * the block's custom controls that will appear in in the Settings
- * Sidebar when the block is selected.
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
  *
- * Also imports the React hook that is used to mark the block wrapper
- * element. It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#inspectorcontrols
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText, PlainText } from '@wordpress/block-editor';
 
-/**
- * Imports the necessary components that will be used to create
- * the user interface for the block's settings.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/components/panel/#panelbody
- * @see https://developer.wordpress.org/block-editor/reference-guides/components/text-control/
- * @see https://developer.wordpress.org/block-editor/reference-guides/components/toggle-control/
- */
-import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
-
-/**
- * Imports the useEffect React Hook. This is used to set an attribute when the
- * block is loaded in the Editor.
- *
- * @see https://react.dev/reference/react/useEffect
- */
 import { useEffect } from 'react';
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+import './editor.scss';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -42,60 +29,27 @@ import { useEffect } from 'react';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
- * @param {Object}   props               Properties passed to the function.
- * @param {Object}   props.attributes    Available block attributes.
- * @param {Function} props.setAttributes Function that updates individual attributes.
- *
  * @return {Element} Element to render.
  */
-export default function Edit( { attributes, setAttributes } ) {
-	const { fallbackCurrentYear, showStartingYear, startingYear } = attributes;
+export default function Edit({ attributes, setAttributes }) {
 
-	// Get the current year and make sure it's a string.
-	const currentYear = new Date().getFullYear().toString();
+	const blockProps = useBlockProps();
+    
+    const { codeContent } = attributes;
 
-	// When the block loads, set the fallbackCurrentYear attribute to the
-	// current year if it's not already set.
-	useEffect( () => {
-		if ( currentYear !== fallbackCurrentYear ) {
-			setAttributes( { fallbackCurrentYear: currentYear } );
-		}
-	}, [ currentYear, fallbackCurrentYear, setAttributes ] );
+    const onChangeCode = ( newCode ) => {
+        setAttributes({ codeContent: newCode });
+    };
 
-	let displayDate;
-
-	// Display the starting year as well if supplied by the user.
-	if ( showStartingYear && startingYear ) {
-		displayDate = startingYear + '–' + currentYear;
-	} else {
-		displayDate = currentYear;
-	}
-
-	return (
-		<>
-			<InspectorControls>
-				<PanelBody title={ __( 'Settings', 'my-custom-block' ) }>
-					<ToggleControl
-						checked={ showStartingYear }
-						label={ __( 'Show starting year', 'my-custom-block' ) }
-						onChange={ () =>
-							setAttributes( {
-								showStartingYear: ! showStartingYear,
-							} )
-						}
-					/>
-					{ showStartingYear && (
-						<TextControl
-							label={ __( 'Starting year', 'my-custom-block' ) }
-							value={ startingYear }
-							onChange={ ( value ) =>
-								setAttributes( { startingYear: value } )
-							}
-						/>
-					) }
-				</PanelBody>
-			</InspectorControls>
-			<p { ...useBlockProps() }>© { displayDate }</p>
-		</>
-	);
+    return (
+        <div {...blockProps}>
+            <PlainText
+            tagName="pre"
+            value={codeContent}
+            onChange={onChangeCode}
+            placeholder={__('コードを入力してください','code-block')}
+            className="code-block-editer"
+            />
+        </div>
+    )
 }

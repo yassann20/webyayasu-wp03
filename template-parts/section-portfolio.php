@@ -51,21 +51,30 @@
                     </div>
                 </div>
             </div>
-
             <?php
             $portfolio_content_h3 = CFS()->get('portfolio_content_h3'); // 'content_text' はフィールドの名前
             if ($portfolio_content_h3) {
                 echo '<h3>' . esc_html($portfolio_content_h3) . '</h3>';
             }
-            
             $portfolio_content_text = CFS()->get('portfolio_content_text'); // 'content_text' はフィールドの名前
             if ($portfolio_content_text) {
-                echo '<p>' . esc_html($portfolio_content_text) . '</p>';
-            }
-                    
+                echo '<p class="text">' . esc_html($portfolio_content_text) . '</p>';
+            }?>
+            <div class="portfolio_content_profile">
+                <p class="time-data"><time datetime="<?php echo get_the_date('Y/m/d'); ?>"><?php echo get_the_date(); ?></time></p><!--投稿時間-->
+                <p>業務内容 :
+                    <?php
+                    $portfolio_genre = CFS()->get('portfolio_genre'); //制作ジャンルを取得
+                    if($portfolio_genre){
+                        echo esc_html($portfolio_genre);
+                    }
+                    ?>
+                </p>
+            </div>
+            <?php
             $portfolio_site_link = CFS()->get('portfolio_site_link'); // 'site_link' はフィールドの名前
             if ($portfolio_site_link) {
-                echo '<a href="' . esc_url($portfolio_site_link) . '" class="portfolio-link">more</a>';
+                echo '<a href="' . esc_url($portfolio_site_link['url']) . '" class="portfolio-link" target="'.$portfolio_site_link['target'].'">'.esc_html($portfolio_site_link['text']) .'</a>';
             }
             ?>
         </div>

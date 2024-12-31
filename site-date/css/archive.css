@@ -1,19 +1,25 @@
+@charset "UTF-8";
 section.archive {
   width: 100%;
   text-align: center;
 }
 section.archive div.categorys {
   width: 100%;
+  padding: 10px 0;
 }
-section.archive div.categorys ul {
-  width: 100%;
+section.archive div.categorys p {
   text-align: left;
 }
-section.archive div.categorys ul li {
+section.archive div.categorys p a {
   display: inline-block;
-  padding: 10px;
-  border: solid 1px #ffffff;
+  padding: 0.3rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: solid 1px white;
   margin: 10px;
+}
+section.archive div.archive-text {
+  width: 100%;
 }
 section.archive div.archive-text h2 {
   padding: 20px 0;
@@ -21,58 +27,79 @@ section.archive div.archive-text h2 {
 section.archive div.archive-content {
   width: 100%;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
 }
 section.archive div.archive-content article.archive-content_item {
-  width: 1000px;
-  height: 250px;
-  margin: 0 auto;
+  min-width: 300px;
+  max-width: 31%;
+  height: 450px;
+  margin: 0 0 2.3333333333%;
+}
+@media (min-width: 1024px) {
+  section.archive div.archive-content article.archive-content_item {
+    height: 500px;
+  }
 }
 section.archive div.archive-content article.archive-content_item a {
-  display: flex;
-  flex-wrap: nowrap;
+  display: block;
   width: 100%;
   height: 100%;
   border: solid 1px #ffffff;
 }
 section.archive div.archive-content article.archive-content_item a div.img {
-  height: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
   aspect-ratio: 16/9;
   background-color: gray;
 }
 section.archive div.archive-content article.archive-content_item a div.post {
-  padding: 20px 50px;
+  width: 100%;
+  padding: 1rem;
   text-align: left;
 }
 section.archive div.archive-content article.archive-content_item a div.post div.post-meta {
   width: 100%;
 }
+section.archive div.archive-content article.archive-content_item a div.post div.post-meta time {
+  margin-right: 1rem;
+}
 section.archive div.archive-content article.archive-content_item a div.post div.post-meta p, section.archive div.archive-content article.archive-content_item a div.post div.post-meta time {
   display: inline-block;
-  padding: 10px;
 }
 section.archive div.archive-content article.archive-content_item a div.post div.post-text {
   word-break: break-all;
 }
 section.archive div.archive-content article.archive-content_item a div.post div.post-text h3 {
-  padding: 10px 0;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  max-height: 3.4rem; /*２行ぴったりで表示してそれ以降は非表示*/
+  margin: 1rem 0;
+  overflow: hidden;
 }
 section.archive div.archive-content article.archive-content_item a div.post div.post-text p {
-  padding: 5px 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  max-height: 7.5rem; /*5行ぴったりで表示してそれ以降は非表示*/
+  margin: 1rem 0;
+  overflow: hidden;
 }
-section.archive div.pagination ul {
+section.archive div.archive-content div.pagination ul {
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: nowrap;
 }
-section.archive div.pagination ul li {
+section.archive div.archive-content div.pagination ul li {
   width: 80px;
   height: 30px;
   list-style: none;
 }
-section.archive div.pagination ul li a {
+section.archive div.archive-content div.pagination ul li a {
   display: block;
   width: 100%;
   height: 100%;

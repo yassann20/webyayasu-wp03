@@ -3,33 +3,33 @@
 <main> 
 
 <section class="archive">
-
-    <!-- カテゴリーの一覧を表示 -->
+    <!-- アーカイブページのタイトルを表示 -->
+    <div class="sections-title">
+        <?php if(is_category()): ?>
+            <h2><?php echo single_cat_title('', false); //現在表示されているカテゴリー名を習得?>一覧</h2>
+        <?php else: ?>
+            <h2>記事一覧</h2>
+        <?php endif; ?>
+    </div>
     <div class="categorys">
-        <ul>
-            <?php
+        <p>
+        <?php
                 // すべてのカテゴリーを取得
                 $categories = get_categories();
 
                 // 各カテゴリーをループしてリストとして表示
                 foreach ( $categories as $category ) {
-                    echo '<li><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li>';
+                    echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a>';
                 }
             ?>
-        </ul>
+        </p>
     </div>
-
-    <!-- アーカイブページのタイトルを表示 -->
-    <div class="archive-text">
-        <h2>アーカイブページ一覧</h2>
-    </div>
-
     <!-- 記事の一覧を表示 -->
     <div class="archive-content">
 
         <?php
-            // 投稿を取得するためのクエリを設定
-            $args = array(
+        // 投稿を取得するためのクエリを設定
+        $args = array(
                 'post_type' => 'post', // 投稿タイプを指定
                 'posts_per_page' => -1, // すべての投稿を取得
             );
@@ -66,7 +66,7 @@
                         <!-- 投稿のタイトルを表示 -->
                         <h3 class="title"><?php the_title(); ?></h3>
                         <!-- 投稿の抜粋を表示（カスタム抜粋長を適用） -->
-                        <p><?php custom_excerpt_length(50); ?></p>
+                        <p><?php custom_excerpt_length(200); ?></p>
                     </div>
                 </div>
             </a>
@@ -80,16 +80,8 @@
             endif; 
         ?>
 
-    </div>
-
-    <!-- ページネーションを表示 -->
-    <div class="pagination">
-        <ul>
-            <li><a id="prev" href="">← prev</a></li>
-            <li><a id="next" href="">next →</a></li>
-        </ul>
-    </div>
-
+    
+</div>
 </section>
 
 </main>

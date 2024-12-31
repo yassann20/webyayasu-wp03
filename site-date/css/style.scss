@@ -26,7 +26,7 @@ $breakpoint-spend: 767px;
 
 body {
 	color: #fff;
-
+	font-family: sans-serif !important;
 	div.sections-title {
 		width: 100%;
 		text-align: center;
@@ -57,8 +57,8 @@ body {
 	div#particles-js {
 		position: fixed;
 		width: 100vw;
-		height: 100vh;
-		background-color: blue;
+		height: 100lvh;
+		background-color: #0067C0;
 		z-index: -1;
 	}
 
@@ -177,10 +177,11 @@ body {
 				nav.menu {
 					position: fixed;
 					width: 100%;
-					height: calc( 100vh - 80px );
+					height: calc( 100lvh - 80px );
 					transition: all .5s;
 					margin-top: 80px;
 					transform: translateX(100%);
+					background-color: #ffff;
 					&.open{
 						transform: translateX(0);
 					}
@@ -240,10 +241,11 @@ body {
 				nav.menu {
 					position: fixed;
 					width: 100%;
-					height: calc( 100vh - 80px );
+					height: calc( 100lvh - 80px );
 					transition: all .5s;
 					margin-top: 80px;
 					transform: translateX(100%);
+					background-color: #ffff;
 					&.open{
 						transform: translateX(0);
 					}
@@ -294,10 +296,25 @@ body {
 					}
 			}
 		}
+		div.header-view{
+			position: relative;
+			width: 100%;
+			height: calc( 100vh - 80px );
+			transition: all 1s;
+			&.hide{
+				opacity: 0;
+				transform: translateY(200px);
+			}
+			&.hide.fade-up{
+				opacity: 1;
+				transform: translateY(0);
+			}
 		div.header-img {
 			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
-			height: calc(100vh - 80px);
+			height: 100%;
 			top: 80px;
 			background-image: url('../photos/sitecodding.jpg');
 			background-attachment: fixed;
@@ -307,28 +324,17 @@ body {
 		}
 
 		div.content-profile {
+			position: absolute;
+			top: 0;
+			left: 0;
 			display: flex;
 			flex-wrap: wrap;
-			margin-top: 80px;
-			
-			@include respond-to('pc') {
-				flex-wrap: nowrap;
-			}
-
 			justify-content: center;
 			align-items: center;
+			align-content: center;
 			width: 100%;
-			height: calc(100% - 80px);
+			height: 100%;
 			transition: all .5s;
-
-			&.hide {
-				transform: translateY(200px);
-			}
-
-			&.hide.fade-up {
-				transform: translateY(0);
-				opacity: 1;
-			}
 
 			div.img {
 				width: 300px;
@@ -352,6 +358,20 @@ body {
 					margin: 0 auto;
 				}
 
+				ul{
+					list-style: none;
+					width: 80%;
+					margin: 0 auto;
+					li{
+						text-align: left;
+						margin: 10px 0;
+					}
+				}
+				
+				p{
+					text-align: left;
+				}
+
 				a {
 					display: block;
 					width: 150px;
@@ -361,7 +381,36 @@ body {
 					margin: 20px auto;
 				}
 			}
+			div.SNS{
+				width: 100%;
+				ul{
+					display: flex;
+				align-items: center;
+				align-content: center;
+				justify-content: center;
+				flex-wrap: nowrap;
+				list-style: none;
+				gap: 30px;
+				padding-top: 50px;
+					li{
+						width: 100px;
+						height: 100px;
+						border-radius: 50px;
+						background-color: #ffffff;
+						padding: 25px;
+						a{
+							display: block;
+							img{
+								display: block;
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+				}
+			}
 		}
+	}
 	}
 
 	main {
@@ -374,11 +423,11 @@ body {
 		}
 
 		@include respond-to("tab") {
-			padding: 100px 100px 100px;
+			padding: 0 100px 100px;
 		}
 
 		@include respond-to("pc") {
-			padding: 100px 100px 100px;
+			padding: 0 100px 100px;
 		}
 
 
@@ -435,20 +484,14 @@ body {
 		section.section-work {
 			width: 100%;
 			margin: 0 auto;
-			padding: 0 20px;
-
-
-			div.sections-title {
-				h2 {}
-
-			}
+			padding: 0;
 
 			p.section-text {}
 
 			div.work-content {
 				display: flex;
 				flex-wrap: wrap;
-				justify-content: center;
+				justify-content: space-around;
 				width: 100%;
 				gap: 50px;
 				margin: 60px auto 0;
@@ -494,16 +537,10 @@ body {
 		}
 		//section-portfolio
 		section.section-portfolio {
-			div.sections-title {
-				h2 {}
-			}
-
-			p.section-text {}
 
 			div.portofolio-content {
 				width: 100%;
-				margin: 0 auto;
-				padding: 20px;
+				margin: 050px auto 0;
 
 				div.portofolio-content__item {
 					width: 100%;
@@ -515,7 +552,6 @@ body {
 					padding-bottom: 20px;
 					transition: all 1s;
 					word-wrap: break-word;
-
 					&.left,
 					&.right {
 						margin: 20px auto;
@@ -558,7 +594,7 @@ body {
 						}
 
 						&.right {
-							margin-left: 620px;
+							margin-left: calc( 100% - 500px);
 
 							&.hide {
 								transform: translateX(100px);
@@ -570,7 +606,11 @@ body {
 							}
 						}
 					}
-
+					@media screen and(min-width: 1280px){
+						&:not(:first-child){
+							margin-top: -15%;
+						}
+					}
 					div.portofolio-img-slider {
 						display: block;
 						width: 100%;
@@ -584,7 +624,7 @@ body {
 							p.scroll{
 								position: absolute;
 								top: 50%;
-								left: 80%;
+								left: 75%;
 								color: gray;
 								display: inline-block;
 								transform: translateY(-50%);
@@ -707,8 +747,8 @@ body {
 							div.portofolio-img-content-outer{
 								position: absolute;
 								top: 1%;
-								left: 37%;
-								width: 26%;
+								left: 36%;
+								width: 28%;
 								height: 98%;
 								overflow: auto;
 								-ms-overflow-style: none;  /* Internet Explorer と Edge用にスクロールバーを非表示にする */
@@ -731,13 +771,14 @@ body {
 						padding: 20px 40px 10px;
 					}
 
-					p {
+					p.text {
 						padding: 10px 40px 20px;
 					}
 
 					a {
-						display: block;
-						width: 100px;
+						display: inline-block;
+						width: 200px;
+						height: 30px;
 						margin: auto;
 						border: solid 1px #000000;
 					}
@@ -755,7 +796,7 @@ body {
 			div.skill-content {
 				display: flex;
 				flex-wrap: wrap;
-				justify-content: center;
+				justify-content: space-between;
 				width: 100%;
 				gap: 30px;
 				margin: 0 auto;
@@ -764,7 +805,7 @@ body {
 					position: relative;
 					display: flex;
 					flex-wrap: wrap;
-					width: 300px;
+					width: 200px;
 					min-height: 250px;
 					color: black;
 					background-color: rgba(255, 255, 255, 0.7);
@@ -781,9 +822,9 @@ body {
 					}
 
 					div.img {
-						width: 200px;
-						height: 200px;
-						margin: 25px auto;
+						width: 150px;
+						height: 150px;
+						margin: 10px auto 0;
 
 						img {
 							display: block;
@@ -797,9 +838,9 @@ body {
 						flex-wrap: wrap;
 						justify-content: center;
 						align-content: center;
-						width: 250px;
+						width: 100%;
 						overflow: hidden;
-						margin: 25px auto;
+						margin: 10px auto;
 
 						h3 {
 							width: 100%;
@@ -818,83 +859,9 @@ body {
 								height: auto;
 							}
 						}
-
-						p {
-							word-break: break-all;
-						}
 					}
 
 				}
-				@include respond-to("pc"){
-				div.skill-content__item {
-					position: relative;
-					display: flex;
-					flex-wrap: nowrap;
-					width: 1000px;
-					height: 250px;
-					color: black;
-					background-color: rgba(255, 255, 255, 0.7);
-					margin: 20px 0;
-					transition: all 1s;
-					word-wrap: break-word;
-					overflow: hidden;
-					&.skill-fade-up {
-						transform: translateY(200px);
-					}
-
-					&.skill-fade-up.fade-in {
-						transform: translateY(0);
-						opacity: 1;
-					}
-
-					div.img {
-						position: absolute;
-						width: 250px;
-						height: 250px;
-						margin: 0 auto;
-						img {
-							display: block;
-							width: 80%;
-							height: 80%;
-							padding: 10%;
-						}
-					}
-
-					div.skill-content__item__text {
-						display: flex;
-						flex-wrap: wrap;
-						justify-content: center;
-						align-content: center;
-						width: 750px;
-						margin-left: 250px;
-						padding-right: 50px;
-						overflow: hidden;
-
-						h3 {
-							width: 100%;
-							font-size: 24px;
-							height: 24px;
-							line-height: 24px;
-							text-align: center;
-						}
-
-						div.img-star {
-							width: 150px;
-							margin: 15px 0;
-							img {
-								display: block;
-								width: 100%;
-								height: auto;
-							}
-						}
-
-						p {
-							word-break: break-all;
-						}
-					}
-
-				}
-			}
 			}
 		}
 		//section-contact

@@ -3,34 +3,23 @@
 	"apiVersion": 3,
 	"name": "create-block/my-custom-block",
 	"version": "0.1.0",
-	"title": "My Custom Block",
+	"title": "コードエディター",
 	"category": "widgets",
-	"description": "Display your site's copyright date.",
+	"icon": "smiley",
+	"description": "ソースコードをそのまま記載することでエディター風のブロックにしてページに出力します",
 	"example": {},
-	"attributes": {
-		"fallbackCurrentYear": {
-			"type": "string"
-		},
-		"showStartingYear": {
-			"type": "boolean"
-		},
-		"startingYear": {
-			"type": "string"
-		}
-	},
 	"supports": {
-		"color": {
-			"background": false,
-			"text": true
-		},
-		"html": false,
-		"typography": {
-			"fontSize": true
-		}
+		"html": false
 	},
+	"attributes": {
+        "codeContent": {
+			"type": "string",
+			"default": []
+        }
+    },
 	"textdomain": "my-custom-block",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"render": "file:./render.php"
+	"viewScript": "file:./view.js"
 }

@@ -1,4 +1,4 @@
-<section class="section-work">
+<section id="work" class="section-work">
     <div class="sections-text-scale">
         <div class="sections-title">
 

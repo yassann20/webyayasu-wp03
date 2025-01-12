@@ -1,6 +1,151 @@
 @charset "UTF-8";
+/* HTML */
+.html {
+  color: #e44d26;
+}
+
+.html-bc {
+  background-color: #e44d26;
+}
+
+/* CSS */
+.css {
+  color: #264de4;
+}
+
+.css-bc {
+  background-color: #264de4;
+}
+
+/* JavaScript */
+.javascript {
+  color: #f7df1e;
+}
+
+.javascript-bc {
+  background-color: #f7df1e;
+}
+
+/* jQuery */
+.jquery {
+  color: #0769ad; /* 独自色: jQueryの公式カラー */
+}
+
+.jquery-bc {
+  background-color: #0769ad;
+}
+
+/* PHP */
+.php {
+  color: #787cb4;
+}
+
+.php-bc {
+  background-color: #787cb4;
+}
+
+/* Java */
+.java {
+  color: #5382a1; /* 独自色: Java公式カラーに基づく */
+}
+
+.java-bc {
+  background-color: #5382a1;
+}
+
+/* Python */
+.python {
+  color: #306998; /* 独自色: Python公式カラー */
+}
+
+.python-bc {
+  background-color: #306998;
+}
+
+/* React.js */
+.reactjs {
+  color: #61dafb;
+}
+
+.reactjs-bc {
+  background-color: #61dafb;
+}
+
+/* Vue.js */
+.vuejs {
+  color: #42b883;
+}
+
+.vuejs-bc {
+  background-color: #42b883;
+}
+
+/* WordPress */
+.wordpress {
+  color: #21759b;
+}
+
+.wordpress-bc {
+  background-color: #21759b;
+}
+
+/* MySQL */
+.mysql {
+  color: #00758f;
+}
+
+.mysql-bc {
+  background-color: #00758f;
+}
+
+/* Illustrator */
+.illustrator {
+  color: #ff9a00;
+}
+
+.illustrator-bc {
+  background-color: #ff9a00;
+}
+
+/* Photoshop */
+.photoshop {
+  color: #31a8ff;
+}
+
+.photoshop-bc {
+  background-color: #31a8ff;
+}
+
+/* Adobe XD */
+.adobexd {
+  color: #ff61f6;
+}
+
+.adobexd-bc {
+  background-color: #ff61f6;
+}
+
+/* Figma */
+.figma {
+  color: #a259ff;
+}
+
+.figma-bc {
+  background-color: #a259ff;
+}
+
+/* github */
+.github {
+  color: #181717; /* GitHubに対応する黒 */
+}
+
+.github-bc {
+  background-color: #181717;
+}
+
 body {
   color: #fff;
+  font-family: sans-serif !important;
 }
 body div.sections-title {
   width: 100%;
@@ -27,8 +172,8 @@ body p.section-text {
 body div#particles-js {
   position: fixed;
   width: 100vw;
-  height: 100vh;
-  background-color: blue;
+  height: 100lvh;
+  background-color: #0067C0;
   z-index: -1;
 }
 body .img {
@@ -129,10 +274,11 @@ body header div.menu-content div.img {
   body header div.menu-content nav.menu {
     position: fixed;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100lvh - 80px);
     transition: all 0.5s;
     margin-top: 80px;
     transform: translateX(100%);
+    background-color: white;
   }
   body header div.menu-content nav.menu.open {
     transform: translateX(0);
@@ -185,10 +331,11 @@ body header div.menu-content div.img {
   body header div.menu-content nav.menu {
     position: fixed;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100lvh - 80px);
     transition: all 0.5s;
     margin-top: 80px;
     transform: translateX(100%);
+    background-color: white;
   }
   body header div.menu-content nav.menu.open {
     transform: translateX(0);
@@ -227,10 +374,26 @@ body header div.menu-content div.img {
     color: #000000;
   }
 }
-body header div.header-img {
-  position: absolute;
+body header div.header-view {
+  position: relative;
   width: 100%;
   height: calc(100vh - 80px);
+  transition: all 1s;
+}
+body header div.header-view.hide {
+  opacity: 0;
+  transform: translateY(200px);
+}
+body header div.header-view.hide.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+body header div.header-view div.header-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   top: 80px;
   background-image: url("../photos/sitecodding.jpg");
   background-attachment: fixed;
@@ -238,56 +401,87 @@ body header div.header-img {
   background-position: center center;
   z-index: -1;
 }
-body header div.content-profile {
+body header div.header-view div.content-profile {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 80px;
   justify-content: center;
   align-items: center;
+  align-content: center;
   width: 100%;
-  height: calc(100% - 80px);
+  height: 100%;
   transition: all 0.5s;
 }
-@media (min-width: 1024px) {
-  body header div.content-profile {
-    flex-wrap: nowrap;
-  }
-}
-body header div.content-profile.hide {
-  transform: translateY(200px);
-}
-body header div.content-profile.hide.fade-up {
-  transform: translateY(0);
-  opacity: 1;
-}
-body header div.content-profile div.img {
+body header div.header-view div.content-profile div.img {
   width: 300px;
   height: 300px;
   border-radius: 150px;
   background-color: white;
 }
-body header div.content-profile div.content-profile_text {
+body header div.header-view div.content-profile div.content-profile_text {
   text-align: center;
 }
 @media (min-width: 1024px) {
-  body header div.content-profile div.content-profile_text {
+  body header div.header-view div.content-profile div.content-profile_text {
     padding-left: 100px;
   }
 }
-body header div.content-profile div.content-profile_text h2,
-body header div.content-profile div.content-profile_text p {
+body header div.header-view div.content-profile div.content-profile_text h2,
+body header div.header-view div.content-profile div.content-profile_text p {
   width: 80%;
   max-width: 500px;
   padding: 10px 0;
   margin: 0 auto;
 }
-body header div.content-profile div.content-profile_text a {
+body header div.header-view div.content-profile div.content-profile_text ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+}
+body header div.header-view div.content-profile div.content-profile_text ul li {
+  text-align: left;
+  margin: 10px 0;
+}
+body header div.header-view div.content-profile div.content-profile_text p {
+  text-align: left;
+}
+body header div.header-view div.content-profile div.content-profile_text a {
   display: block;
   width: 150px;
   height: 40px;
   line-height: 30px;
   border: solid 1px #ffffff;
   margin: 20px auto;
+}
+body header div.header-view div.content-profile div.SNS {
+  width: 100%;
+}
+body header div.header-view div.content-profile div.SNS ul {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  list-style: none;
+  gap: 30px;
+  padding-top: 50px;
+}
+body header div.header-view div.content-profile div.SNS ul li {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: #ffffff;
+  padding: 25px;
+}
+body header div.header-view div.content-profile div.SNS ul li a {
+  display: block;
+}
+body header div.header-view div.content-profile div.SNS ul li a img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 body main {
   max-width: 1400px;
@@ -301,12 +495,12 @@ body main {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   body main {
-    padding: 100px 100px 100px;
+    padding: 0 100px 100px;
   }
 }
 @media (min-width: 1024px) {
   body main {
-    padding: 100px 100px 100px;
+    padding: 0 100px 100px;
   }
 }
 body main section.section-news {
@@ -348,12 +542,12 @@ body main section.section-news ul.news-list li.news-list__item article p {
 body main section.section-work {
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
 }
 body main section.section-work div.work-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
   gap: 50px;
   margin: 60px auto 0;
@@ -392,8 +586,7 @@ body main section.section-work div.work-content div.work-content_item p {
 }
 body main section.section-portfolio div.portofolio-content {
   width: 100%;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 50px auto 0;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item {
   width: 100%;
@@ -435,7 +628,7 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
     opacity: 1;
   }
   body main section.section-portfolio div.portofolio-content div.portofolio-content__item.right {
-    margin-left: 620px;
+    margin-left: calc(100% - 500px);
   }
   body main section.section-portfolio div.portofolio-content div.portofolio-content__item.right.hide {
     transform: translateX(100px);
@@ -443,6 +636,11 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   body main section.section-portfolio div.portofolio-content div.portofolio-content__item.right.hide.slide-right-in {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body main section.section-portfolio div.portofolio-content div.portofolio-content__item:not(:first-child) {
+    margin-top: -15%;
   }
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider {
@@ -459,7 +657,7 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll {
   position: absolute;
   top: 50%;
-  left: 80%;
+  left: 75%;
   color: gray;
   display: inline-block;
   transform: translateY(-50%);
@@ -575,8 +773,8 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp div.portofolio-img-content-outer {
   position: absolute;
   top: 1%;
-  left: 37%;
-  width: 26%;
+  left: 36%;
+  width: 28%;
   height: 98%;
   overflow: auto;
   -ms-overflow-style: none; /* Internet Explorer と Edge用にスクロールバーを非表示にする */
@@ -592,37 +790,102 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   height: auto;
   z-index: -1;
 }
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item .portfolio_content_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item .portfolio_content_profile img {
+  display: inline-block;
+  width: 1.2em;
+  margin-right: 0.8em;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item .portfolio_content_use_skill {
+  padding: 3px 0;
+}
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item .portfolio_content_use_skill span {
+  display: inline-block;
+  padding: 5px 10px;
+  height: 26px;
+  line-height: 16px;
+  font-size: 16px;
+  border-radius: 13px;
+  color: white;
+  margin: 3px 6px;
+}
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item h3 {
   padding: 20px 40px 10px;
 }
-body main section.section-portfolio div.portofolio-content div.portofolio-content__item p {
+body main section.section-portfolio div.portofolio-content div.portofolio-content__item p.text {
   padding: 10px 40px 20px;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item a {
-  display: block;
-  width: 100px;
+  display: inline-block;
+  width: 200px;
+  height: 30px;
   margin: auto;
   border: solid 1px #000000;
 }
 body main section.section-skill div.skill-content {
   display: flex;
   flex-wrap: wrap;
+  justify-items: center;
   justify-content: center;
-  width: 100%;
-  gap: 30px;
+  width: auto;
+  gap: 45px;
   margin: 0 auto;
 }
 body main section.section-skill div.skill-content div.skill-content__item {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  width: 300px;
-  min-height: 250px;
+  justify-content: center;
+  align-content: center;
+  width: 220px;
+  aspect-ratio: 1/1;
   color: black;
   background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 150px;
   margin: 20px 0;
   transition: all 1s;
   overflow: hidden;
+}
+body main section.section-skill div.skill-content div.skill-content__item.html {
+  border: solid 10px #E34F26; /* HTMLに対応するオレンジ色 */
+}
+body main section.section-skill div.skill-content div.skill-content__item.css {
+  border: solid 10px #2965F1; /* CSSに対応する青色 */
+}
+body main section.section-skill div.skill-content div.skill-content__item.javascript {
+  border: solid 10px #F7DF1E; /* JavaScriptに対応する黄色 */
+}
+body main section.section-skill div.skill-content div.skill-content__item.react {
+  border: solid 10px #61DBFB; /* React.jsに対応する水色 */
+}
+body main section.section-skill div.skill-content div.skill-content__item.php {
+  border: solid 10px #8993BE; /* PHPに対応するグレー系の青 */
+}
+body main section.section-skill div.skill-content div.skill-content__item.wordpress {
+  border: solid 10px #21759B; /* WordPressに対応する青系 */
+}
+body main section.section-skill div.skill-content div.skill-content__item.photoshop {
+  border: solid 10px #31A8FF; /* Photoshopに対応する青 */
+}
+body main section.section-skill div.skill-content div.skill-content__item.illustrator {
+  border: solid 10px #FF9A00; /* Illustratorに対応するオレンジ */
+}
+body main section.section-skill div.skill-content div.skill-content__item.mysql {
+  border: solid 10px #00758F; /* MySQLに対応する青 */
+}
+body main section.section-skill div.skill-content div.skill-content__item.adobexd {
+  border: solid 10px #FF61F6; /* Adobe XDに対応するピンク */
+}
+body main section.section-skill div.skill-content div.skill-content__item.figma {
+  border: solid 10px #F24E1E; /* Figmaに対応する赤 */
+}
+body main section.section-skill div.skill-content div.skill-content__item.github {
+  border: solid 10px #181717; /* GitHubに対応する黒 */
 }
 body main section.section-skill div.skill-content div.skill-content__item.skill-fade-up {
   transform: translateY(200px);
@@ -632,9 +895,9 @@ body main section.section-skill div.skill-content div.skill-content__item.skill-
   opacity: 1;
 }
 body main section.section-skill div.skill-content div.skill-content__item div.img {
-  width: 200px;
-  height: 200px;
-  margin: 25px auto;
+  width: 100px;
+  height: 100px;
+  margin: 10px auto 0;
 }
 body main section.section-skill div.skill-content div.skill-content__item div.img img {
   display: block;
@@ -646,91 +909,25 @@ body main section.section-skill div.skill-content div.skill-content__item div.sk
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  width: 250px;
+  width: 100%;
   overflow: hidden;
-  margin: 25px auto;
+  margin: 10px auto;
 }
 body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text h3 {
   width: 100%;
-  font-size: 24px;
-  height: 24px;
-  line-height: 24px;
+  font-size: 18px;
+  height: 18px;
+  line-height: 18px;
   text-align: center;
 }
 body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star {
-  width: 150px;
+  width: 100px;
   margin: 15px 0;
 }
 body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star img {
   display: block;
   width: 100%;
   height: auto;
-}
-body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text p {
-  word-break: break-all;
-}
-@media (min-width: 1024px) {
-  body main section.section-skill div.skill-content div.skill-content__item {
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
-    width: 1000px;
-    height: 250px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.7);
-    margin: 20px 0;
-    transition: all 1s;
-    word-wrap: break-word;
-    overflow: hidden;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item.skill-fade-up {
-    transform: translateY(200px);
-  }
-  body main section.section-skill div.skill-content div.skill-content__item.skill-fade-up.fade-in {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.img {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    margin: 0 auto;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.img img {
-    display: block;
-    width: 80%;
-    height: 80%;
-    padding: 10%;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    width: 750px;
-    margin-left: 250px;
-    padding-right: 50px;
-    overflow: hidden;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text h3 {
-    width: 100%;
-    font-size: 24px;
-    height: 24px;
-    line-height: 24px;
-    text-align: center;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star {
-    width: 150px;
-    margin: 15px 0;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text p {
-    word-break: break-all;
-  }
 }
 body main section.section-contact {
   max-width: 1200px;

@@ -1,7 +1,7 @@
 {
 	"name": "my-custom-block",
 	"version": "0.1.0",
-	"description": "Display your site's copyright date.",
+	"description": "Example block scaffolded with Create Block tool.",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
@@ -12,11 +12,9 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start",
-		"env": "wp-env"
+		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^10.7.0",
-		"@wordpress/scripts": "^29.0.0"
+		"@wordpress/scripts": "^30.1.0"
 	}
 }

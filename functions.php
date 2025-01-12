@@ -114,6 +114,7 @@ function webyayasu03_customize_register( $wp_customize ) {
     $wp_customize->add_section('header_image_filter_section', array(
         'title'    => __('ヘッダー画像フィルター効果', 'mytheme'),
         'priority' => 30,
+        'panel' => 'custom_header_panel',
     ));
 
     // フィルターの選択コントロール
@@ -237,6 +238,17 @@ function post_section03(){
 }
 add_action('init', 'post_section03');
 
+// 投稿のアーカイブページを作成する
+function post_has_archive($args, $post_type)
+{
+    if ('post' == $post_type) {
+        $args['rewrite'] = true; // リライトを有効にする
+        $args['has_archive'] = 'blog'; // 任意のスラッグ名
+    }
+    return $args;
+}
+add_filter('register_post_type_args', 'post_has_archive', 10, 2);
+
 //archiveページとcategoryページ内の記事抜粋の文字数を制限
 function custom_excerpt_length( $charlength ) {
     $excerpt = get_the_excerpt();
@@ -256,14 +268,34 @@ function custom_excerpt_length( $charlength ) {
     }
 }
 
-function mytheme_enqueue_block_editor_assets() {
-    wp_enqueue_script(
-        'mytheme-custom-block',
+function mytheme_register_block_editor_assets() {
+    // ブロックエディター用のJavaScript
+    wp_register_script(
+        'mytheme-block-editor',
         get_template_directory_uri() . '/my-custom-block/build/index.js',
-        array('wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor'),
-        filemtime(get_template_directory() . '/my-custom-block/build/index.js')
+        array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components' ),
+        filemtime( get_template_directory() . '/my-custom-block/build/index.js' )
     );
+
+    // ブロックエディター用のスタイル
+    wp_register_style(
+        'mytheme-block-editor-style',
+        get_template_directory_uri() . '/my-custom-block/build/index.css',
+        array(),
+        filemtime( get_template_directory() . '/my-custom-block/build/index.css' )
+    );
+
+    // フロントエンド用のスタイル
+    wp_register_style(
+        'mytheme-block-style',
+        get_template_directory_uri() . '/my-custom-block/build/index.css',
+        array(),
+        filemtime( get_template_directory() . '/my-custom-block/build/index.css' )
+    );
+
+    // ブロックを登録
+    register_block_type( get_template_directory() . '/my-custom-block/build/block.json' );
 }
-add_action('enqueue_block_editor_assets', 'mytheme_enqueue_block_editor_assets');
+add_action( 'init', 'mytheme_register_block_editor_assets' );
 
 ?>

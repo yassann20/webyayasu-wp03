@@ -1,4 +1,4 @@
-<section class="section-skill">
+<section id="skill" class="section-skill">
     <div class="sections-text-scale">
         <div class="sections-title">
             <h2>skill</h2>
@@ -20,7 +20,11 @@
         if ($query->have_posts()) :
             while ($query->have_posts()) : $query->the_post();
                 ?>
-        <div class="skill-content__item hide skill-fade-up">
+                <?php
+                $skill_add_class = CFS()->get('skill_add_class');//コンテンツごとに取得したクラス名を取得クラスに指定できるのはコンテンツごとに１つ
+                $additional_class = $skill_add_class ? sanitize_html_class($skill_add_class) : '';//クラス名がある場合は変数に格納
+                ?>
+        <div class="skill-content__item <?php echo $additional_class; /*クラス名を出力*/?> hide skill-fade-up">
             <div class="img">
                 <!--サムネイル画像を出力-->
                 <?php if(has_post_thumbnail() ): ?>
@@ -42,19 +46,12 @@
                     }
                     ?>
                 </div>
-                <?php
-                $skill_content_text = CFS()->get('skill_content_text');
-                if($skill_content_text){
-                    echo '<p>'.esc_html($skill_content_text).'</p>';
-                }
-                ?>
-            </div>
-            <div class="skill-content__item__button">
-                <span></span>
-                <span></span>
             </div>
         </div>
         <?php endwhile; ?>
         <?php endif; ?>
+    </div>
+    <div>
+
     </div>
 </section>

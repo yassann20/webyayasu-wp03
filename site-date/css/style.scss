@@ -23,10 +23,139 @@ $breakpoint-spend: 767px;
 		}
 	}
 }
+//スキルカラーパレット
+/* HTML */
+.html {
+	color: #e44d26;
+}
+.html-bc {
+	background-color: #e44d26;
+}
+
+/* CSS */
+.css {
+	color: #264de4;
+}
+.css-bc {
+	background-color: #264de4;
+}
+
+/* JavaScript */
+.javascript {
+	color: #f7df1e;
+}
+.javascript-bc {
+	background-color: #f7df1e;
+}
+
+/* jQuery */
+.jquery {
+	color: #0769ad; /* 独自色: jQueryの公式カラー */
+}
+.jquery-bc {
+	background-color: #0769ad;
+}
+
+/* PHP */
+.php {
+	color: #787cb4;
+}
+.php-bc {
+	background-color: #787cb4;
+}
+
+/* Java */
+.java {
+	color: #5382a1; /* 独自色: Java公式カラーに基づく */
+}
+.java-bc {
+	background-color: #5382a1;
+}
+
+/* Python */
+.python {
+	color: #306998; /* 独自色: Python公式カラー */
+}
+.python-bc {
+	background-color: #306998;
+}
+
+/* React.js */
+.reactjs {
+	color: #61dafb;
+}
+.reactjs-bc {
+	background-color: #61dafb;
+}
+
+/* Vue.js */
+.vuejs {
+	color: #42b883;
+}
+.vuejs-bc {
+	background-color: #42b883;
+}
+
+/* WordPress */
+.wordpress {
+	color: #21759b;
+}
+.wordpress-bc {
+	background-color: #21759b;
+}
+
+/* MySQL */
+.mysql {
+	color: #00758f;
+}
+.mysql-bc {
+	background-color: #00758f;
+}
+
+/* Illustrator */
+.illustrator {
+	color: #ff9a00;
+}
+.illustrator-bc {
+	background-color: #ff9a00;
+}
+
+/* Photoshop */
+.photoshop {
+	color: #31a8ff;
+}
+.photoshop-bc {
+	background-color: #31a8ff;
+}
+
+/* Adobe XD */
+.adobexd {
+	color: #ff61f6;
+}
+.adobexd-bc {
+	background-color: #ff61f6;
+}
+
+/* Figma */
+.figma {
+	color: #a259ff;
+}
+.figma-bc {
+	background-color: #a259ff;
+}
+
+/* github */
+.github {
+	color: #181717; /* GitHubに対応する黒 */
+}
+.github-bc {
+	background-color: #181717;
+}
+
 
 body {
 	color: #fff;
-
+	font-family: sans-serif !important;
 	div.sections-title {
 		width: 100%;
 		text-align: center;
@@ -57,8 +186,8 @@ body {
 	div#particles-js {
 		position: fixed;
 		width: 100vw;
-		height: 100vh;
-		background-color: blue;
+		height: 100lvh;
+		background-color: #0067C0;
 		z-index: -1;
 	}
 
@@ -177,10 +306,11 @@ body {
 				nav.menu {
 					position: fixed;
 					width: 100%;
-					height: calc( 100vh - 80px );
+					height: calc( 100lvh - 80px );
 					transition: all .5s;
 					margin-top: 80px;
 					transform: translateX(100%);
+					background-color: #ffff;
 					&.open{
 						transform: translateX(0);
 					}
@@ -240,10 +370,11 @@ body {
 				nav.menu {
 					position: fixed;
 					width: 100%;
-					height: calc( 100vh - 80px );
+					height: calc( 100lvh - 80px );
 					transition: all .5s;
 					margin-top: 80px;
 					transform: translateX(100%);
+					background-color: #ffff;
 					&.open{
 						transform: translateX(0);
 					}
@@ -294,10 +425,25 @@ body {
 					}
 			}
 		}
+		div.header-view{
+			position: relative;
+			width: 100%;
+			height: calc( 100vh - 80px );
+			transition: all 1s;
+			&.hide{
+				opacity: 0;
+				transform: translateY(200px);
+			}
+			&.hide.fade-up{
+				opacity: 1;
+				transform: translateY(0);
+			}
 		div.header-img {
 			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
-			height: calc(100vh - 80px);
+			height: 100%;
 			top: 80px;
 			background-image: url('../photos/sitecodding.jpg');
 			background-attachment: fixed;
@@ -307,28 +453,17 @@ body {
 		}
 
 		div.content-profile {
+			position: absolute;
+			top: 0;
+			left: 0;
 			display: flex;
 			flex-wrap: wrap;
-			margin-top: 80px;
-			
-			@include respond-to('pc') {
-				flex-wrap: nowrap;
-			}
-
 			justify-content: center;
 			align-items: center;
+			align-content: center;
 			width: 100%;
-			height: calc(100% - 80px);
+			height: 100%;
 			transition: all .5s;
-
-			&.hide {
-				transform: translateY(200px);
-			}
-
-			&.hide.fade-up {
-				transform: translateY(0);
-				opacity: 1;
-			}
 
 			div.img {
 				width: 300px;
@@ -352,6 +487,20 @@ body {
 					margin: 0 auto;
 				}
 
+				ul{
+					list-style: none;
+					width: 80%;
+					margin: 0 auto;
+					li{
+						text-align: left;
+						margin: 10px 0;
+					}
+				}
+				
+				p{
+					text-align: left;
+				}
+
 				a {
 					display: block;
 					width: 150px;
@@ -361,7 +510,36 @@ body {
 					margin: 20px auto;
 				}
 			}
+			div.SNS{
+				width: 100%;
+				ul{
+					display: flex;
+				align-items: center;
+				align-content: center;
+				justify-content: center;
+				flex-wrap: nowrap;
+				list-style: none;
+				gap: 30px;
+				padding-top: 50px;
+					li{
+						width: 100px;
+						height: 100px;
+						border-radius: 50px;
+						background-color: #ffffff;
+						padding: 25px;
+						a{
+							display: block;
+							img{
+								display: block;
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+				}
+			}
 		}
+	}
 	}
 
 	main {
@@ -374,11 +552,11 @@ body {
 		}
 
 		@include respond-to("tab") {
-			padding: 100px 100px 100px;
+			padding: 0 100px 100px;
 		}
 
 		@include respond-to("pc") {
-			padding: 100px 100px 100px;
+			padding: 0 100px 100px;
 		}
 
 
@@ -435,20 +613,14 @@ body {
 		section.section-work {
 			width: 100%;
 			margin: 0 auto;
-			padding: 0 20px;
-
-
-			div.sections-title {
-				h2 {}
-
-			}
+			padding: 0;
 
 			p.section-text {}
 
 			div.work-content {
 				display: flex;
 				flex-wrap: wrap;
-				justify-content: center;
+				justify-content: space-around;
 				width: 100%;
 				gap: 50px;
 				margin: 60px auto 0;
@@ -494,16 +666,10 @@ body {
 		}
 		//section-portfolio
 		section.section-portfolio {
-			div.sections-title {
-				h2 {}
-			}
-
-			p.section-text {}
 
 			div.portofolio-content {
 				width: 100%;
-				margin: 0 auto;
-				padding: 20px;
+				margin: 050px auto 0;
 
 				div.portofolio-content__item {
 					width: 100%;
@@ -515,7 +681,6 @@ body {
 					padding-bottom: 20px;
 					transition: all 1s;
 					word-wrap: break-word;
-
 					&.left,
 					&.right {
 						margin: 20px auto;
@@ -558,7 +723,7 @@ body {
 						}
 
 						&.right {
-							margin-left: 620px;
+							margin-left: calc( 100% - 500px);
 
 							&.hide {
 								transform: translateX(100px);
@@ -570,7 +735,11 @@ body {
 							}
 						}
 					}
-
+					@media screen and (min-width: 1280px){
+						&:not(:first-child){
+							margin-top: -15%;
+						}
+					}
 					div.portofolio-img-slider {
 						display: block;
 						width: 100%;
@@ -584,7 +753,7 @@ body {
 							p.scroll{
 								position: absolute;
 								top: 50%;
-								left: 80%;
+								left: 75%;
 								color: gray;
 								display: inline-block;
 								transform: translateY(-50%);
@@ -707,8 +876,8 @@ body {
 							div.portofolio-img-content-outer{
 								position: absolute;
 								top: 1%;
-								left: 37%;
-								width: 26%;
+								left: 36%;
+								width: 28%;
 								height: 98%;
 								overflow: auto;
 								-ms-overflow-style: none;  /* Internet Explorer と Edge用にスクロールバーを非表示にする */
@@ -726,18 +895,46 @@ body {
 						}
 						}
 					}
+					.portfolio_content_profile{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						align-content: center;
+						img{
+							display: inline-block;
+							width: 1.2em;
+							margin-right: 0.8em;
+						}
+						p{
+
+						}
+					}
+					.portfolio_content_use_skill{
+						padding: 3px 0;
+						span{
+						display: inline-block;
+						padding: 5px 10px;
+						height: 26px;
+						line-height: 16px;
+						font-size: 16px;
+						border-radius: 13px;
+						color: #ffff;
+						margin: 3px 6px;
+						}
+					}
 
 					h3 {
 						padding: 20px 40px 10px;
 					}
 
-					p {
+					p.text {
 						padding: 10px 40px 20px;
 					}
 
 					a {
-						display: block;
-						width: 100px;
+						display: inline-block;
+						width: 200px;
+						height: 30px;
 						margin: auto;
 						border: solid 1px #000000;
 					}
@@ -755,22 +952,74 @@ body {
 			div.skill-content {
 				display: flex;
 				flex-wrap: wrap;
+				justify-items: center;
 				justify-content: center;
-				width: 100%;
-				gap: 30px;
+				width: auto;
+				gap: 45px;
 				margin: 0 auto;
 
 				div.skill-content__item {
 					position: relative;
 					display: flex;
 					flex-wrap: wrap;
-					width: 300px;
-					min-height: 250px;
+					justify-content: center;
+					align-content: center;
+					width: 220px;
+					aspect-ratio: 1/1;
 					color: black;
 					background-color: rgba(255, 255, 255, 0.7);
+					border-radius: 150px;
 					margin: 20px 0;
 					transition: all 1s;
 					overflow: hidden;
+					  &.html {
+						border: solid 10px #E34F26; /* HTMLに対応するオレンジ色 */
+					  }
+					  
+					  &.css {
+						border: solid 10px #2965F1; /* CSSに対応する青色 */
+					  }
+					  
+					  &.javascript {
+						border: solid 10px #F7DF1E; /* JavaScriptに対応する黄色 */
+					  }
+					  
+					  &.react {
+						border: solid 10px #61DBFB; /* React.jsに対応する水色 */
+					  }
+					  
+					  &.php {
+						border: solid 10px #8993BE; /* PHPに対応するグレー系の青 */
+					  }
+					  
+					  &.wordpress {
+						border: solid 10px #21759B; /* WordPressに対応する青系 */
+					  }
+					  
+					  &.photoshop {
+						border: solid 10px #31A8FF; /* Photoshopに対応する青 */
+					  }
+					  
+					  &.illustrator {
+						border: solid 10px #FF9A00; /* Illustratorに対応するオレンジ */
+					  }
+					  
+					  &.mysql {
+						border: solid 10px #00758F; /* MySQLに対応する青 */
+					  }
+					  
+					  &.adobexd {
+						border: solid 10px #FF61F6; /* Adobe XDに対応するピンク */
+					  }
+					  
+					  &.figma {
+						border: solid 10px #F24E1E; /* Figmaに対応する赤 */
+					  }
+
+					  &.github {
+						border: solid 10px #181717; /* GitHubに対応する黒 */
+					  }
+					  
 					&.skill-fade-up {
 						transform: translateY(200px);
 					}
@@ -781,9 +1030,9 @@ body {
 					}
 
 					div.img {
-						width: 200px;
-						height: 200px;
-						margin: 25px auto;
+						width: 100px;
+						height: 100px;
+						margin: 10px auto 0;
 
 						img {
 							display: block;
@@ -797,20 +1046,20 @@ body {
 						flex-wrap: wrap;
 						justify-content: center;
 						align-content: center;
-						width: 250px;
+						width: 100%;
 						overflow: hidden;
-						margin: 25px auto;
+						margin: 10px auto;
 
 						h3 {
 							width: 100%;
-							font-size: 24px;
-							height: 24px;
-							line-height: 24px;
+							font-size: 18px;
+							height: 18px;
+							line-height: 18px;
 							text-align: center;
 						}
 
 						div.img-star {
-							width: 150px;
+							width: 100px;
 							margin: 15px 0;
 							img {
 								display: block;
@@ -818,83 +1067,9 @@ body {
 								height: auto;
 							}
 						}
-
-						p {
-							word-break: break-all;
-						}
 					}
 
 				}
-				@include respond-to("pc"){
-				div.skill-content__item {
-					position: relative;
-					display: flex;
-					flex-wrap: nowrap;
-					width: 1000px;
-					height: 250px;
-					color: black;
-					background-color: rgba(255, 255, 255, 0.7);
-					margin: 20px 0;
-					transition: all 1s;
-					word-wrap: break-word;
-					overflow: hidden;
-					&.skill-fade-up {
-						transform: translateY(200px);
-					}
-
-					&.skill-fade-up.fade-in {
-						transform: translateY(0);
-						opacity: 1;
-					}
-
-					div.img {
-						position: absolute;
-						width: 250px;
-						height: 250px;
-						margin: 0 auto;
-						img {
-							display: block;
-							width: 80%;
-							height: 80%;
-							padding: 10%;
-						}
-					}
-
-					div.skill-content__item__text {
-						display: flex;
-						flex-wrap: wrap;
-						justify-content: center;
-						align-content: center;
-						width: 750px;
-						margin-left: 250px;
-						padding-right: 50px;
-						overflow: hidden;
-
-						h3 {
-							width: 100%;
-							font-size: 24px;
-							height: 24px;
-							line-height: 24px;
-							text-align: center;
-						}
-
-						div.img-star {
-							width: 150px;
-							margin: 15px 0;
-							img {
-								display: block;
-								width: 100%;
-								height: auto;
-							}
-						}
-
-						p {
-							word-break: break-all;
-						}
-					}
-
-				}
-			}
 			}
 		}
 		//section-contact

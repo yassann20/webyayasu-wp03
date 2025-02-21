@@ -15,16 +15,16 @@ var_dump($_SESSION["nam"]);
 
 <main>
 
-<div class="confirmation">
-<div class="sections-text-scale">
-        <div class="sections-title">
-            <h2>お問い合わせ内容確認</h2>
+    <div class="confirmation">
+        <div class="sections-text-scale">
+            <div class="sections-title">
+                <h2>お問い合わせ内容確認</h2>
+            </div>
+            <p class="section-text">
+                お問い合わせ内容にお間違いがなければ送信ボタンを押してください。
+            </p>
         </div>
-        <p class="section-text">
-            お問い合わせ内容にお間違いがなければ送信ボタンを押してください。
-        </p>
     </div>
-</div>
 
 </main>
 

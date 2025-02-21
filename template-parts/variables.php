@@ -17,4 +17,3 @@ $skill_class = [
     ['figma', 'figma-bc'],
     ['github', 'github-bc']
 ];
-?>

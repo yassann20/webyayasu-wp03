@@ -24,16 +24,16 @@
                 // 投稿のカテゴリーを取得（最初の1つだけ）
                 $category = get_the_category();
                 $category_name = !empty($category) ? $category[0]->name : '未設定';
-                ?>
-        <li class="news-list__item">
-        <a href="<?php the_permalink(); ?>">
-            <article>
-                <time datetime="<?php echo esc_attr($date); ?>"><?php echo esc_html(get_the_date()); ?></time>
-                <span class="category"><?php echo esc_html($category_name); ?></span>
-                <p><?php echo esc_html(get_the_title()); ?></p>
-            </article>
-        </a>
-        </li>
+        ?>
+                <li class="news-list__item">
+                    <a href="<?php the_permalink(); ?>">
+                        <article>
+                            <time datetime="<?php echo esc_attr($date); ?>"><?php echo esc_html(get_the_date()); ?></time>
+                            <span class="category"><?php echo esc_html($category_name); ?></span>
+                            <p><?php echo esc_html(get_the_title()); ?></p>
+                        </article>
+                    </a>
+                </li>
         <?php
             endwhile;
             // 投稿データのリセット

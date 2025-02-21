@@ -47,39 +47,39 @@ $mastermessage .= "-------------------------------------------------------------
 <main>
 
     <?php if (mb_send_mail($to, $title, $message, $headers) && mb_send_mail($masterto, $mastertitle, $mastermessage, $masterheaders)) : ?>
-    <!--メールの送信が完了した場合は下記を表示-->
-    <section class="semdmail">
-        <div class="sections-text-scale">
-            <div class="sections-title">
-                <h2>
-                    メールの送信が完了しました。
-                </h2>
+        <!--メールの送信が完了した場合は下記を表示-->
+        <section class="semdmail">
+            <div class="sections-text-scale">
+                <div class="sections-title">
+                    <h2>
+                        メールの送信が完了しました。
+                    </h2>
+                </div>
             </div>
-        </div>
-        <div class="semdmail">
-            <p>メールの送信が完了しました。後ほど担当者よりメールにてご連絡いたしますので。今しばらくお待ちください。</p>
-        </div>
-        <div class="button-area">
-        <a href="<?php echo home_url(); ?>">トップページ</a>
-        </div>
-    </section>
+            <div class="semdmail">
+                <p>メールの送信が完了しました。後ほど担当者よりメールにてご連絡いたしますので。今しばらくお待ちください。</p>
+            </div>
+            <div class="button-area">
+                <a href="<?php echo home_url(); ?>">トップページ</a>
+            </div>
+        </section>
     <?php else: ?>
 
         <section class="semdmail">
-        <div class="sections-text-scale">
-            <div class="sections-title">
-                <h2>
-                    メールの送信に失敗しました。
-                </h2>
+            <div class="sections-text-scale">
+                <div class="sections-title">
+                    <h2>
+                        メールの送信に失敗しました。
+                    </h2>
+                </div>
             </div>
-        </div>
-        <div class="semdmail">
-            <p>お手数ですが、内容を確認しながら再度入力しなおしてください。</p>
-        </div>
-        <div class="button-area">
-        <a href="<?php echo home_url(); ?>">トップページ</a>
-        </div>
-    </section>
+            <div class="semdmail">
+                <p>お手数ですが、内容を確認しながら再度入力しなおしてください。</p>
+            </div>
+            <div class="button-area">
+                <a href="<?php echo home_url(); ?>">トップページ</a>
+            </div>
+        </section>
     <?php endif; ?>
 </main>
 

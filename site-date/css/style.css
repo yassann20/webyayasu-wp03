@@ -691,6 +691,11 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   transform: translateY(-50%);
   z-index: 10;
 }
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll {
+    left: 85%;
+  }
+}
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::before, body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::after {
   content: "";
   position: absolute;
@@ -704,7 +709,7 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::before {
   content: "▲";
   /* 上向き矢印 */
-  top: -40px;
+  top: -30px;
   animation: moveUpDown 1s infinite alternate;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::after {
@@ -767,6 +772,11 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   transform: translateY(-50%);
   z-index: 10;
 }
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll {
+    left: 70%;
+  }
+}
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::before, body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::after {
   content: "";
   position: absolute;
@@ -780,7 +790,7 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::before {
   content: "▲";
   /* 上向き矢印 */
-  top: -40px;
+  top: -30px;
   animation: moveUpDown 1s infinite alternate;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::after {
@@ -1091,7 +1101,7 @@ body main section.section-contact form label input,
 body main section.section-contact form label textarea {
   display: block;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   background-color: #ffffff;
 }
 body main section.section-contact form label input {

@@ -796,6 +796,9 @@ body {
 								position: absolute;
 								top: 50%;
 								left: 75%;
+								@include respond-to("sp"){
+									left: 85%;
+								}
 								color: gray;
 								display: inline-block;
 								transform: translateY(-50%);
@@ -816,7 +819,7 @@ body {
 								&::before {
 									content: "▲";
 									/* 上向き矢印 */
-									top: -40px;
+									top: -30px;
 									animation: moveUpDown 1s infinite alternate;
 								}
 
@@ -885,6 +888,9 @@ body {
 								position: absolute;
 								top: 50%;
 								left: 63%;
+								@include respond-to("sp"){
+									left: 70%;
+								}
 								color: gray;
 								display: inline-block;
 								transform: translateY(-50%);
@@ -905,7 +911,7 @@ body {
 								&::before {
 									content: "▲";
 									/* 上向き矢印 */
-									top: -40px;
+									top: -30px;
 									animation: moveUpDown 1s infinite alternate;
 								}
 
@@ -1263,7 +1269,7 @@ body {
 					textarea {
 						display: block;
 						width: 100%; // 可変にする
-						max-width: 600px; // 最大幅を指定
+						max-width: 400px; // 最大幅を指定
 						background-color: #ffffff;
 					}
 

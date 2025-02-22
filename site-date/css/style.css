@@ -28,7 +28,8 @@
 
 /* jQuery */
 .jquery {
-  color: #0769ad; /* 独自色: jQueryの公式カラー */
+  color: #0769ad;
+  /* 独自色: jQueryの公式カラー */
 }
 
 .jquery-bc {
@@ -46,7 +47,8 @@
 
 /* Java */
 .java {
-  color: #5382a1; /* 独自色: Java公式カラーに基づく */
+  color: #5382a1;
+  /* 独自色: Java公式カラーに基づく */
 }
 
 .java-bc {
@@ -55,7 +57,8 @@
 
 /* Python */
 .python {
-  color: #306998; /* 独自色: Python公式カラー */
+  color: #306998;
+  /* 独自色: Python公式カラー */
 }
 
 .python-bc {
@@ -136,7 +139,8 @@
 
 /* github */
 .github {
-  color: #181717; /* GitHubに対応する黒 */
+  color: #181717;
+  /* GitHubに対応する黒 */
 }
 
 .github-bc {
@@ -146,6 +150,7 @@
 body {
   color: #fff;
   font-family: sans-serif !important;
+  overflow-x: hidden;
 }
 body div.sections-title {
   width: 100%;
@@ -213,7 +218,7 @@ body p.ip {
 body header {
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: auto;
   overflow: hidden;
 }
 @media (min-width: 0) and (max-width: 767px) {
@@ -381,11 +386,10 @@ body header div.menu-content div.img {
 }
 body header div.header-view {
   position: relative;
-  top: 80px;
   width: 100%;
   height: auto;
   transition: all 1s;
-  padding: 100px 0;
+  padding: 120px 0 50px;
 }
 body header div.header-view.hide {
   opacity: 0;
@@ -490,6 +494,27 @@ body main {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
+  /*-----------------------------------------*
+  |              section-news                |
+  *-----------------------------------------*/
+  /*-----------------------------------------*
+  |              section-work                |
+  *-----------------------------------------*/
+  /*-----------------------------------------*
+  |              section-portfolio           |
+  *-----------------------------------------*/
+  /*-----------------------------------------*
+  |              section-skill               |
+  *-----------------------------------------*/
+  /*-----------------------------------------*
+  |              section-contact             |
+  *-----------------------------------------*/
+  /*-----------------------------------------*
+  |              page-confirm.php            |
+  *-----------------------------------------*/
+  /*-----------------------------------------*
+  |              page-semd.php               |
+  *-----------------------------------------*/
 }
 @media (min-width: 0) and (max-width: 767px) {
   body main {
@@ -674,24 +699,26 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   font-size: 24px;
   color: gray;
   opacity: 0.7;
-  pointer-events: none; /* 矢印がクリックの邪魔にならないように */
+  pointer-events: none;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::before {
-  content: "▲"; /* 上向き矢印 */
+  content: "▲";
+  /* 上向き矢印 */
   top: -40px;
-  animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+  animation: moveUpDown 1s infinite alternate;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc p.scroll::after {
-  content: "▼"; /* 下向き矢印 */
+  content: "▼";
+  /* 下向き矢印 */
   bottom: -20px;
-  animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+  animation: moveUpDown 1s infinite alternate;
 }
 @keyframes moveUpDown {
   0% {
     transform: translate(-50%, 0);
   }
   100% {
-    transform: translate(-50%, 10px); /* 矢印が10px上下に動く */
+    transform: translate(-50%, 10px);
   }
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc img.portofolio-img-outer {
@@ -709,11 +736,14 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   width: 60%;
   height: 67%;
   overflow: auto;
-  -ms-overflow-style: none; /* Internet Explorer と Edge用にスクロールバーを非表示にする */
-  scrollbar-width: none; /* Firefox用にスクロールバーを非表示にする */
+  -ms-overflow-style: none;
+  /* IE と Edge用にスクロールバーを非表示にする */
+  scrollbar-width: none;
+  /* Firefox用にスクロールバーを非表示にする */
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc div.portofolio-img-content-outer::-webkit-scrollbar {
-  display: none; /* Webkitベースのブラウザでスクロールバーを非表示にする */
+  display: none;
+  /* Webkitベースのブラウザでスクロールバーを非表示にする */
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-pc div.portofolio-img-content-outer img.portofolio-img_inner {
   position: absolute;
@@ -745,24 +775,26 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   font-size: 24px;
   color: gray;
   opacity: 0.7;
-  pointer-events: none; /* 矢印がクリックの邪魔にならないように */
+  pointer-events: none;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::before {
-  content: "▲"; /* 上向き矢印 */
+  content: "▲";
+  /* 上向き矢印 */
   top: -40px;
-  animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+  animation: moveUpDown 1s infinite alternate;
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp p.scroll::after {
-  content: "▼"; /* 下向き矢印 */
+  content: "▼";
+  /* 下向き矢印 */
   bottom: -20px;
-  animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+  animation: moveUpDown 1s infinite alternate;
 }
 @keyframes moveUpDown {
   0% {
     transform: translate(-50%, 0);
   }
   100% {
-    transform: translate(-50%, 10px); /* 矢印が10px上下に動く */
+    transform: translate(-50%, 10px);
   }
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp img.portofolio-img-outer {
@@ -780,11 +812,14 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
   width: 28%;
   height: 98%;
   overflow: auto;
-  -ms-overflow-style: none; /* Internet Explorer と Edge用にスクロールバーを非表示にする */
-  scrollbar-width: none; /* Firefox用にスクロールバーを非表示にする */
+  -ms-overflow-style: none;
+  /* IE と Edge用にスクロールバーを非表示にする */
+  scrollbar-width: none;
+  /* Firefox用にスクロールバーを非表示にする */
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp div.portofolio-img-content-outer::-webkit-scrollbar {
-  display: none; /* Webkitベースのブラウザでスクロールバーを非表示にする */
+  display: none;
+  /* Webkitベースのブラウザでスクロールバーを非表示にする */
 }
 body main section.section-portfolio div.portofolio-content div.portofolio-content__item div.portofolio-img-slider div.portofolio-img-sp div.portofolio-img-content-outer img.portofolio-img_inner {
   position: absolute;
@@ -833,14 +868,12 @@ body main section.section-portfolio div.portofolio-content div.portofolio-conten
 body main section.section-skill div.skill-content {
   display: flex;
   flex-wrap: wrap;
-  justify-items: center;
   justify-content: center;
   width: auto;
   gap: 45px;
   margin: 0 auto;
 }
 body main section.section-skill div.skill-content div.skill-content__item {
-  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -851,44 +884,109 @@ body main section.section-skill div.skill-content div.skill-content__item {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 150px;
   margin: 20px 0;
-  transition: all 1s;
+  transition: all 1s ease;
   overflow: hidden;
 }
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item {
+    width: 140px;
+  }
+}
 body main section.section-skill div.skill-content div.skill-content__item.html {
-  border: solid 10px #E34F26; /* HTMLに対応するオレンジ色 */
+  border: solid 10px #E34F26;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.html {
+    border: solid 5px #E34F26;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.css {
-  border: solid 10px #2965F1; /* CSSに対応する青色 */
+  border: solid 10px #2965F1;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.css {
+    border: solid 5px #2965F1;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.javascript {
-  border: solid 10px #F7DF1E; /* JavaScriptに対応する黄色 */
+  border: solid 10px #F7DF1E;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.javascript {
+    border: solid 5px #F7DF1E;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.react {
-  border: solid 10px #61DBFB; /* React.jsに対応する水色 */
+  border: solid 10px #61DBFB;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.react {
+    border: solid 5px #61DBFB;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.php {
-  border: solid 10px #8993BE; /* PHPに対応するグレー系の青 */
+  border: solid 10px #8993BE;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.php {
+    border: solid 5px #8993BE;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.wordpress {
-  border: solid 10px #21759B; /* WordPressに対応する青系 */
+  border: solid 10px #21759B;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.wordpress {
+    border: solid 5px #21759B;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.photoshop {
-  border: solid 10px #31A8FF; /* Photoshopに対応する青 */
+  border: solid 10px #31A8FF;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.photoshop {
+    border: solid 5px #31A8FF;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.illustrator {
-  border: solid 10px #FF9A00; /* Illustratorに対応するオレンジ */
+  border: solid 10px #FF9A00;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.illustrator {
+    border: solid 5px #FF9A00;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.mysql {
-  border: solid 10px #00758F; /* MySQLに対応する青 */
+  border: solid 10px #00758F;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.mysql {
+    border: solid 5px #00758F;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.adobexd {
-  border: solid 10px #FF61F6; /* Adobe XDに対応するピンク */
+  border: solid 10px #FF61F6;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.adobexd {
+    border: solid 5px #FF61F6;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.figma {
-  border: solid 10px #F24E1E; /* Figmaに対応する赤 */
+  border: solid 10px #F24E1E;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.figma {
+    border: solid 5px #F24E1E;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.github {
-  border: solid 10px #181717; /* GitHubに対応する黒 */
+  border: solid 10px #181717;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item.github {
+    border: solid 5px #181717;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item.skill-fade-up {
   transform: translateY(200px);
@@ -899,13 +997,18 @@ body main section.section-skill div.skill-content div.skill-content__item.skill-
 }
 body main section.section-skill div.skill-content div.skill-content__item div.img {
   width: 100px;
-  height: 100px;
+  aspect-ratio: 1/1;
   margin: 10px auto 0;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item div.img {
+    width: 60px;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item div.img img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text {
   display: flex;
@@ -923,9 +1026,22 @@ body main section.section-skill div.skill-content div.skill-content__item div.sk
   line-height: 18px;
   text-align: center;
 }
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text h3 {
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+  }
+}
 body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star {
   width: 100px;
   margin: 15px 0;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star {
+    width: 60px;
+    margin: 10px 0;
+  }
 }
 body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text div.img-star img {
   display: block;
@@ -938,7 +1054,7 @@ body main section.section-contact {
   margin: 0 auto;
 }
 body main section.section-contact form {
-  transition: all 1s;
+  transition: all 1s ease;
 }
 body main section.section-contact form.hide {
   transform: translateY(200px);
@@ -953,15 +1069,12 @@ body main section.section-contact form label {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
   padding: 25px 10px;
-  border-top: solid 1px white;
-  /*============================
-  #message
-  ============================*/
+  border-top: solid 1px #ffffff;
 }
 body main section.section-contact form label h3 {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   font-size: 24px;
 }
 @media (min-width: 0) and (max-width: 767px) {
@@ -974,26 +1087,27 @@ body main section.section-contact form label h3 {
     padding-bottom: 20px;
   }
 }
-body main section.section-contact form label input {
+body main section.section-contact form label input,
+body main section.section-contact form label textarea {
   display: block;
-  width: 600px;
-  height: 50px;
-  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
 }
-body main section.section-contact form label textarea#message {
-  display: block;
-  width: 600px;
+body main section.section-contact form label input {
+  height: 40px;
+}
+body main section.section-contact form label textarea {
   height: 200px;
-  background-color: white;
 }
 body main section.section-contact form button {
   display: block;
   width: 80px;
   height: 40px;
   line-height: 40px;
-  background-color: white;
+  background-color: #ffffff;
   color: black;
-  margin: 50px calc(50% - 40px) 60px;
+  margin: 50px auto 60px;
 }
 body main section.confirm {
   max-width: 1200px;
@@ -1005,18 +1119,17 @@ body main section.confirm div.confirm div.confirm-content {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: auto;
-  padding: 25px 10px;
-  border-top: solid 1px white;
+  border-top: solid 1px #ffffff;
 }
 body main section.confirm div.confirm div.confirm-content h3 {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   font-size: 24px;
 }
 body main section.confirm div.confirm div.confirm-content p {
-  display: block;
-  width: 600px;
-  height: 50px;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
   line-height: 50px;
   text-align: left;
 }
@@ -1035,8 +1148,8 @@ body main section.confirm div.button-area a {
   width: auto;
   height: 40px;
   font-size: 20px;
-  line-height: 20px;
-  background-color: white;
+  line-height: 40px;
+  background-color: #ffffff;
   padding: 10px;
   color: black;
   margin: 50px 0 0;

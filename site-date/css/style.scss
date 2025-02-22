@@ -23,11 +23,13 @@ $breakpoint-spend: 767px;
 		}
 	}
 }
+
 //スキルカラーパレット
 /* HTML */
 .html {
 	color: #e44d26;
 }
+
 .html-bc {
 	background-color: #e44d26;
 }
@@ -36,6 +38,7 @@ $breakpoint-spend: 767px;
 .css {
 	color: #264de4;
 }
+
 .css-bc {
 	background-color: #264de4;
 }
@@ -44,14 +47,17 @@ $breakpoint-spend: 767px;
 .javascript {
 	color: #f7df1e;
 }
+
 .javascript-bc {
 	background-color: #f7df1e;
 }
 
 /* jQuery */
 .jquery {
-	color: #0769ad; /* 独自色: jQueryの公式カラー */
+	color: #0769ad;
+	/* 独自色: jQueryの公式カラー */
 }
+
 .jquery-bc {
 	background-color: #0769ad;
 }
@@ -60,22 +66,27 @@ $breakpoint-spend: 767px;
 .php {
 	color: #787cb4;
 }
+
 .php-bc {
 	background-color: #787cb4;
 }
 
 /* Java */
 .java {
-	color: #5382a1; /* 独自色: Java公式カラーに基づく */
+	color: #5382a1;
+	/* 独自色: Java公式カラーに基づく */
 }
+
 .java-bc {
 	background-color: #5382a1;
 }
 
 /* Python */
 .python {
-	color: #306998; /* 独自色: Python公式カラー */
+	color: #306998;
+	/* 独自色: Python公式カラー */
 }
+
 .python-bc {
 	background-color: #306998;
 }
@@ -84,6 +95,7 @@ $breakpoint-spend: 767px;
 .reactjs {
 	color: #61dafb;
 }
+
 .reactjs-bc {
 	background-color: #61dafb;
 }
@@ -92,6 +104,7 @@ $breakpoint-spend: 767px;
 .vuejs {
 	color: #42b883;
 }
+
 .vuejs-bc {
 	background-color: #42b883;
 }
@@ -100,6 +113,7 @@ $breakpoint-spend: 767px;
 .wordpress {
 	color: #21759b;
 }
+
 .wordpress-bc {
 	background-color: #21759b;
 }
@@ -108,6 +122,7 @@ $breakpoint-spend: 767px;
 .mysql {
 	color: #00758f;
 }
+
 .mysql-bc {
 	background-color: #00758f;
 }
@@ -116,6 +131,7 @@ $breakpoint-spend: 767px;
 .illustrator {
 	color: #ff9a00;
 }
+
 .illustrator-bc {
 	background-color: #ff9a00;
 }
@@ -124,6 +140,7 @@ $breakpoint-spend: 767px;
 .photoshop {
 	color: #31a8ff;
 }
+
 .photoshop-bc {
 	background-color: #31a8ff;
 }
@@ -132,6 +149,7 @@ $breakpoint-spend: 767px;
 .adobexd {
 	color: #ff61f6;
 }
+
 .adobexd-bc {
 	background-color: #ff61f6;
 }
@@ -140,14 +158,17 @@ $breakpoint-spend: 767px;
 .figma {
 	color: #a259ff;
 }
+
 .figma-bc {
 	background-color: #a259ff;
 }
 
 /* github */
 .github {
-	color: #181717; /* GitHubに対応する黒 */
+	color: #181717;
+	/* GitHubに対応する黒 */
 }
+
 .github-bc {
 	background-color: #181717;
 }
@@ -156,6 +177,8 @@ $breakpoint-spend: 767px;
 body {
 	color: #fff;
 	font-family: sans-serif !important;
+	overflow-x: hidden;
+
 	div.sections-title {
 		width: 100%;
 		text-align: center;
@@ -235,11 +258,14 @@ body {
 	header {
 		position: relative;
 		width: 100%;
-		height: calc(100vh - 80px);
-		@include respond-to("sp"){
+		height: auto;
+
+		@include respond-to("sp") {
 			height: auto;
 		}
+
 		overflow: hidden;
+
 		div.menu-content {
 			position: fixed;
 			display: flex;
@@ -268,12 +294,8 @@ body {
 				height: 70px;
 				margin: 5px;
 
-				&.logo {}
-
-				a {
-					img {}
-				}
 			}
+
 			@include respond-to("sp") {
 				div.hamburger {
 					position: fixed;
@@ -285,6 +307,7 @@ body {
 					height: 30px;
 					cursor: pointer;
 					margin: 25px;
+
 					span {
 						display: block;
 						width: 100%;
@@ -292,14 +315,15 @@ body {
 						background-color: #333;
 						border-radius: 5px;
 						transition: transform 0.3s, opacity 0.3s;
+
 						&.open:nth-child(1) {
 							transform: translateY(10px) rotate(45deg);
 						}
-						
+
 						&.open:nth-child(2) {
 							opacity: 0;
 						}
-						
+
 						&.open:nth-child(3) {
 							transform: translateY(-10px) rotate(-45deg);
 						}
@@ -309,32 +333,33 @@ body {
 				nav.menu {
 					position: fixed;
 					width: 100%;
-					height: calc( 100lvh - 80px );
+					height: calc(100lvh - 80px);
 					transition: all .5s;
 					margin-top: 80px;
 					transform: translateX(100%);
 					background-color: #ffff;
-					&.open{
+
+					&.open {
 						transform: translateX(0);
 					}
-					
-						ul {
-							display: flex;
-							justify-content: center;
-							align-content: center;
-							flex-wrap: wrap;
-							width: 100%;
-							height: 100%;						
-							color: #000000;
 
-							li {
-								width: 100%;
-								text-align: center;
-								height: 50px;
-								line-height: 50px;
-								a {}
-							}
+					ul {
+						display: flex;
+						justify-content: center;
+						align-content: center;
+						flex-wrap: wrap;
+						width: 100%;
+						height: 100%;
+						color: #000000;
+
+						li {
+							width: 100%;
+							text-align: center;
+							height: 50px;
+							line-height: 50px;
+
 						}
+					}
 				}
 			}
 
@@ -349,6 +374,7 @@ body {
 					height: 30px;
 					cursor: pointer;
 					margin: 25px;
+
 					span {
 						display: block;
 						width: 100%;
@@ -356,14 +382,15 @@ body {
 						background-color: #333;
 						border-radius: 5px;
 						transition: transform 0.3s, opacity 0.3s;
+
 						&.open:nth-child(1) {
 							transform: translateY(10px) rotate(45deg);
 						}
-						
+
 						&.open:nth-child(2) {
 							opacity: 0;
 						}
-						
+
 						&.open:nth-child(3) {
 							transform: translateY(-10px) rotate(-45deg);
 						}
@@ -373,33 +400,34 @@ body {
 				nav.menu {
 					position: fixed;
 					width: 100%;
-					height: calc( 100lvh - 80px );
+					height: calc(100lvh - 80px);
 					transition: all .5s;
 					margin-top: 80px;
 					transform: translateX(100%);
 					background-color: #ffff;
-					&.open{
+
+					&.open {
 						transform: translateX(0);
 					}
-					
 
-						ul {
-							display: flex;
-							justify-content: center;
-							align-content: center;
-							flex-wrap: wrap;
+
+					ul {
+						display: flex;
+						justify-content: center;
+						align-content: center;
+						flex-wrap: wrap;
+						width: 100%;
+						height: 100%;
+						color: #000000;
+
+						li {
 							width: 100%;
-							height: 100%;							
-							color: #000000;
+							text-align: center;
+							height: 50px;
+							line-height: 50px;
 
-							li {
-								width: 100%;
-								text-align: center;
-								height: 50px;
-								line-height: 50px;
-								a {}
-							}
 						}
+					}
 				}
 			}
 
@@ -413,134 +441,140 @@ body {
 					height: 100%;
 					transition: all .5s;
 
-						ul {
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							height: 100%;
-							gap: 40px;
-							color: #000000;
+					ul {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						height: 100%;
+						gap: 40px;
+						color: #000000;
 
-							li {
-								a {}
-							}
-						}
 					}
+				}
 			}
 		}
-		div.header-view{
+
+		div.header-view {
 			position: relative;
-			top: 80px;
 			width: 100%;
 			height: auto;
 			transition: all 1s;
-			padding: 100px 0;
-			&.hide{
+			padding: 120px 0 50px;
+
+			&.hide {
 				opacity: 0;
 				transform: translateY(200px);
 			}
-			&.hide.fade-up{
+
+			&.hide.fade-up {
 				opacity: 1;
 				transform: translateY(0);
 			}
-		div.header-img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-image: url('../photos/sitecodding.jpg');
-			background-attachment: fixed;
-			background-size: cover;
-			background-position: center center;
-			z-index: -1;
-		}
 
-		div.content-profile {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			align-content: center;
-			width: 100%;
-			height: 100%;
-			transition: all .5s;
-
-			div.img {
-				width: 300px;
-				height: 300px;
-				border-radius: 150px;
-				background-color: #ffff;
-			}
-
-			div.content-profile_text {
-				@include respond-to("pc") {
-					padding-left: 100px;
-				}
-
-				text-align: center;
-
-				h2,
-				p {
-					width: 80%;
-					max-width: 500px;
-					padding: 10px 0;
-					margin: 0 auto;
-				}
-
-				ul{
-					list-style: none;
-					width: 80%;
-					margin: 0 auto;
-					li{
-						text-align: left;
-						margin: 10px 0;
-					}
-				}
-				
-				p{
-					text-align: left;
-				}
-
-				a {
-					display: block;
-					width: 150px;
-					height: 40px;
-					line-height: 30px;
-					border: solid 1px #ffffff;
-					margin: 20px auto;
-				}
-			}
-			div.SNS{
+			div.header-img {
+				position: absolute;
+				top: 0;
+				left: 0;
 				width: 100%;
-				ul{
-					display: flex;
+				height: 100%;
+				background-image: url('../photos/sitecodding.jpg');
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: center center;
+				z-index: -1;
+			}
+
+			div.content-profile {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
 				align-items: center;
 				align-content: center;
-				justify-content: center;
-				flex-wrap: nowrap;
-				list-style: none;
-				gap: 30px;
-				padding-top: 50px;
-					li{
-						width: 100px;
-						height: 100px;
-						border-radius: 50px;
-						background-color: #ffffff;
-						padding: 25px;
-						a{
-							display: block;
-							img{
+				width: 100%;
+				height: 100%;
+				transition: all .5s;
+
+				div.img {
+					width: 300px;
+					height: 300px;
+					border-radius: 150px;
+					background-color: #ffff;
+				}
+
+				div.content-profile_text {
+					@include respond-to("pc") {
+						padding-left: 100px;
+					}
+
+					text-align: center;
+
+					h2,
+					p {
+						width: 80%;
+						max-width: 500px;
+						padding: 10px 0;
+						margin: 0 auto;
+					}
+
+					ul {
+						list-style: none;
+						width: 80%;
+						margin: 0 auto;
+
+						li {
+							text-align: left;
+							margin: 10px 0;
+						}
+					}
+
+					p {
+						text-align: left;
+					}
+
+					a {
+						display: block;
+						width: 150px;
+						height: 40px;
+						line-height: 30px;
+						border: solid 1px #ffffff;
+						margin: 20px auto;
+					}
+				}
+
+				div.SNS {
+					width: 100%;
+
+					ul {
+						display: flex;
+						align-items: center;
+						align-content: center;
+						justify-content: center;
+						flex-wrap: nowrap;
+						list-style: none;
+						gap: 30px;
+						padding-top: 50px;
+
+						li {
+							width: 100px;
+							height: 100px;
+							border-radius: 50px;
+							background-color: #ffffff;
+							padding: 25px;
+
+							a {
 								display: block;
-								width: 100%;
-								height: 100%;
+
+								img {
+									display: block;
+									width: 100%;
+									height: 100%;
+								}
 							}
 						}
 					}
 				}
 			}
 		}
-	}
 	}
 
 	main {
@@ -561,7 +595,9 @@ body {
 		}
 
 
-		//section-news
+		/*-----------------------------------------*
+		|              section-news                |
+		*-----------------------------------------*/
 		section.section-news {
 			width: 100%;
 			max-width: 1000px;
@@ -570,10 +606,6 @@ body {
 
 			&.hide.fade-in {
 				opacity: 1;
-			}
-
-			div.sections-title {
-				h2 {}
 			}
 
 			ul.news-list {
@@ -610,13 +642,14 @@ body {
 				}
 			}
 		}
-		//section-work
+
+		/*-----------------------------------------*
+		|              section-work                |
+		*-----------------------------------------*/
 		section.section-work {
 			width: 100%;
 			margin: 0 auto;
 			padding: 0;
-
-			p.section-text {}
 
 			div.work-content {
 				display: flex;
@@ -629,15 +662,17 @@ body {
 				div.work-content_item {
 					width: 100%;
 					max-width: 500px;
-					@include respond-to("pc"){
+
+					@include respond-to("pc") {
 						max-width: 350px;
 					}
+
 					height: auto;
 					text-align: center;
 					word-wrap: break-word;
 
 					&.hide {
-						transition: all .5s;
+						transition: all 0.5s;
 						transform: translateY(200px);
 					}
 
@@ -650,8 +685,6 @@ body {
 						width: 100%;
 						aspect-ratio: 16/9;
 						background-color: gray;
-
-						img {}
 					}
 
 					h3 {
@@ -665,12 +698,15 @@ body {
 				}
 			}
 		}
-		//section-portfolio
+
+		/*-----------------------------------------*
+		|              section-portfolio           |
+		*-----------------------------------------*/
 		section.section-portfolio {
 
 			div.portofolio-content {
 				width: 100%;
-				margin: 050px auto 0;
+				margin: 50px auto 0;
 
 				div.portofolio-content__item {
 					width: 100%;
@@ -682,6 +718,7 @@ body {
 					padding-bottom: 20px;
 					transition: all 1s;
 					word-wrap: break-word;
+
 					&.left,
 					&.right {
 						margin: 20px auto;
@@ -724,7 +761,7 @@ body {
 						}
 
 						&.right {
-							margin-left: calc( 100% - 500px);
+							margin-left: calc(100% - 500px);
 
 							&.hide {
 								transform: translateX(100px);
@@ -736,22 +773,26 @@ body {
 							}
 						}
 					}
-					@media screen and (min-width: 1280px){
-						&:not(:first-child){
+
+					@media screen and (min-width: 1280px) {
+						&:not(:first-child) {
 							margin-top: -15%;
 						}
 					}
+
 					div.portofolio-img-slider {
 						display: block;
 						width: 100%;
 						aspect-ratio: 16/10;
-						//pcサイトを表示
+
+						// PCサイトを表示
 						div.portofolio-img-pc {
 							position: relative;
 							width: 500px;
 							aspect-ratio: 16/10;
 							overflow: hidden;
-							p.scroll{
+
+							p.scroll {
 								position: absolute;
 								top: 50%;
 								left: 75%;
@@ -759,7 +800,9 @@ body {
 								display: inline-block;
 								transform: translateY(-50%);
 								z-index: 10;
-								&::before, &::after{
+
+								&::before,
+								&::after {
 									content: "";
 									position: absolute;
 									left: 50%;
@@ -767,31 +810,35 @@ body {
 									font-size: 24px;
 									color: gray;
 									opacity: 0.7;
-									pointer-events: none; /* 矢印がクリックの邪魔にならないように */
+									pointer-events: none;
 								}
+
 								&::before {
-									content: "▲"; /* 上向き矢印 */
+									content: "▲";
+									/* 上向き矢印 */
 									top: -40px;
-									animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+									animation: moveUpDown 1s infinite alternate;
 								}
-								
+
 								&::after {
-									content: "▼"; /* 下向き矢印 */
+									content: "▼";
+									/* 下向き矢印 */
 									bottom: -20px;
-									animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+									animation: moveUpDown 1s infinite alternate;
 								}
-								
+
 								@keyframes moveUpDown {
 									0% {
 										transform: translate(-50%, 0);
 									}
+
 									100% {
-										transform: translate(-50%, 10px); /* 矢印が10px上下に動く */
+										transform: translate(-50%, 10px);
 									}
 								}
 							}
-							
-							img.portofolio-img-outer{
+
+							img.portofolio-img-outer {
 								position: absolute;
 								width: 100%;
 								top: 50%;
@@ -799,35 +846,42 @@ body {
 								display: block;
 								transform: translate(-50%, -50%);
 							}
-							div.portofolio-img-content-outer{
+
+							div.portofolio-img-content-outer {
 								position: absolute;
 								top: 10%;
 								left: 20%;
 								width: 60%;
 								height: 67%;
 								overflow: auto;
-								-ms-overflow-style: none;  /* Internet Explorer と Edge用にスクロールバーを非表示にする */
-                                scrollbar-width: none;  /* Firefox用にスクロールバーを非表示にする */
+								-ms-overflow-style: none;
+								/* IE と Edge用にスクロールバーを非表示にする */
+								scrollbar-width: none;
+								/* Firefox用にスクロールバーを非表示にする */
+
 								&::-webkit-scrollbar {
-									display: none;  /* Webkitベースのブラウザでスクロールバーを非表示にする */
+									display: none;
+									/* Webkitベースのブラウザでスクロールバーを非表示にする */
 								}
-							img.portofolio-img_inner{
-								position: absolute;
-								display: block;
-								width: 100%;
-								height: auto;
-								z-index: -1;
+
+								img.portofolio-img_inner {
+									position: absolute;
+									display: block;
+									width: 100%;
+									height: auto;
+									z-index: -1;
+								}
 							}
 						}
-						}
-						//spサイトを表示
-						//pcーサイトを表示
+
+						// SPサイトを表示
 						div.portofolio-img-sp {
 							position: relative;
 							width: 500px;
 							aspect-ratio: 16/10;
 							overflow: hidden;
-							p.scroll{
+
+							p.scroll {
 								position: absolute;
 								top: 50%;
 								left: 63%;
@@ -835,7 +889,9 @@ body {
 								display: inline-block;
 								transform: translateY(-50%);
 								z-index: 10;
-								&::before, &::after{
+
+								&::before,
+								&::after {
 									content: "";
 									position: absolute;
 									left: 50%;
@@ -843,30 +899,35 @@ body {
 									font-size: 24px;
 									color: gray;
 									opacity: 0.7;
-									pointer-events: none; /* 矢印がクリックの邪魔にならないように */
+									pointer-events: none;
 								}
+
 								&::before {
-									content: "▲"; /* 上向き矢印 */
+									content: "▲";
+									/* 上向き矢印 */
 									top: -40px;
-									animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+									animation: moveUpDown 1s infinite alternate;
 								}
-								
+
 								&::after {
-									content: "▼"; /* 下向き矢印 */
+									content: "▼";
+									/* 下向き矢印 */
 									bottom: -20px;
-									animation: moveUpDown 1s infinite alternate; /* 上下に動かすアニメーション */
+									animation: moveUpDown 1s infinite alternate;
 								}
-								
+
 								@keyframes moveUpDown {
 									0% {
 										transform: translate(-50%, 0);
 									}
+
 									100% {
-										transform: translate(-50%, 10px); /* 矢印が10px上下に動く */
+										transform: translate(-50%, 10px);
 									}
 								}
 							}
-							img.portofolio-img-outer{
+
+							img.portofolio-img-outer {
 								position: absolute;
 								width: 100%;
 								top: 50%;
@@ -874,53 +935,60 @@ body {
 								display: block;
 								transform: translate(-50%, -50%);
 							}
-							div.portofolio-img-content-outer{
+
+							div.portofolio-img-content-outer {
 								position: absolute;
 								top: 1%;
 								left: 36%;
 								width: 28%;
 								height: 98%;
 								overflow: auto;
-								-ms-overflow-style: none;  /* Internet Explorer と Edge用にスクロールバーを非表示にする */
-                                scrollbar-width: none;  /* Firefox用にスクロールバーを非表示にする */
+								-ms-overflow-style: none;
+								/* IE と Edge用にスクロールバーを非表示にする */
+								scrollbar-width: none;
+								/* Firefox用にスクロールバーを非表示にする */
+
 								&::-webkit-scrollbar {
-									display: none;  /* Webkitベースのブラウザでスクロールバーを非表示にする */
+									display: none;
+									/* Webkitベースのブラウザでスクロールバーを非表示にする */
 								}
-							img.portofolio-img_inner{
-								position: absolute;
-								display: block;
-								width: 100%;
-								height: auto;
-								z-index: -1;
+
+								img.portofolio-img_inner {
+									position: absolute;
+									display: block;
+									width: 100%;
+									height: auto;
+									z-index: -1;
+								}
 							}
 						}
-						}
 					}
-					.portfolio_content_profile{
+
+					.portfolio_content_profile {
 						display: flex;
 						justify-content: center;
 						align-items: center;
 						align-content: center;
-						img{
+
+						img {
 							display: inline-block;
 							width: 1.2em;
 							margin-right: 0.8em;
 						}
-						p{
-
-						}
 					}
-					.portfolio_content_use_skill{
+
+					.portfolio_content_use_skill {
 						padding: 3px 0;
-						span{
-						display: inline-block;
-						padding: 5px 10px;
-						height: 26px;
-						line-height: 16px;
-						font-size: 16px;
-						border-radius: 13px;
-						color: #ffff;
-						margin: 3px 6px;
+
+						span {
+							display: inline-block;
+							padding: 5px 10px;
+							height: 26px;
+							line-height: 16px;
+							font-size: 16px;
+							border-radius: 13px;
+							color: #ffff;
+							margin: 3px 6px;
 						}
 					}
 
@@ -942,85 +1010,147 @@ body {
 				}
 			}
 		}
-		//section-skill
+
+
+		/*-----------------------------------------*
+		|              section-skill               |
+		*-----------------------------------------*/
 		section.section-skill {
-			div.sections-title {
-				h2 {}
-			}
-
-			p.section-text {}
-
 			div.skill-content {
 				display: flex;
 				flex-wrap: wrap;
-				justify-items: center;
 				justify-content: center;
 				width: auto;
 				gap: 45px;
 				margin: 0 auto;
 
 				div.skill-content__item {
-					position: relative;
 					display: flex;
 					flex-wrap: wrap;
 					justify-content: center;
 					align-content: center;
 					width: 220px;
+
+					@include respond-to("sp") {
+						width: 140px;
+					}
+
 					aspect-ratio: 1/1;
 					color: black;
 					background-color: rgba(255, 255, 255, 0.7);
 					border-radius: 150px;
 					margin: 20px 0;
-					transition: all 1s;
+					transition: all 1s ease; // easeを追加
 					overflow: hidden;
-					  &.html {
-						border: solid 10px #E34F26; /* HTMLに対応するオレンジ色 */
-					  }
-					  
-					  &.css {
-						border: solid 10px #2965F1; /* CSSに対応する青色 */
-					  }
-					  
-					  &.javascript {
-						border: solid 10px #F7DF1E; /* JavaScriptに対応する黄色 */
-					  }
-					  
-					  &.react {
-						border: solid 10px #61DBFB; /* React.jsに対応する水色 */
-					  }
-					  
-					  &.php {
-						border: solid 10px #8993BE; /* PHPに対応するグレー系の青 */
-					  }
-					  
-					  &.wordpress {
-						border: solid 10px #21759B; /* WordPressに対応する青系 */
-					  }
-					  
-					  &.photoshop {
-						border: solid 10px #31A8FF; /* Photoshopに対応する青 */
-					  }
-					  
-					  &.illustrator {
-						border: solid 10px #FF9A00; /* Illustratorに対応するオレンジ */
-					  }
-					  
-					  &.mysql {
-						border: solid 10px #00758F; /* MySQLに対応する青 */
-					  }
-					  
-					  &.adobexd {
-						border: solid 10px #FF61F6; /* Adobe XDに対応するピンク */
-					  }
-					  
-					  &.figma {
-						border: solid 10px #F24E1E; /* Figmaに対応する赤 */
-					  }
 
-					  &.github {
-						border: solid 10px #181717; /* GitHubに対応する黒 */
-					  }
-					  
+					// HTMLに対応するオレンジ色 
+					&.html {
+						border: solid 10px #E34F26; // オレンジ色
+
+						@include respond-to("sp") {
+							border: solid 5px #E34F26; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// CSSに対応する青色
+					&.css {
+						border: solid 10px #2965F1; // 青色
+
+						@include respond-to("sp") {
+							border: solid 5px #2965F1; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// JavaScriptに対応する黄色
+					&.javascript {
+						border: solid 10px #F7DF1E; // 黄色
+
+						@include respond-to("sp") {
+							border: solid 5px #F7DF1E; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// React.jsに対応する水色
+					&.react {
+						border: solid 10px #61DBFB; // 水色
+
+						@include respond-to("sp") {
+							border: solid 5px #61DBFB; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// PHPに対応するグレー系の青
+					&.php {
+						border: solid 10px #8993BE; // グレー系の青
+
+						@include respond-to("sp") {
+							border: solid 5px #8993BE; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// WordPressに対応する青系
+					&.wordpress {
+						border: solid 10px #21759B; // 青系
+
+						@include respond-to("sp") {
+							border: solid 5px #21759B; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// Photoshopに対応する青
+					&.photoshop {
+						border: solid 10px #31A8FF; // 青
+
+						@include respond-to("sp") {
+							border: solid 5px #31A8FF; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// Illustratorに対応するオレンジ
+					&.illustrator {
+						border: solid 10px #FF9A00; // オレンジ
+
+						@include respond-to("sp") {
+							border: solid 5px #FF9A00; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// MySQLに対応する青
+					&.mysql {
+						border: solid 10px #00758F; // 青
+
+						@include respond-to("sp") {
+							border: solid 5px #00758F; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// Adobe XDに対応するピンク
+					&.adobexd {
+						border: solid 10px #FF61F6; // ピンク
+
+						@include respond-to("sp") {
+							border: solid 5px #FF61F6; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// Figmaに対応する赤
+					&.figma {
+						border: solid 10px #F24E1E; // 赤
+
+						@include respond-to("sp") {
+							border: solid 5px #F24E1E; // モバイルサイズではボーダーを小さく
+						}
+					}
+
+					// GitHubに対応する黒
+					&.github {
+						border: solid 10px #181717; // 黒
+
+						@include respond-to("sp") {
+							border: solid 5px #181717; // モバイルサイズではボーダーを小さく
+						}
+					}
+
 					&.skill-fade-up {
 						transform: translateY(200px);
 					}
@@ -1032,13 +1162,16 @@ body {
 
 					div.img {
 						width: 100px;
-						height: 100px;
+						@include respond-to("sp"){
+							width: 60px;
+						}
+						aspect-ratio: 1/1;
 						margin: 10px auto 0;
 
 						img {
 							display: block;
 							width: 100%;
-							height: 100%;
+							height: auto;
 						}
 					}
 
@@ -1056,12 +1189,21 @@ body {
 							font-size: 18px;
 							height: 18px;
 							line-height: 18px;
+							@include respond-to("sp"){
+								font-size: 14px;
+							height: 14px;
+							line-height: 14px;
+							}
 							text-align: center;
 						}
 
 						div.img-star {
 							width: 100px;
 							margin: 15px 0;
+							@include respond-to("sp"){
+								width: 60px;
+								margin: 10px 0;
+							}
 							img {
 								display: block;
 								width: 100%;
@@ -1069,22 +1211,21 @@ body {
 							}
 						}
 					}
-
 				}
 			}
 		}
-		//section-contact
+
+
+		/*-----------------------------------------*
+		|              section-contact             |
+		*-----------------------------------------*/
 		section.section-contact {
 			max-width: 1200px;
 			width: 100%;
 			margin: 0 auto;
 
-			div.sections-title {
-				h2 {}
-			}
-
 			form {
-				transition: all 1s;
+				transition: all 1s ease; // スムーズにするためにeaseを追加
 
 				&.hide {
 					transform: translateY(200px);
@@ -1101,12 +1242,12 @@ body {
 					justify-content: center;
 					align-items: center;
 					width: 100%;
-					height: auto;
 					padding: 25px 10px;
-					border-top: solid 1px #ffff;
+					border-top: solid 1px #ffffff; // 修正
 
 					h3 {
-						width: 400px;
+						width: 100%; // 可変にする
+						max-width: 400px;
 						font-size: 24px;
 
 						@include respond-to("sp") {
@@ -1118,21 +1259,20 @@ body {
 						}
 					}
 
-					input {
+					input,
+					textarea {
 						display: block;
-						width: 600px;
-						height: 50px;
-						background-color: #ffff;
+						width: 100%; // 可変にする
+						max-width: 600px; // 最大幅を指定
+						background-color: #ffffff;
 					}
 
-					/*============================
-#message
-============================*/
-					textarea#message {
-						display: block;
-						width: 600px;
+					input{
+						height: 40px;
+					}
+
+					textarea {
 						height: 200px;
-						background-color: #ffff;
 					}
 				}
 
@@ -1141,44 +1281,40 @@ body {
 					width: 80px;
 					height: 40px;
 					line-height: 40px;
-					background-color: #ffff;
+					background-color: #ffffff;
 					color: black;
-					margin: 50px calc(50% - 40px) 60px;
+					margin: 50px auto 60px; // autoで中央揃え
 				}
 			}
 		}
 
-		//page-confirm.php
+
+		/*-----------------------------------------*
+		|              page-confirm.php            |
+		*-----------------------------------------*/
 		section.confirm {
 			max-width: 1200px;
 			width: 100%;
 			margin: 0 auto;
 			padding-bottom: 60px;
 
-			div.sections-text-scale {
-				div.sections-title {
-					h2 {}
-				}
-			}
-
 			div.confirm {
 				div.confirm-content {
 					display: flex;
 					justify-content: center;
 					width: 100%;
-					height: auto;
-					padding: 25px 10px;
-					border-top: solid 1px #ffff;
+					border-top: solid 1px #ffffff; // 修正
 
 					h3 {
-						width: 400px;
+						width: 100%; // 可変に
+						max-width: 400px;
 						font-size: 24px;
 					}
 
 					p {
-						display: block;
-						width: 600px;
-						height: 50px;
+						width: 100%; // 可変に
+						max-width: 600px;
+						height: auto; // 高さ自動調整
 						line-height: 50px;
 						text-align: left;
 					}
@@ -1201,8 +1337,8 @@ body {
 					width: auto;
 					height: 40px;
 					font-size: 20px;
-					line-height: 20px;
-					background-color: #ffff;
+					line-height: 40px; // 高さに合わせて調整
+					background-color: #ffffff; // 背景色の修正
 					padding: 10px;
 					color: black;
 					margin: 50px 0 0;
@@ -1211,7 +1347,9 @@ body {
 			}
 		}
 
-		//page-semd.php
+		/*-----------------------------------------*
+		|              page-semd.php               |
+		*-----------------------------------------*/
 		section.semdmail {
 			display: flex;
 			flex-wrap: wrap;
@@ -1220,12 +1358,6 @@ body {
 			height: auto;
 			padding: 25px 10px;
 			border-top: solid 1px #ffff;
-
-			div.sections-text-scale {
-				div.sections-title {
-					h2 {}
-				}
-			}
 
 			div.semdmail {
 				p {

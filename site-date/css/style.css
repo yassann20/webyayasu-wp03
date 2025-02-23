@@ -518,7 +518,7 @@ body main {
 }
 @media (min-width: 0) and (max-width: 767px) {
   body main {
-    padding: 10px;
+    padding: 10px 30px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {

@@ -31,7 +31,7 @@
                 </div>
                 <h1><?php echo the_title(); ?></h1>
                 <div class="img thumbnail">
-                    <?php if (has_post_thumbnail()) : ?>
+                    <?php if (has_post_thumbnail()): ?>
                         <?php the_post_thumbnail(); ?>
                     <?php else: ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/site-date/photos/noimg.jpg" alt="">

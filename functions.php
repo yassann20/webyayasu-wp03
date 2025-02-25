@@ -115,32 +115,58 @@ function webyayasu03_customize_register($wp_customize)
     ));
 
     //ヘッダーsmsの設定
-    $wp_customize->add_section('header_sns_item', array(
+    $wp_customize->add_section('custom_header_sns_item', array(
         'title' => __('snsアイテム', 'mytheme'),
-        'priority' => 20,
+        'priority' => 50,
+        'panel' => 'custom_header_panel',
     ));
 
-    //画像の設定
-    $wp_customize->add_setting('header_sns_img', array(
-        'default' => '',
+    //snsアイテムを管理
+    $wp_customize->add_setting('custom_header_sns_count', array(
+        'default' => 3, // デフォルト値
         'transport' => 'refresh',
     ));
 
-    // 画像のアップローダー
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'header_sns_img_control', array(
-        'label' => __('sns画像', 'mytheme'),
-        'section' => 'header_sns_item',
-        'setting' => 'header_sns_img',
-    )));
-
-    //リンクURLの設定
-    $wp_customize->add_setting('header_sns_text', array(
-        'default' => '',
-        'transport' => 'refresh',
+    $wp_customize->add_control('custom_header_sns_count_control', array(
+        'label' => __('SNSアイテム数(個数指定する場合は初めに数値を保存公開、再リロードしてください)', 'mytheme'),
+        'section' => 'custom_header_sns_item',
+        'settings' => 'custom_header_sns_count',
+        'type' => 'number',
+        'input_attrs' => array(
+            'min' => 1,  // 最小値
+            'max' => 5,  // 最大値
+        ),
     ));
-    //テキスト入力フィールド
-    $wp_customize->add_control('')
 
+    $sns_count = get_theme_mod('custom_header_sns_count',3);
+    for ($i = 0; $i <= $sns_count; $i++) {
+
+        //画像の設定
+        $wp_customize->add_setting('custom_header_sns_img_0'.$i , array(
+            'default' => '',
+            'transport' => 'refresh',
+        ));
+        // 画像のアップローダー
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_sns_img_control_0' .$i, array(
+            'label' => __('sns画像'.($i+1), 'mytheme'),
+            'section' => 'custom_header_sns_item',
+            'settings' => 'custom_header_sns_img_0' .$i,
+        )));
+
+        //リンクURLの設定
+        $wp_customize->add_setting('custom_header_sns_text_0' .$i, array(
+            'default' => '',
+            'transport' => 'refresh',
+        ));
+        //テキスト入力フィールド
+        $wp_customize->add_control('custom_header_sns_text_control_0' .$i, array(
+            'label' => __('snsテキスト'. ($i + 1), 'mytheme'),
+            'section' => 'custom_header_sns_item',
+            'settings' => 'custom_header_sns_text_0' .$i,
+            'type' => 'url',
+        ));
+
+    }
     // ヘッダー画像フィルター設定
     $wp_customize->add_section('header_image_filter_section', array(
         'title'    => __('ヘッダー画像フィルター効果', 'mytheme'),

@@ -4,6 +4,12 @@ $header_image = get_theme_mod('custom_header_img');
 $header_profile_img = get_theme_mod('custom_header_profile_img');
 $header_headline_h2 = get_theme_mod('custom_header_headline_h2');
 $header_text = get_theme_mod('custom_header_text');
+$header_sns_img = [];
+$header_sns_text = [];
+for($i=0; $i<=3; $i++){
+    $header_sns_img[$i] = get_theme_mod('custom_header_sns_img_0' . $i);
+    $header_sns_text[$i] = get_theme_mod('custom_header_sns_text_0' . $i);
+}
 
 ?>
 <!DOCTYPE html>
@@ -101,9 +107,15 @@ $header_text = get_theme_mod('custom_header_text');
                 </div>
                 <div class="SNS">
                     <ul>
-                        <li><a href="https://x.com/webyayasu"><img src="http://localhost/wordpress02/wp-content/uploads/2024/11/logo-black.png" alt=""></a></li>
-                        <li><a href="https://www.prod.instagram.com/yasuzaki_k/?next=%2Fvozos%2F&hl=ja"><img src="http://localhost/wordpress02/wp-content/uploads/2024/11/Instagram_Glyph_Black.png" alt=""></a></li>
-                        <li><a href="https://github.com/yassann20"><img src="http://localhost/wordpress02/wp-content/uploads/2024/11/github-mark.png" alt=""></a></li>
+                    <?php
+                    for($i = 0; $i<=3; $i++){
+                        if ($header_sns_img[$i] && $header_sns_text[$i]){
+                        echo "<li><a href=\"" . $header_sns_text[$i] . "\"><img src=\"" . $header_sns_img[$i] . "\" alt=\"\"></a></li>";
+                        }else{
+                            break;
+                        }
+                    }
+                    ?> 
                     </ul>
                 </div>
             </div>

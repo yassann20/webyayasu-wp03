@@ -108,11 +108,38 @@ function webyayasu03_customize_register($wp_customize)
         'transport' => 'postMessage',
     ));
     $wp_customize->add_control('custom_header_text_control', array(
-        'label' => __('h2テキスト', 'mytheme'),
+        'label' => __('テキスト', 'mytheme'),
         'section' => 'custom_header_section',
         'settings' => 'custom_header_text',
         'type' => 'text',
     ));
+
+    //ヘッダーsmsの設定
+    $wp_customize->add_section('header_sns_item', array(
+        'title' => __('snsアイテム', 'mytheme'),
+        'priority' => 20,
+    ));
+
+    //画像の設定
+    $wp_customize->add_setting('header_sns_img', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+
+    // 画像のアップローダー
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'header_sns_img_control', array(
+        'label' => __('sns画像', 'mytheme'),
+        'section' => 'header_sns_item',
+        'setting' => 'header_sns_img',
+    )));
+
+    //リンクURLの設定
+    $wp_customize->add_setting('header_sns_text', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+    //テキスト入力フィールド
+    $wp_customize->add_control('')
 
     // ヘッダー画像フィルター設定
     $wp_customize->add_section('header_image_filter_section', array(

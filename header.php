@@ -3,6 +3,9 @@ $header_logo = get_theme_mod('custom_header_logo');
 $header_image = get_theme_mod('custom_header_img');
 $header_profile_img = get_theme_mod('custom_header_profile_img');
 $header_headline_h2 = get_theme_mod('custom_header_headline_h2');
+
+$header_profile_list_label = 
+
 $header_text = get_theme_mod('custom_header_text');
 $header_sns_img = [];
 $header_sns_text = [];

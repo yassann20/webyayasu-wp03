@@ -795,7 +795,7 @@ body {
 							p.scroll {
 								position: absolute;
 								top: 50%;
-								left: 75%;
+								left: 86%;
 								@include respond-to("sp"){
 									left: 85%;
 								}
@@ -887,9 +887,9 @@ body {
 							p.scroll {
 								position: absolute;
 								top: 50%;
-								left: 63%;
+								left: 71%;
 								@include respond-to("sp"){
-									left: 70%;
+									left: 69%;
 								}
 								color: gray;
 								display: inline-block;

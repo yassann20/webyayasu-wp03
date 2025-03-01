@@ -71,7 +71,7 @@
                         echo '<p class="text">' . esc_html($portfolio_content_text) . '</p>';
                     } ?>
                     <div class="portfolio_content_profile">
-                        <p class="time-data"><time datetime="<?php echo get_the_date('Y/m/d'); ?>"><img src="http://localhost/wordpress/wp-content/uploads/2025/01/clock-icon.png" alt="time"><?php echo get_the_date(); ?></time></p><!--投稿時間-->
+                        <p class="time-data"><time datetime="<?php echo get_the_date('Y/m/d'); ?>"><img src="http://localhost/wordpress/wp-content/uploads/2025/03/clock-icon.png" alt="time"><?php echo get_the_date(); ?></time></p><!--投稿時間-->
                         <p>
                             <?php
                             $portfolio_genre = CFS()->get('portfolio_genre'); //制作ジャンルを取得

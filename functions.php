@@ -40,7 +40,9 @@ add_action('wp_enqueue_scripts', 'my_enqueue_blog_styles');
 
 function webyayasu03_customize_register($wp_customize)
 {
-    // ヘッダーパネル追加
+    /***********************************************
+     *  heder関連のカスタマイザー       *
+     ***********************************************/
     $wp_customize->add_panel('custom_header_panel', array(
         'title' => __('ヘッダーのカスタマイズ', 'mytheme'),
         'description' => __('ヘッダーの画像、テキストなどを変更できます。', 'mytheme'),
@@ -102,6 +104,57 @@ function webyayasu03_customize_register($wp_customize)
         'type' => 'text',
     ));
 
+    $wp_customize->add_section('custom_header_list_date', array(
+        'title' => __('プロフィールデータ', 'mytheme'),
+        'priority' => 20,
+        'panel' => 'custom_header_panel'
+    ));
+
+    //データテキストの個数を管理
+    $wp_customize->add_setting('custom_header_list_text_count', array(
+        'default' => 3, // デフォルト値
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('custom_header_list_text_count_control', array(
+        'label' => __('リストデータ数(個数指定する場合は初めに数値を保存公開、再リロードしてください)', 'mytheme'),
+        'section' => 'custom_header_list_date',
+        'settings' => 'custom_header_list_text_count',
+        'type' => 'number',
+        'input_attrs' => array(
+            'min' => 1,  // 最小値
+            'max' => 5,  // 最大値
+        ),
+    ));
+
+    $list_data_count = get_theme_mod('custom_header_list_text_count', 3);
+
+    for ($i = 1; $i <= $list_data_count; $i++) {
+        //データテキストの見出し設定
+        $wp_customize->add_setting('custom_header_list_heading_setting_0' . $i, array(
+            'default' => '',
+            'transport' => 'refresh',
+        ));
+        $wp_customize->add_control('custom_header_list_heading_control_0' . $i, array(
+            'label' => __('データタイトル' . ($i), 'mytheme'),
+            'section' => 'custom_header_list_date',
+            'settings' => 'custom_header_list_heading_setting_0' . $i,
+            'type' => 'url',
+        ));
+
+        //データテキストのテキスト設定
+        $wp_customize->add_setting('custom_header_list_text_setting_0' . $i, array(
+            'default' => '',
+            'transport' => 'refresh',
+        ));
+        $wp_customize->add_control('custom_header_list_text_control_0' . $i, array(
+            'label' => __('データテキスト' . ($i), 'mytheme'),
+            'section' => 'custom_header_list_date',
+            'settings' => 'custom_header_list_text_setting_0' . $i,
+            'type' => 'url',
+        ));
+    }
+
     //ヘッダーpテキストの設定
     $wp_customize->add_setting('custom_header_text', array(
         'default' => '',
@@ -138,34 +191,33 @@ function webyayasu03_customize_register($wp_customize)
         ),
     ));
 
-    $sns_count = get_theme_mod('custom_header_sns_count',3);
-    for ($i = 0; $i <= $sns_count; $i++) {
+    $sns_count = get_theme_mod('custom_header_sns_count', 3);
+    for ($i = 1; $i <= $sns_count; $i++) {
 
         //画像の設定
-        $wp_customize->add_setting('custom_header_sns_img_0'.$i , array(
+        $wp_customize->add_setting('custom_header_sns_img_0' . $i, array(
             'default' => '',
             'transport' => 'refresh',
         ));
         // 画像のアップローダー
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_sns_img_control_0' .$i, array(
-            'label' => __('sns画像'.($i+1), 'mytheme'),
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'custom_header_sns_img_control_0' . $i, array(
+            'label' => __('sns画像' . $i, 'mytheme'),
             'section' => 'custom_header_sns_item',
-            'settings' => 'custom_header_sns_img_0' .$i,
+            'settings' => 'custom_header_sns_img_0' . $i,
         )));
 
         //リンクURLの設定
-        $wp_customize->add_setting('custom_header_sns_text_0' .$i, array(
+        $wp_customize->add_setting('custom_header_sns_text_0' . $i, array(
             'default' => '',
             'transport' => 'refresh',
         ));
         //テキスト入力フィールド
-        $wp_customize->add_control('custom_header_sns_text_control_0' .$i, array(
-            'label' => __('snsテキスト'. ($i + 1), 'mytheme'),
+        $wp_customize->add_control('custom_header_sns_text_control_0' . $i, array(
+            'label' => __('snsテキスト' . $i, 'mytheme'),
             'section' => 'custom_header_sns_item',
-            'settings' => 'custom_header_sns_text_0' .$i,
+            'settings' => 'custom_header_sns_text_0' . $i,
             'type' => 'url',
         ));
-
     }
     // ヘッダー画像フィルター設定
     $wp_customize->add_section('header_image_filter_section', array(
@@ -213,6 +265,16 @@ function webyayasu03_customize_register($wp_customize)
             'selector'        => '.custom-header-headline-h2',
             'render_callback' => 'mytheme_customize_partial_header_headline_h2',
         ));
+        for ($i = 1; $i <= $list_data_count; $i++) {
+            $wp_customize->selective_refresh->add_partial('custom_header_list_heading_setting_0' . $i, array(
+                'selector' => '.custom-header-list-heading_0' . $i,
+                'render_callback' => 'mytheme_customize_partial_header_list_heading_0'.$i,
+            ));
+            $wp_customize->selective_refresh->add_partial('custom_header_list_text_setting_0' . $i, array(
+                'selector' => '.custom-header-list-text_0' . $i,
+                'render_callback' => 'mytheme_customize_partial_header_list_text_0' . $i,
+            ));
+        }
         $wp_customize->selective_refresh->add_partial('custom_header_text', array(
             'selector'        => '.custom-header-text',
             'render_callback' => 'mytheme_customize_partial_header_text',
@@ -244,6 +306,18 @@ function mytheme_customize_partial_header_profile_image()
 function mytheme_customize_partial_header_headline_h2()
 {
     return get_theme_mod('custom_header_headline_h2');
+}
+$list_data_count = get_theme_mod('custom_header_list_text_count', 3);
+for ($i = 1; $i <= $list_data_count; $i++) {
+   eval("
+   function mytheme_customize_partial_header_list_heading_0$i(){
+        return get_theme_mod('custom_header_list_heading_setting_0$i');
+   }
+
+   function mytheme_customize_partial_header_list_text_0$i(){
+        return get_theme_mod('custom_header_list_text_setting_0$i');
+   }
+   ");
 }
 function mytheme_customize_partial_header_text()
 {

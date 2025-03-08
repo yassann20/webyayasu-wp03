@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
 <main>
-
+    <!-- ページtracking機能を付与 -->
+    <?php get_template_part('template-parts/section', 'page-tracking') ?>
     <section class="archive">
         <!-- アーカイブページのタイトルを表示 -->
         <div class="sections-title">

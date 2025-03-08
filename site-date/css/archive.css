@@ -2,7 +2,7 @@
 section.archive {
   width: 100%;
   text-align: center;
-  padding: 0 50px;
+  padding: 0;
 }
 section.archive div.categorys {
   width: 100%;
@@ -35,7 +35,7 @@ section.archive div.archive-content {
   align-content: center;
 }
 section.archive div.archive-content article.archive-content_item {
-  width: 350px;
+  width: 375px;
   height: 480px;
   background-color: rgba(255, 255, 255, 0.7);
   color: black;

@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
 <main>
+    <!-- ページtracking機能を付与 -->
+    <?php get_template_part('template-parts/section', 'page-tracking') ?>
 
     <?php
     // WordPress のループ開始
@@ -30,13 +32,13 @@
                     </p>
                 </div>
                 <h1><?php echo the_title(); ?></h1>
-                <div class="img thumbnail">
-                    <?php if (has_post_thumbnail()): ?>
+
+                <?php if (has_post_thumbnail()): ?>
+                    <div class="img thumbnail">
                         <?php the_post_thumbnail(); ?>
-                    <?php else: ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/site-date/photos/noimg.jpg" alt="">
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php endif; ?>
+
                 </div>
 
                 <div class="blog-content">

@@ -4,7 +4,7 @@
         // カテゴリー・アーカイブページ
         if (is_category() || is_archive()) {
             echo '<a href="' . home_url() . '">Home</a> >';
-            echo single_cat_title();
+            echo get_the_archive_title();
         // 投稿ページ
         } elseif (is_single()) {
             echo '<a href="' . home_url() . '">Home</a> >';

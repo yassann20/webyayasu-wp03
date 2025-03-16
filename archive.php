@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <main>
+    <div class="top-pading"></div><!--ヘッダーとの重なりを防ぐスペース-->
     <!-- ページtracking機能を付与 -->
     <?php get_template_part('template-parts/section', 'page-tracking') ?>
     <section class="archive">

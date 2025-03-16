@@ -173,6 +173,12 @@ $breakpoint-spend: 767px;
 	background-color: #181717;
 }
 
+/* top-paddingはheaderの高さ分のpaddingを設けヘッダーの下に隠れて表示されることを防ぐ物です。span.top-paddingと併用し使用してください*/
+div.top-pading{
+	display: block;
+	width: 100%;
+	height: 80px;
+}
 
 body {
 	color: #fff;
@@ -454,6 +460,8 @@ body {
 			}
 		}
 
+	}
+	.hero{
 		div.header-view {
 			position: relative;
 			width: 100%;

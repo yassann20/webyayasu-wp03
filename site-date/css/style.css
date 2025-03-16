@@ -147,6 +147,13 @@
   background-color: #181717;
 }
 
+/* top-paddingはheaderの高さ分のpaddingを設けヘッダーの下に隠れて表示されることを防ぐ物です。span.top-paddingと併用し使用してください*/
+div.top-pading {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
 body {
   color: #fff;
   font-family: sans-serif !important;
@@ -384,22 +391,22 @@ body header div.menu-content div.img {
     color: #000000;
   }
 }
-body header div.header-view {
+body .hero div.header-view {
   position: relative;
   width: 100%;
   height: auto;
   transition: all 1s;
   padding: 120px 0 50px;
 }
-body header div.header-view.hide {
+body .hero div.header-view.hide {
   opacity: 0;
   transform: translateY(200px);
 }
-body header div.header-view.hide.fade-up {
+body .hero div.header-view.hide.fade-up {
   opacity: 1;
   transform: translateY(0);
 }
-body header div.header-view div.header-img {
+body .hero div.header-view div.header-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -411,7 +418,7 @@ body header div.header-view div.header-img {
   background-position: center center;
   z-index: -1;
 }
-body header div.header-view div.content-profile {
+body .hero div.header-view div.content-profile {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -421,40 +428,40 @@ body header div.header-view div.content-profile {
   height: 100%;
   transition: all 0.5s;
 }
-body header div.header-view div.content-profile div.img {
+body .hero div.header-view div.content-profile div.img {
   width: 300px;
   height: 300px;
   border-radius: 150px;
   background-color: white;
 }
-body header div.header-view div.content-profile div.content-profile_text {
+body .hero div.header-view div.content-profile div.content-profile_text {
   text-align: center;
 }
 @media (min-width: 1024px) {
-  body header div.header-view div.content-profile div.content-profile_text {
+  body .hero div.header-view div.content-profile div.content-profile_text {
     padding-left: 100px;
   }
 }
-body header div.header-view div.content-profile div.content-profile_text h2,
-body header div.header-view div.content-profile div.content-profile_text p {
+body .hero div.header-view div.content-profile div.content-profile_text h2,
+body .hero div.header-view div.content-profile div.content-profile_text p {
   width: 80%;
   max-width: 500px;
   padding: 10px 0;
   margin: 0 auto;
 }
-body header div.header-view div.content-profile div.content-profile_text ul {
+body .hero div.header-view div.content-profile div.content-profile_text ul {
   list-style: none;
   width: 80%;
   margin: 0 auto;
 }
-body header div.header-view div.content-profile div.content-profile_text ul li {
+body .hero div.header-view div.content-profile div.content-profile_text ul li {
   text-align: left;
   margin: 10px 0;
 }
-body header div.header-view div.content-profile div.content-profile_text p {
+body .hero div.header-view div.content-profile div.content-profile_text p {
   text-align: left;
 }
-body header div.header-view div.content-profile div.content-profile_text a {
+body .hero div.header-view div.content-profile div.content-profile_text a {
   display: block;
   width: 150px;
   height: 40px;
@@ -462,10 +469,10 @@ body header div.header-view div.content-profile div.content-profile_text a {
   border: solid 1px #ffffff;
   margin: 20px auto;
 }
-body header div.header-view div.content-profile div.SNS {
+body .hero div.header-view div.content-profile div.SNS {
   width: 100%;
 }
-body header div.header-view div.content-profile div.SNS ul {
+body .hero div.header-view div.content-profile div.SNS ul {
   display: flex;
   align-items: center;
   align-content: center;
@@ -475,17 +482,17 @@ body header div.header-view div.content-profile div.SNS ul {
   gap: 30px;
   padding-top: 50px;
 }
-body header div.header-view div.content-profile div.SNS ul li {
+body .hero div.header-view div.content-profile div.SNS ul li {
   width: 100px;
   height: 100px;
   border-radius: 50px;
   background-color: #ffffff;
   padding: 25px;
 }
-body header div.header-view div.content-profile div.SNS ul li a {
+body .hero div.header-view div.content-profile div.SNS ul li a {
   display: block;
 }
-body header div.header-view div.content-profile div.SNS ul li a img {
+body .hero div.header-view div.content-profile div.SNS ul li a img {
   display: block;
   width: 100%;
   height: 100%;

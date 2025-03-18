@@ -525,6 +525,9 @@ body main {
   /*-----------------------------------------*
   |              page-semd.php               |
   *-----------------------------------------*/
+  /*-----------------------------------------*
+  |              section-hero                |
+  *-----------------------------------------*/
 }
 @media (min-width: 0) and (max-width: 767px) {
   body main {
@@ -1209,6 +1212,79 @@ body main section.semdmail div.button-area a {
   color: black;
   margin: 50px 0 60px;
   transform: translateX(-50%);
+}
+body main section.about {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  width: 100%;
+}
+body main section.about div.hero-profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 300px;
+}
+body main section.about div.hero-profile div.img {
+  width: 200px;
+  aspect-ratio: 1/1;
+  background-color: gray;
+  border-radius: 50%;
+  border: solid 25px yellow;
+  box-sizing: border-box;
+}
+body main section.about div.hero-profile ul {
+  padding-top: 30px;
+  padding-left: 0;
+  list-style: none;
+}
+body main section.about div.hero-profile ul li {
+  font-size: 1.2em;
+}
+body main section.about div.hero-profile ul li ruby {
+  font-weight: bold;
+}
+body main section.about div.hero-profile ul li ruby rt {
+  font-size: 50%;
+}
+body main section.about div.hero-text {
+  width: 60%;
+  padding: 50px 100px;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: -1;
+}
+body main section.about div.hero-text p {
+  color: #000000;
+}
+body main section.background {
+  padding-top: 60px;
+}
+body main section.background table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+body main section.background table thead {
+  background-color: #f5f5f5;
+}
+body main section.background table thead th {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-weight: bold;
+}
+body main section.background table tbody td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
 }
 body footer {
   width: 100%;

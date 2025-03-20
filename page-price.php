@@ -20,7 +20,72 @@
     </section>
 
     <section class="background">
-        <h2>画像ランディングページコーディング</h2>
+        <div class="sections-text-scale">
+            <div class="sections-title">
+                <h2>静的・動的サイトのコーディング</h2>
+            </div>
+            <p class="section-text">特にブログやコンテンツ管理などの更新をせずサイト運営をしていきたい方向けの制作方法です。基本的に不都合がなければサーバー代などの費用のみで運用可能、ただし更新する際に比較的高めの費用がかかることが多い点に注が必要</p>
+        </div>
+        <table border="1" cellspacing="0" cellpadding="8">
+            <thead>
+                <tr>
+                    <th colspan="3" style="text-align: center;">コーポレートサイト コーディング料金表</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>トップページ</td>
+                    <td>2日～3日</td>
+                    <td>30,000円</td>
+                </tr>
+                <tr>
+                    <td>下層ページ（1ページあたり）</td>
+                    <td>1日～2日</td>
+                    <td>10,000円</td>
+                </tr>
+                <tr>
+                    <td>お問い合わせフォーム（静的）</td>
+                    <td>+1日</td>
+                    <td>5,000円</td>
+                </tr>
+                <tr>
+                    <td>お問い合わせフォーム（PHP+送信機能）</td>
+                    <td>+1日</td>
+                    <td>10,000円</td>
+                </tr>
+                <tr>
+                    <td>簡易アニメーション（5箇所まで）</td>
+                    <td>+1日</td>
+                    <td>5,000円</td>
+                </tr>
+                <tr>
+                    <td>高度なアニメーション</td>
+                    <td>+2日～</td>
+                    <td>10,000円～</td>
+                </tr>
+                <tr>
+                    <td>レスポンシブ対応</td>
+                    <td>標準対応</td>
+                    <td>無料</td>
+                </tr>
+                <tr>
+                    <td>JavaScript処理（スライダー・モーダル等）</td>
+                    <td>+1日～</td>
+                    <td>8,000円～</td>
+                </tr>
+                <tr>
+                    <td>特殊カスタマイズ</td>
+                    <td>要相談</td>
+                    <td>都度見積もり</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="sections-text-scale">
+            <div class="sections-title">
+                <h2>画像ランディングページのコーディング</h2>
+            </div>
+            <p class="section-text">画像ランディングページは費用を極力抑え、納期が短期で済むメリットがあります。期間が短いランディングページなどで絶大なコストパフォーマンスを発揮します。ただし既存のランディングページをリニューアルして使う際には丸ごと作り直す事が多いので長く使いまわすには不向き</p>
+        </div>
         <table>
             <tbody>
                 <tr>
@@ -76,7 +141,12 @@
                 </tr>
             </tbody>
         </table>
-        <h2>htmlランディングページコーディング</h2>
+        <div class="sections-text-scale">
+            <div class="sections-title">
+                <h2>HTMLランディングページコーディング</h2>
+            </div>
+            <p class="section-text">htmlランディングページは読み込み速度が画像LPよりも速く読みこみ速度が遅いことによる客離れを抑えるメリットがあります。ただし工数は画像LPよりも多く、着工から完成までの期間も多くなります。</p>
+        </div>
         <table>
             <tbody>
                 <tr>
@@ -132,8 +202,15 @@
                 </tr>
             </tbody>
         </table>
-        <h2>wordpressコーディング</h2>
-        <table border="1" cellspacing="0" cellpadding="8">
+        <div class="sections-text-scale">
+            <div class="sections-title">
+                <h2>wordpressコーディング</h2>
+            </div>
+            <p class="section-text">
+                ブログやコンテンツ情報などを日々更新していきたい方向けのサイトで長期運営前提のサイトを制作する際におすすめ、基本的な構成でのブログ、コンテンツ管理はもちろん外部プラグインを加えることで様々なニーズにあったサイトを構築できます。
+            </p>
+        </div>
+        <table>
             <thead>
                 <tr>
                     <th colspan="3" style="text-align: center;">WordPressコーディング料金表</th>
@@ -182,61 +259,6 @@
                 </tr>
                 <tr>
                     <td>追加オプション・特殊カスタマイズ</td>
-                    <td>要相談</td>
-                    <td>都度見積もり</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2>静的・動的コーディング</h2>
-        <table border="1" cellspacing="0" cellpadding="8">
-            <thead>
-                <tr>
-                    <th colspan="3" style="text-align: center;">コーポレートサイト コーディング料金表</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>トップページ</td>
-                    <td>2日～3日</td>
-                    <td>30,000円</td>
-                </tr>
-                <tr>
-                    <td>下層ページ（1ページあたり）</td>
-                    <td>1日～2日</td>
-                    <td>10,000円</td>
-                </tr>
-                <tr>
-                    <td>お問い合わせフォーム（静的）</td>
-                    <td>+1日</td>
-                    <td>5,000円</td>
-                </tr>
-                <tr>
-                    <td>お問い合わせフォーム（PHP+送信機能）</td>
-                    <td>+1日</td>
-                    <td>10,000円</td>
-                </tr>
-                <tr>
-                    <td>簡易アニメーション（5箇所まで）</td>
-                    <td>+1日</td>
-                    <td>5,000円</td>
-                </tr>
-                <tr>
-                    <td>高度なアニメーション</td>
-                    <td>+2日～</td>
-                    <td>10,000円～</td>
-                </tr>
-                <tr>
-                    <td>レスポンシブ対応</td>
-                    <td>標準対応</td>
-                    <td>無料</td>
-                </tr>
-                <tr>
-                    <td>JavaScript処理（スライダー・モーダル等）</td>
-                    <td>+1日～</td>
-                    <td>8,000円～</td>
-                </tr>
-                <tr>
-                    <td>特殊カスタマイズ</td>
                     <td>要相談</td>
                     <td>都度見積もり</td>
                 </tr>

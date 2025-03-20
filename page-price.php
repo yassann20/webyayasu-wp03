@@ -20,7 +20,7 @@
     </section>
 
     <section class="background">
-        <div class="sections-text-scale">
+        <div class="sections-text-fixed">
             <div class="sections-title">
                 <h2>静的・動的サイトのコーディング</h2>
             </div>
@@ -80,7 +80,7 @@
                 </tr>
             </tbody>
         </table>
-        <div class="sections-text-scale">
+        <div class="sections-text-fixed">
             <div class="sections-title">
                 <h2>画像ランディングページのコーディング</h2>
             </div>
@@ -141,7 +141,7 @@
                 </tr>
             </tbody>
         </table>
-        <div class="sections-text-scale">
+        <div class="sections-text-fixed">
             <div class="sections-title">
                 <h2>HTMLランディングページコーディング</h2>
             </div>
@@ -202,7 +202,7 @@
                 </tr>
             </tbody>
         </table>
-        <div class="sections-text-scale">
+        <div class="sections-text-fixed">
             <div class="sections-title">
                 <h2>wordpressコーディング</h2>
             </div>

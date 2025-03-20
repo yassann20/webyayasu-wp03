@@ -185,6 +185,21 @@ body {
 	font-family: sans-serif !important;
 	overflow-x: hidden;
 
+	//固定表示の見出し
+	div.sections-text-fixed {
+
+		div.sections-title {
+			display: inline-block;
+			font-size: 1.4em;
+			margin: 20px;
+		}
+
+		p.sections-text {
+			max-width: 700px;
+			margin: 0 auto 20px;
+			padding: 0 20px;
+		}
+	}
 	div.sections-title {
 		width: 100%;
 		text-align: center;
@@ -201,14 +216,14 @@ body {
 
 		h2 {
 			display: inline-block;
-			font-size: 48px;
+			font-size: 2.0em;
 			margin: 20px;
 		}
 	}
 
 	p.section-text {
 		max-width: 700px;
-		margin: 20px auto;
+		margin: 0 auto 20px;
 		padding: 0 20px;
 	}
 
@@ -1484,6 +1499,7 @@ body {
 
 		section.background {
 			padding-top: 60px;
+
 			table {
 				border-collapse: collapse; // セルのボーダーを重ねる
 				width: 100%;

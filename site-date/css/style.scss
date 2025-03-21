@@ -24,8 +24,6 @@ $breakpoint-spend: 767px;
 	}
 }
 
-
-
 //スキルカラーパレット
 /* HTML */
 .html {
@@ -180,6 +178,35 @@ div.top-pading {
 	display: block;
 	width: 100%;
 	height: 80px;
+}
+
+//サイト全体のフォントサイズを指定
+html h1 {
+  font-size: 2em;
+}
+
+html h2 {
+  font-size: 1.75em;
+}
+
+html h3 {
+  font-size: 1.5em;
+}
+
+html h4 {
+  font-size: 1.25em;
+}
+
+html h5 {
+  font-size: 1.125em;
+}
+
+html h6 {
+  font-size: 1em;
+}
+
+html p {
+  font-size: 1em;
 }
 
 body {
@@ -842,7 +869,7 @@ body {
 									position: absolute;
 									left: 50%;
 									transform: translateX(-50%);
-									font-size: 24px;
+									font-size: 1.8em;
 									color: gray;
 									opacity: 0.7;
 									pointer-events: none;
@@ -936,7 +963,6 @@ body {
 									position: absolute;
 									left: 50%;
 									transform: translateX(-50%);
-									font-size: 24px;
 									color: gray;
 									opacity: 0.7;
 									pointer-events: none;
@@ -1024,8 +1050,8 @@ body {
 							display: inline-block;
 							padding: 5px 10px;
 							height: 26px;
-							line-height: 16px;
-							font-size: 16px;
+							line-height: 1em;
+							font-size: 1em;
 							border-radius: 13px;
 							color: #ffff;
 							margin: 3px 6px;
@@ -1228,16 +1254,6 @@ body {
 
 						h3 {
 							width: 100%;
-							font-size: 18px;
-							height: 18px;
-							line-height: 18px;
-
-							@include respond-to("sp") {
-								font-size: 14px;
-								height: 14px;
-								line-height: 14px;
-							}
-
 							text-align: center;
 						}
 
@@ -1294,7 +1310,6 @@ body {
 					h3 {
 						width: 100%; // 可変にする
 						max-width: 400px;
-						font-size: 24px;
 
 						@include respond-to("sp") {
 							padding-bottom: 20px;
@@ -1354,7 +1369,6 @@ body {
 					h3 {
 						width: 100%; // 可変に
 						max-width: 400px;
-						font-size: 24px;
 					}
 
 					p {
@@ -1381,9 +1395,9 @@ body {
 					left: 50%;
 					display: block;
 					width: auto;
-					height: 40px;
-					font-size: 20px;
-					line-height: 40px; // 高さに合わせて調整
+					height: 2.0em;
+					font-size: 1.0em;
+					line-height: 2.0em; // 高さに合わせて調整
 					background-color: #ffffff; // 背景色の修正
 					padding: 10px;
 					color: black;
@@ -1423,8 +1437,8 @@ body {
 					display: block;
 					width: auto;
 					height: 40px;
-					font-size: 20px;
-					line-height: 20px;
+					font-size: 1em;
+					line-height: 1em;
 					background-color: #ffff;
 					padding: 10px;
 					color: black;
@@ -1471,7 +1485,7 @@ body {
 					list-style: none;
 
 					li {
-						font-size: 1.2em;
+						font-size: 1.0em;
 
 						ruby {
 

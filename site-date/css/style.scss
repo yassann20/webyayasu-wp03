@@ -182,31 +182,31 @@ div.top-pading {
 
 //サイト全体のフォントサイズを指定
 html h1 {
-  font-size: 2em;
+	font-size: 2em;
 }
 
 html h2 {
-  font-size: 1.75em;
+	font-size: 1.75em;
 }
 
 html h3 {
-  font-size: 1.5em;
+	font-size: 1.5em;
 }
 
 html h4 {
-  font-size: 1.25em;
+	font-size: 1.25em;
 }
 
 html h5 {
-  font-size: 1.125em;
+	font-size: 1.125em;
 }
 
 html h6 {
-  font-size: 1em;
+	font-size: 1em;
 }
 
 html p {
-  font-size: 1em;
+	font-size: 1em;
 }
 
 body {
@@ -228,6 +228,7 @@ body {
 			padding: 0 20px;
 		}
 	}
+
 	div.sections-title {
 		width: 100%;
 		text-align: center;
@@ -1252,7 +1253,7 @@ body {
 						overflow: hidden;
 						margin: 10px auto;
 
-						h3 {
+						h4 {
 							width: 100%;
 							text-align: center;
 						}
@@ -1451,22 +1452,27 @@ body {
 		/*-----------------------------------------*
 		|              section-hero                |
 		*-----------------------------------------*/
+
+
 		section.about {
 			display: flex;
-			flex-wrap: nowrap;
+			flex-wrap: wrap;
+			/* 子要素が画面幅に収まるように wrap */
 			justify-content: center;
 			align-items: center;
-			align-content: center;
 			position: relative;
 			width: 100%;
+			padding: 20px;
+			/* 余白を追加 */
 
 			div.hero-profile {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: center;
 				align-items: center;
-				align-content: center;
 				width: 300px;
+				margin-bottom: 20px;
+				/* 下部に余白追加 */
 
 				div.img {
 					width: 200px;
@@ -1476,7 +1482,14 @@ body {
 					border: solid 25px yellow;
 					box-sizing: border-box;
 
-					img.hero-profile_img {}
+					img.hero-profile_img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						/* 画像が枠内に収まるように調整 */
+						border-radius: 50%;
+						/* 画像を丸くする */
+					}
 				}
 
 				ul {
@@ -1488,7 +1501,6 @@ body {
 						font-size: 1.0em;
 
 						ruby {
-
 							font-weight: bold;
 
 							rt {
@@ -1504,12 +1516,36 @@ body {
 				padding: 50px 100px;
 				background-color: rgba(255, 255, 255, 0.7);
 				z-index: -1;
+				margin-left: 20px;
 
 				p {
 					color: #000000;
 				}
 			}
 		}
+
+		/* スマホ対応 */
+		@include respond-to("sp") {
+			section.about {
+				flex-direction: column;
+				padding: 10px;
+				/* スマホでの余白調整 */
+			}
+
+			div.hero-profile {
+				width: 100%;
+				/* スマホでのプロフィールの幅を調整 */
+				margin-bottom: 10px;
+			}
+
+			div.hero-text {
+				width: 100%;
+				padding: 20px;
+				margin-left: 0;
+			}
+		}
+
+		
 
 		section.background {
 			padding-top: 60px;

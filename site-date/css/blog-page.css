@@ -2,27 +2,45 @@
 section.blog-page {
   max-width: 1200px;
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.9);
   color: #000;
   margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 section.blog-page h1 {
-  font-size: 1.6rem;
-  line-height: 2;
-  letter-spacing: 1px;
+  font-size: 1.8rem;
+  font-weight: bold;
   text-align: center;
-  padding: 25px 0 25px;
+  padding: 25px 0;
+  border-bottom: 2px solid #007BFF;
 }
 section.blog-page div.img.thumbnail {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 10px;
 }
 section.blog-page div.img.thumbnail img {
-  position: absolute;
-  display: block;
   width: 100%;
   height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+section.blog-page div.img.thumbnail:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+section.blog-page div.img.thumbnail::after {
+  content: "カテゴリー名";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 5px;
 }
 section.blog-page div.blog-header {
   display: flex;
@@ -49,50 +67,57 @@ section.blog-page div.blog-content .prettyprint * {
   display: initial;
 }
 section.blog-page div.blog-content h2 {
-  font-size: 1.2rem;
-  line-height: 2;
-  letter-spacing: 1px;
+  font-size: 1.4rem;
+  font-weight: bold;
   margin-top: 30px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-left: 5px solid #007BFF;
 }
 section.blog-page div.blog-content h3 {
-  font-size: 1.1rem;
-  line-height: 2;
-  letter-spacing: 1px;
-  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 25px;
+  padding: 5px;
+  border-left: 3px solid #007BFF;
 }
 section.blog-page div.blog-content p {
   margin-top: 30px;
-}
-section.blog-page div.blog-content p, section.blog-page div.blog-content a {
   font-size: 1rem;
-  line-height: 2;
-  letter-spacing: 1px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-indent: 1em;
 }
 section.blog-page div.blog-content a {
-  color: #007BFF; /* 通常時のリンクの色 */
-  text-decoration: none; /* 下線を消す */
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  color: #007BFF;
+  text-decoration: none;
 }
 section.blog-page div.blog-content a:hover {
-  color: #FF6347; /* ホバー時の色 */
-  text-decoration: underline; /* ホバー時に下線を追加 */
+  color: #FF6347;
+  text-decoration: underline;
 }
 section.blog-page div.pagination ul {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 40px;
-  flex-wrap: nowrap;
+  gap: 20px;
 }
-section.blog-page div.pagination ul li {
+section.blog-page div.pagination li {
   list-style: none;
 }
-section.blog-page div.pagination ul li a {
+section.blog-page div.pagination li a {
   display: block;
   border: solid 1px #000;
   padding: 10px 25px;
-  transition: all 0.3s;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
-section.blog-page div.pagination ul li a:hover {
+section.blog-page div.pagination li a:hover {
   background-color: #000;
   color: #fff;
+  box-shadow: none;
 }/*# sourceMappingURL=blog-page.css.map */

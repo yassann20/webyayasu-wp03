@@ -35,7 +35,7 @@
                         <?php
                         $skill_content_h3 = CFS()->get('skill_content_h3');
                         if ($skill_content_h3) {
-                            echo '<h3>' . esc_html($skill_content_h3) . '</h3>';
+                            echo '<h4>' . esc_html($skill_content_h3) . '</h4>';
                         }
                         ?>
                         <div class="img-star">

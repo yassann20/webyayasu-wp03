@@ -564,6 +564,7 @@ body main {
   /*-----------------------------------------*
   |              section-hero                |
   *-----------------------------------------*/
+  /* スマホ対応 */
 }
 @media (min-width: 0) and (max-width: 767px) {
   body main {
@@ -1080,7 +1081,7 @@ body main section.section-skill div.skill-content div.skill-content__item div.sk
   overflow: hidden;
   margin: 10px auto;
 }
-body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text h3 {
+body main section.section-skill div.skill-content div.skill-content__item div.skill-content__item__text h4 {
   width: 100%;
   text-align: center;
 }
@@ -1238,20 +1239,23 @@ body main section.semdmail div.button-area a {
 }
 body main section.about {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  /* 子要素が画面幅に収まるように wrap */
   justify-content: center;
   align-items: center;
-  align-content: center;
   position: relative;
   width: 100%;
+  padding: 20px;
+  /* 余白を追加 */
 }
 body main section.about div.hero-profile {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  align-content: center;
   width: 300px;
+  margin-bottom: 20px;
+  /* 下部に余白追加 */
 }
 body main section.about div.hero-profile div.img {
   width: 200px;
@@ -1260,6 +1264,15 @@ body main section.about div.hero-profile div.img {
   border-radius: 50%;
   border: solid 25px yellow;
   box-sizing: border-box;
+}
+body main section.about div.hero-profile div.img img.hero-profile_img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* 画像が枠内に収まるように調整 */
+  border-radius: 50%;
+  /* 画像を丸くする */
 }
 body main section.about div.hero-profile ul {
   padding-top: 30px;
@@ -1280,9 +1293,27 @@ body main section.about div.hero-text {
   padding: 50px 100px;
   background-color: rgba(255, 255, 255, 0.7);
   z-index: -1;
+  margin-left: 20px;
 }
 body main section.about div.hero-text p {
   color: #000000;
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.about {
+    flex-direction: column;
+    padding: 10px;
+    /* スマホでの余白調整 */
+  }
+  body main div.hero-profile {
+    width: 100%;
+    /* スマホでのプロフィールの幅を調整 */
+    margin-bottom: 10px;
+  }
+  body main div.hero-text {
+    width: 100%;
+    padding: 20px;
+    margin-left: 0;
+  }
 }
 body main section.background {
   padding-top: 60px;

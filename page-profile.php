@@ -20,32 +20,34 @@
     </section>
 
     <section class="background">
-        <table>
-            <tbody>
-                <tr>
-                    <td colspan="4" style="text-align: center;">これまでの業務経歴</td>
-                </tr>
-                <tr>
-                    <td>令和2年8月～現在</td>
-                    <td>株式会社クラウドワークス</td>
-                    <td>個人デザイナーとして活動している方との業務委託</td>
-                    <td>・住宅系LPのコーディング(複数本)<br>・フィットネスジムLPのコーディング(複数本)<br>・wordpressカスタマイズ<br>・お問い合わせフォームのコーディング(サーバーサイド含む)などを担当<br>使用スキル ( html / css / javascript / php / mysql / github )</td>
-                </tr>
-                <tr>
-                    <td>令和3年8月～現在</td>
-                    <td>オリクション株式会社</td>
-                    <td>フロントエンドエンジニアとして業務委託</td>
-                    <td>大手医薬品会社様およびサプリメント会社様のLPを月に数本規模でデザインの再現性を重視したコーディングを担当<br>使用スキル ( html / css / javascript / react.js / github )</td>
-                </tr>
-                <tr>
-                    <td>令和7年1月～現在</td>
-                    <td>株式会社ホットスタッフ</td>
-                    <td>バックエンドエンジニアとして入社</td>
-                    <td>企業様向けの顧客情報管理サイトのフロントエンド・バックエンドコーディングを担当しています。<br>使用スキル ( html / css / javascript / java / PostgreSQL / github )</td>
-                </tr>
+        <div class="table-container">
+            <table>
+                <tbody>
+                    <tr>
+                        <td colspan="4" style="text-align: center;">これまでの業務経歴</td>
+                    </tr>
+                    <tr>
+                        <td>令和2年8月～現在</td>
+                        <td>株式会社クラウドワークス</td>
+                        <td>個人デザイナーとして活動している方との業務委託</td>
+                        <td>・住宅系LPのコーディング(複数本)<br>・フィットネスジムLPのコーディング(複数本)<br>・wordpressカスタマイズ<br>・お問い合わせフォームのコーディング(サーバーサイド含む)などを担当<br>使用スキル ( html / css / javascript / php / mysql / github )</td>
+                    </tr>
+                    <tr>
+                        <td>令和3年8月～現在</td>
+                        <td>オリクション株式会社</td>
+                        <td>フロントエンドエンジニアとして業務委託</td>
+                        <td>大手医薬品会社様およびサプリメント会社様のLPを月に数本規模でデザインの再現性を重視したコーディングを担当<br>使用スキル ( html / css / javascript / react.js / github )</td>
+                    </tr>
+                    <tr>
+                        <td>令和7年1月～現在</td>
+                        <td>株式会社ホットスタッフ</td>
+                        <td>バックエンドエンジニアとして入社</td>
+                        <td>企業様向けの顧客情報管理サイトのフロントエンド・バックエンドコーディングを担当しています。<br>使用スキル ( html / css / javascript / java / PostgreSQL / github )</td>
+                    </tr>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </section>
     <?php get_template_part('template-parts/section', 'skill') ?>
 

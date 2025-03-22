@@ -564,7 +564,6 @@ body main {
   /*-----------------------------------------*
   |              section-hero                |
   *-----------------------------------------*/
-  /* スマホ対応 */
 }
 @media (min-width: 0) and (max-width: 767px) {
   body main {
@@ -1245,17 +1244,48 @@ body main section.about {
   align-items: center;
   position: relative;
   width: 100%;
-  padding: 20px;
   /* 余白を追加 */
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.about {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body main section.about {
+    padding: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  body main section.about {
+    padding: 20px;
+  }
 }
 body main section.about div.hero-profile {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  margin-bottom: 20px;
   /* 下部に余白追加 */
+}
+@media (min-width: 1024px) {
+  body main section.about div.hero-profile {
+    width: 300px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body main section.about div.hero-profile {
+    width: 300px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.about div.hero-profile {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 body main section.about div.hero-profile div.img {
   width: 200px;
@@ -1289,52 +1319,64 @@ body main section.about div.hero-profile ul li ruby rt {
   font-size: 50%;
 }
 body main section.about div.hero-text {
-  width: 60%;
-  padding: 50px 100px;
   background-color: rgba(255, 255, 255, 0.7);
   z-index: -1;
-  margin-left: 20px;
+}
+@media (min-width: 1024px) {
+  body main section.about div.hero-text {
+    width: 60%;
+    padding: 50px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body main section.about div.hero-text {
+    width: 100%;
+    padding: 20px;
+  }
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.about div.hero-text {
+    width: 100%;
+    padding: 20px;
+  }
 }
 body main section.about div.hero-text p {
   color: #000000;
 }
-@media (min-width: 0) and (max-width: 767px) {
-  body main section.about {
-    flex-direction: column;
-    padding: 10px;
-    /* スマホでの余白調整 */
-  }
-  body main div.hero-profile {
-    width: 100%;
-    /* スマホでのプロフィールの幅を調整 */
-    margin-bottom: 10px;
-  }
-  body main div.hero-text {
-    width: 100%;
-    padding: 20px;
-    margin-left: 0;
-  }
-}
 body main section.background {
   padding-top: 60px;
 }
-body main section.background table {
-  border-collapse: collapse;
+body main section.background div.table-container {
   width: 100%;
-  max-width: 800px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body main section.background div.table-container {
+    overflow-x: scroll;
+  }
+}
+@media (min-width: 0) and (max-width: 767px) {
+  body main section.background div.table-container {
+    overflow-x: scroll;
+  }
+}
+body main section.background div.table-container table {
+  border-collapse: collapse;
+  width: 800px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
   font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #000000;
 }
-body main section.background table thead th {
+body main section.background div.table-container table thead th {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   text-align: left;
   font-weight: bold;
 }
-body main section.background table tbody td {
+body main section.background div.table-container table tbody td {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   text-align: left;
 }
 body footer {

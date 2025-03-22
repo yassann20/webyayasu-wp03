@@ -1566,44 +1566,49 @@ body {
 		section.background {
 			padding-top: 60px;
 
-			div.table-container {
-				width: 100%;
-				@include respond-to("tab") {
-						overflow-x: scroll;
-					}
 
-					@include respond-to("sp") {
-						overflow-x: scroll;
-					}
-				table {
-					border-collapse: collapse; // セルのボーダーを重ねる
-					width: 800px;
-					margin: 0 auto;
-					font-family: Arial, sans-serif;
-					font-size: 1.0em;
-					background-color: rgba(255, 255, 255, 0.7);
-					color: #000000;
+		}
+	}
 
-					
+	//テーブルはほかでも使う可能性があるのでネストを浅めに設定
+	div.table-container {
+		width: 100%;
 
-					thead {
+		@include respond-to("tab") {
+			overflow-x: scroll;
+		}
 
-						th {
-							padding: 10px;
-							border: 1px solid #000000;
-							text-align: left;
-							font-weight: bold;
-						}
-					}
+		@include respond-to("sp") {
+			overflow-x: scroll;
+		}
 
-					tbody {
+		table {
+			border-collapse: collapse; // セルのボーダーを重ねる
+			width: 800px;
+			margin: 0 auto;
+			font-family: Arial, sans-serif;
+			font-size: 1.0em;
+			background-color: rgba(255, 255, 255, 0.7);
+			color: #000000;
 
-						td {
-							padding: 10px;
-							border: 1px solid #000000;
-							text-align: left;
-						}
-					}
+
+
+			thead {
+
+				th {
+					padding: 10px;
+					border: 1px solid #000000;
+					text-align: left;
+					font-weight: bold;
+				}
+			}
+
+			tbody {
+
+				td {
+					padding: 10px;
+					border: 1px solid #000000;
+					text-align: left;
 				}
 			}
 		}

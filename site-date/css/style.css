@@ -1346,20 +1346,20 @@ body main section.about div.hero-text p {
 body main section.background {
   padding-top: 60px;
 }
-body main section.background div.table-container {
+body div.table-container {
   width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  body main section.background div.table-container {
+  body div.table-container {
     overflow-x: scroll;
   }
 }
 @media (min-width: 0) and (max-width: 767px) {
-  body main section.background div.table-container {
+  body div.table-container {
     overflow-x: scroll;
   }
 }
-body main section.background div.table-container table {
+body div.table-container table {
   border-collapse: collapse;
   width: 800px;
   margin: 0 auto;
@@ -1368,13 +1368,13 @@ body main section.background div.table-container table {
   background-color: rgba(255, 255, 255, 0.7);
   color: #000000;
 }
-body main section.background div.table-container table thead th {
+body div.table-container table thead th {
   padding: 10px;
   border: 1px solid #000000;
   text-align: left;
   font-weight: bold;
 }
-body main section.background div.table-container table tbody td {
+body div.table-container table tbody td {
   padding: 10px;
   border: 1px solid #000000;
   text-align: left;

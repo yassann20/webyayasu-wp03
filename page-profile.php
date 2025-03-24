@@ -1,11 +1,20 @@
-<?php get_header(); ?>
+<?php
+
+$header_profile_img = get_theme_mod('custom_header_profile_img');
+get_header();
+
+?>
 
 <main>
     <div class="top-pading"></div><!--ヘッダーとの重なりを防ぐスペース-->
     <section class="about">
         <div class="hero-profile">
             <div class="img">
-                <img src="" alt="" class="hero-profile_img" />
+                <?php if ($header_profile_img) : ?>
+                    <img class="hero-profile_img" src="<?php echo $header_profile_img; ?>" alt="">
+                <?php else : ?>
+                    <img class="hero-profile_img" src="<?php echo esc_url($header_profile_img); ?>" alt="">
+                <?php endif; ?>
             </div>
             <ul>
                 <li>氏名 : <ruby>安崎<rt>ヤスザキ</rt></ruby>&nbsp;<ruby>海星<rt>カイセイ</rt></ruby></li>

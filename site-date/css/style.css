@@ -1292,7 +1292,6 @@ body main section.about div.hero-profile div.img {
   aspect-ratio: 1/1;
   background-color: gray;
   border-radius: 50%;
-  border: solid 25px yellow;
   box-sizing: border-box;
 }
 body main section.about div.hero-profile div.img img.hero-profile_img {

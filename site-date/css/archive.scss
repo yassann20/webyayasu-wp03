@@ -5,23 +5,23 @@ $breakpoint-spend: 767px;
 
 // Mixinの定義
 @mixin respond-to($device) {
-	@if $device=='pc' {
-		@media (min-width: $breakpoint-pc) {
-			@content;
-		}
-	}
+    @if $device=='pc' {
+        @media (min-width: $breakpoint-pc) {
+            @content;
+        }
+    }
 
-	@else if $device=='tab' {
-		@media (min-width: $breakpoint-tab) and (max-width: ($breakpoint-pc - 1px)) {
-			@content;
-		}
-	}
+    @else if $device=='tab' {
+        @media (min-width: $breakpoint-tab) and (max-width: ($breakpoint-pc - 1px)) {
+            @content;
+        }
+    }
 
-	@else if $device=='sp' {
-		@media (min-width: 0) and (max-width: $breakpoint-spend) {
-			@content;
-		}
-	}
+    @else if $device=='sp' {
+        @media (min-width: 0) and (max-width: $breakpoint-spend) {
+            @content;
+        }
+    }
 }
 
 section.archive {
@@ -33,8 +33,10 @@ section.archive {
         width: 100%;
         padding: 10px 0;
         margin: 0 auto;
+
         p {
             text-align: left;
+
             a {
                 display: inline-block;
                 padding: 0.3rem;
@@ -48,24 +50,29 @@ section.archive {
 
     div.archive-text {
         width: 100%;
+
         h2 {
             padding: 20px 0;
         }
     }
+
     div.archive-content {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        gap: 30px;
+        justify-content: center;
         flex-wrap: wrap;
         align-items: center;
         align-content: center;
 
         article.archive-content_item {
-            width: 375px;
+            max-width: 375px;
+            width: 100%;
             height: 480px;
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.9);
             color: black;
-            margin: 0 0 calc( 7% / 3 );
+            margin: 0;
+
             a {
                 display: block;
                 width: 100%;
@@ -84,22 +91,28 @@ section.archive {
                     width: 100%;
                     padding: 1rem;
                     text-align: left;
+
                     div.post-meta {
                         width: 100%;
-                        time{
+
+                        time {
                             margin-right: 1rem;
                         }
-                        p, time {
+
+                        p,
+                        time {
                             display: inline-block;
                         }
                     }
 
                     div.post-text {
                         word-break: break-all;
+
                         h3 {
                             font-size: 1.3rem;
                             line-height: 1.8rem;
-                            max-height: 3.4rem; /*２行ぴったりで表示してそれ以降は非表示*/
+                            max-height: 3.4rem;
+                            /*２行ぴったりで表示してそれ以降は非表示*/
                             margin: 1rem 0;
                             overflow: hidden;
                         }
@@ -107,7 +120,8 @@ section.archive {
                         p {
                             font-size: 1.0rem;
                             line-height: 1.5rem;
-                            max-height: 7.5rem; /*5行ぴったりで表示してそれ以降は非表示*/
+                            max-height: 7.5rem;
+                            /*5行ぴったりで表示してそれ以降は非表示*/
                             margin: 1rem 0;
                             overflow: hidden;
                         }
@@ -115,18 +129,21 @@ section.archive {
                 }
             }
         }
+
         div.pagination {
-            ul{
+            ul {
                 width: 100%;
                 display: flex;
                 justify-content: center;
                 gap: 40px;
                 flex-wrap: nowrap;
-                li{
+
+                li {
                     width: 80px;
                     height: 30px;
                     list-style: none;
-                    a{
+
+                    a {
                         display: block;
                         width: 100%;
                         height: 100%;
@@ -138,6 +155,6 @@ section.archive {
             }
         }
 
-}
+    }
 
 }

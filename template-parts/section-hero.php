@@ -24,7 +24,7 @@ for ($i = 1; $i <= $header_sns_count; $i++) {
 ?>
 
 <section class="hero">
-    <div class="header-view hide">
+    <div class="header-view">
         <div class="header-img custom-header-img"
             style="background-image: url('<?php echo $header_image ? esc_url($header_image) : get_template_directory_uri() . '/site-date/photos/sitecodding.jpg'; ?>');">
         </div>

@@ -323,17 +323,7 @@ body {
 			width: 100%;
 			height: 80px;
 			background-color: #ffffff;
-			transition: all 1s;
 			z-index: 100;
-
-			&.hide {
-				transform: translateY(-200px);
-			}
-
-			&.hide.fade-dawn {
-				transform: translateY(0);
-				opacity: 1;
-			}
 
 			div.img {
 				position: fixed;
@@ -510,18 +500,7 @@ body {
 			position: relative;
 			width: 100%;
 			height: auto;
-			transition: all 1s;
 			padding: 120px 0 50px;
-
-			&.hide {
-				opacity: 0;
-				transform: translateY(200px);
-			}
-
-			&.hide.fade-up {
-				opacity: 1;
-				transform: translateY(0);
-			}
 
 			div.header-img {
 				position: absolute;
@@ -535,7 +514,6 @@ body {
 				background-position: center center;
 				z-index: -1;
 			}
-
 			div.content-profile {
 				display: flex;
 				flex-wrap: wrap;

@@ -5,14 +5,6 @@ $(function(){
     });
 })
 $(function () {
-    $('header').on('inview', function (event, isInView) {
-        if (isInView) {
-            $('.menu-content').addClass('fade-dawn');
-            setTimeout(function () {
-                $('.header-view').addClass('fade-up');
-            }, 400);
-        }
-    });
     $('.section-news').on('inview', function (event, isInView) {
         if (isInView) {
             $(this).addClass('fade-in');

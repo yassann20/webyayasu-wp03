@@ -31,7 +31,7 @@ $header_logo = get_theme_mod('custom_header_logo');
     </div>
 
     <header>
-        <div class="menu-content hide">
+        <div class="menu-content">
             <div class="img logo custom-header-logo">
                 <a href="<?php echo get_home_url(); ?>">
                     <?php if ($header_logo) : ?>

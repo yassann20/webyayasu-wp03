@@ -6,7 +6,7 @@
         <?php
         // 最新の投稿を3件取得するためのクエリ引数
         $args = array(
-            'post_type' => 'post', // 投稿タイプ
+            'post_type' => array('post', 'section02'), // 投稿タイプ
             'posts_per_page' => 3, // 取得する投稿数
             'orderby' => 'date', // 日付でソート
             'order' => 'DESC' // 新しいものから順

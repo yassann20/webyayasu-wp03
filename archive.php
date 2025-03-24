@@ -33,7 +33,7 @@
             <?php
             // 投稿を取得するためのクエリを設定
             $args = array(
-                'post_type' => 'post', // 投稿タイプを指定
+                'post_type' => array('post', 'section02'), // 投稿タイプを指定
                 'posts_per_page' => -1, // すべての投稿を取得
             );
 

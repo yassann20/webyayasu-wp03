@@ -38,6 +38,40 @@ function my_enqueue_blog_styles()
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_blog_styles');
 
+//カスタム投稿(section02)に対してポートフォリオというカテゴリを付与
+function add_category_to_section02(){
+    register_taxonomy_for_object_type('category', 'section02'); //section02に対してカテゴリを適応
+}
+add_action('init', 'add_category_to_section02');
+
+function include_section02_in_archive($query){
+    // 管理画面（ダッシュボード）ではなく、メインのクエリであることを確認
+    if(!is_admin() && $query->is_main_query()){
+        // ホーム（投稿一覧）、カテゴリーページ、アーカイブページで処理を適用
+        if(is_home() || is_category() || is_archive() ){
+            // 通常の投稿（post）とカスタム投稿（section02）を両方取得するように設定
+            $query->set('post_type', array('post', 'section02'));
+        }
+    }
+}
+// pre_get_posts フックを使い、メインクエリが実行される前に処理を変更
+add_action('pre_get_posts', 'include_section02_in_archive');
+
+function register_section02_post_type()
+{
+    register_post_type(
+        'section02',
+        array(
+            'label'  => 'セクション02',
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+            'taxonomies' => array('category'), // カテゴリを適用
+        )
+    );
+}
+add_action('init', 'register_section02_post_type');
+
 function webyayasu03_customize_register($wp_customize)
 {
     /***********************************************

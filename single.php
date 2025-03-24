@@ -47,8 +47,51 @@
                 </div>
                 <div class="pagination">
                     <ul>
-                        <li><a id="prev" href="">← prev</a></li>
-                        <li><a id="next" href="">next →</a></li>
+                <!--通常の投稿記事とカスタム投稿記事が混ざった記事リンクを取得する処理-->
+                <?php 
+                //現在の投稿IDと投稿タイプを取得
+                $current_id = get_the_ID();
+                $current_type = get_post_ID();
+                
+                ?>
+                        <!--カスタム投稿(section02)のリンクを取得する場合-->
+                        <?php if (is_singular('section02')): ?>
+                            <li>
+                                <?php
+                                $prev_post = get_previous_post(true, '', 'section02');
+                                if (($prev_post)):
+                                ?>
+                                    <a id="prev" href="<?php echo get_permalink($prev_post->ID); ?>">← prev</a>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <?php
+                                $next_post = get_next_post(true, '', 'section02');
+                                if (($next_post)):
+                                ?>
+                                    <a id="next" href="<?php echo get_permalink($next_post->ID); ?>">next →</a>
+                                <?php endif; ?>
+                            </li>
+
+                            <!--通常の投稿リンクを取得する場合-->
+                        <?php elseif (is_single()): ?>
+                            <li>
+                                <?php
+                                $prev_post = get_previous_post();
+                                if (($prev_post)):
+                                ?>
+                                    <a id="prev" href="<?php echo get_permalink($prev_post->ID); ?>">← prev</a>
+                                <?php endif; ?>
+                            </li>
+                            <li>
+                                <?php
+                                $next_post = get_next_post();
+                                if (($next_post)):
+                                ?>
+                                    <a id="next" href="<?php echo get_permalink($next_post->ID); ?>">next →</a>
+                                <?php endif; ?>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </section>
